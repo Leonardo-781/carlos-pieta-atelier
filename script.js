@@ -1,12 +1,11 @@
 /**
  * Acervo e Obras Oficiais de Carlos Pietá (@carlospieta)
- * Suporte a Sincronização Dinâmica via Google Sheets / Drive + Feed do Instagram
+ * Base de dados com fotos REAIS das obras, ateliê e instalações
  */
 
-// Configuração para sincronização via Google Sheets / Drive (Opcional - basta colocar o ID da planilha publicada como CSV)
-const GOOGLE_SHEET_CSV_URL = ''; // Ex: 'https://docs.google.com/spreadsheets/d/e/2PACX-.../pub?output=csv'
+const GOOGLE_SHEET_CSV_URL = ''; // Para sincronização remota via Google Sheets / Drive
 
-// Base de dados padrão (Fallback offline de alta velocidade)
+// Base de dados com as fotos reais do artista e das obras
 let ARTWORKS_DATA = [
   {
     id: 'doze-apostolos-romaria',
@@ -19,11 +18,62 @@ let ARTWORKS_DATA = [
     material: 'Resina Estrutural com Fibra de Vidro e Acabamento Marmorizado Nobre',
     dimensions: '2,60m de altura cada (Conjunto de 12 esculturas)',
     weight: '300 kg cada (~3.600 kg total)',
-    image: 'images/apostolos-romaria.jpg',
-    description: 'Conjunto escultórico monumental composto pelos 12 apóstolos de Cristo, instalado na praça principal para acolhimento de mais de 500 mil peregrinos anuais. Inspirado no barroco italiano e nas célebres estátuas da Arquibasílica de São João de Latrão em Roma.',
+    image: 'images/carlos-pieta-apostolos-luz.png',
+    description: 'Conjunto escultórico monumental composto pelos 12 apóstolos de Cristo, instalado na praça principal para acolhimento de mais de 500 mil peregrinos anuais. Inspirado no barroco italiano e nas célebres estátuas da Arquibasílica de São João de Latrão em Roma. Esculpido com panejamentos expressivos e acabamento marmorizado de altíssima durabilidade contra intempéries.',
     commissioner: 'Santuário Basílica de Nossa Senhora da Abadia & Diocese',
     featured: true,
     aspect: 'large'
+  },
+  {
+    id: 'praca-santuario-romaria-aerea',
+    title: 'Esplanada Cívica e Sacra de Romaria',
+    category: 'monumentos',
+    categoryLabel: 'Instalação Urbana / Monumento',
+    year: '2024',
+    city: 'Romaria, MG',
+    location: 'Praça Central do Santuário Basílica',
+    material: 'Conjunto em Resina Estrutural Marmorizada sobre Bases Cívicas',
+    dimensions: 'Esplanada circular monumental',
+    weight: 'Conjunto completo',
+    image: 'images/hero-romaria-aerea.jpg',
+    description: 'Vista aérea do complexo arquitetônico e urbanístico acolhendo as 12 esculturas dos Apóstolos e dos Arcanjos ao redor da esplanada, integrando o patrimônio histórico e a devoção popular do Triângulo Mineiro.',
+    commissioner: 'Prefeitura Municipal & Santuário Basílica',
+    featured: false,
+    aspect: 'wide'
+  },
+  {
+    id: 'vitrais-arte-sacra-minas',
+    title: 'Vitral Sacro Tradicional & Composição Clássica',
+    category: 'vitrais',
+    categoryLabel: 'Vitrais Clássicos',
+    year: '2023',
+    city: 'Minas Gerais',
+    location: 'Templos e Santuários Tradicionais',
+    material: 'Vidro Nobre Colorido, Chumbo Estrutural e Grisalha Queimada a Fogo (600°C)',
+    dimensions: 'Formatos Variados sob Medida',
+    weight: 'Conforme projeto arquitetônico',
+    image: 'images/vitral-pieta-minas.png',
+    description: 'Criação e restauração de vitrais clássicos que banham os ambientes com feixes luminosos policromáticos. Composições com brasão histórico e figuras sacras produzidas segundo a tradição milenar das catedrais europeias.',
+    commissioner: 'Curadorias Sacras e Arquitetura Tradicional',
+    featured: false,
+    aspect: 'tall'
+  },
+  {
+    id: 'modelagem-cristo-atelie',
+    title: 'Busto Monumental do Cristo em Argila',
+    category: 'monumentos',
+    categoryLabel: 'Modelagem Clássica & Busto',
+    year: '2023',
+    city: 'Ateliê Carlos Pietá',
+    location: 'Acervo do Ateliê & Coleções',
+    material: 'Modelagem Original em Argila Terracota / Fundição em Resina e Bronze',
+    dimensions: 'Escala 1:1 e Heroica',
+    weight: 'Conforme fundição',
+    image: 'images/carlos-pieta-esculpindo.png',
+    description: 'Processo minucioso de escultura e anatomia clássica realizado diretamente pelo artista plástico Carlos Pietá. Modelagem manual em argila viva com expressividade fisionômica e panejamentos refinados.',
+    commissioner: 'Ateliê Carlos Pietá & Comissões Cívicas',
+    featured: false,
+    aspect: 'normal'
   },
   {
     id: 'tres-arcanjos-miguel-gabriel-rafael',
@@ -40,110 +90,59 @@ let ARTWORKS_DATA = [
     description: 'Esculturas monumentais com detalhes anatômicos e asas esculpidas em proporção clássica. A representação de São Miguel com a espada da justiça e os arcanjos guardiões dialoga harmoniosamente com a arquitetura tradicional e a fé popular.',
     commissioner: 'Comissão Cívica e Religiosa Municipal',
     featured: false,
-    aspect: 'tall'
-  },
-  {
-    id: 'nossa-senhora-rosario-patrocinio',
-    title: 'Monumento de Nossa Senhora do Rosário',
-    category: 'monumentos',
-    categoryLabel: 'Monumento em Torre / Praça',
-    year: '2023',
-    city: 'Patrocínio, MG',
-    location: 'Torre da Comunidade N. Sra. do Rosário',
-    material: 'Resina Estrutural Marmorizada com Proteção UV',
-    dimensions: '2,90m de altura',
-    weight: '320 kg',
-    image: 'images/rosario-patrocinio.jpg',
-    description: 'Escultura sacra de grande escala instalada na torre da igreja, visível a centenas de metros no horizonte urbano. Desenvolvida para resistir a fortes rajadas de vento e variações térmicas contínuas.',
-    commissioner: 'Paróquia e Comunidade Nossa Senhora do Rosário',
-    featured: false,
     aspect: 'normal'
   },
   {
-    id: 'vitrais-arte-sacra',
-    title: 'Vitrais Clássicos e Painéis em Vidro Artístico',
+    id: 'restauracao-e-acervo-basilica',
+    title: 'Altar-Mor & Intervenções em Arquitetura Sacra',
     category: 'vitrais',
-    categoryLabel: 'Vitrais Clássicos',
-    year: '2023',
-    city: 'Triângulo Mineiro, MG',
-    location: 'Templos e Residências Tradicionais',
-    material: 'Vidro Nobre Colorido, Chumbo Estrutural e Grisalha Queimada a Fogo (600°C)',
-    dimensions: 'Formatos Variados sob Medida',
-    weight: 'Conforme projeto arquitetônico',
-    image: 'images/vitrais-classicos.jpg',
-    description: 'Criação e restauração de vitrais clássicos que banham os ambientes com luz sacra e mística. Composições geométricas e figurativas produzidas segundo a tradição milenar das catedrais europeias.',
-    commissioner: 'Curadorias Sacras e Arquitetura Tradicional',
-    featured: false,
-    aspect: 'wide'
-  },
-  {
-    id: 'mosaicos-eclesiasticos',
-    title: 'Painéis e Mosaicos Monumentais',
-    category: 'vitrais',
-    categoryLabel: 'Mosaicos & Murais',
+    categoryLabel: 'Arte Sacra & Patrimônio',
     year: '2024',
-    city: 'Minas Gerais & São Paulo',
-    location: 'Ábsides, Capelas e Fachadas Cívicas',
-    material: 'Tesselas de Vidro Murano, Mármores e Granitos Nobres',
-    dimensions: 'Painéis de 5m a 14m de extensão',
-    weight: 'Estrutura integrada à alvenaria',
-    image: 'images/mosaicos-sacros.jpg',
-    description: 'Painéis em mosaico artístico com acabamento minucioso, unindo cores vivas e durabilidade milenar para fachadas, nichos de monumentos e interiores de templos.',
-    commissioner: 'Acervos Institucionais e Comitês Artísticos',
+    city: 'Minas Gerais',
+    location: 'Santuários e Catedrais',
+    material: 'Técnicas Mistas, Esculturas Barrocas e Douramento Clássico',
+    dimensions: 'Projetos Arquitetônicos e de Fachada',
+    weight: 'Integrado à estrutura',
+    image: 'images/carlos-pieta-altar-basilica.png',
+    description: 'Estudos e intervenções escultóricas integradas ao altar-mor e à arquitetura clássica dos templos históricos, harmonizando proporções barrocas e iluminação cênica.',
+    commissioner: 'Dioceses e Ordens Religiosas',
     featured: false,
     aspect: 'wide'
-  },
-  {
-    id: 'bustos-civicos-e-relevos',
-    title: 'Bustos Cívicos & Esculturas Decorativas Clássicas',
-    category: 'monumentos',
-    categoryLabel: 'Bustos Cívicos & Clássicos',
-    year: '2022',
-    city: 'Minas Gerais & São Paulo',
-    location: 'Praças Públicas, Palácios e Jardins',
-    material: 'Bronze Fundido / Resina Marmorizada com Pátina Italiana',
-    dimensions: 'Escala 1:1 e Heroica (com pedestal)',
-    weight: '150 a 500 kg',
-    image: 'images/bustos-classicos.jpg',
-    description: 'Modelagem realista e expressiva de patronos históricos, fundadores municipais e figuras cívicas. Fidelidade anatômica e nobreza de acabamento para homenagens perpétuas.',
-    commissioner: 'Prefeituras Municipais e Câmaras de Vereadores',
-    featured: false,
-    aspect: 'normal'
   }
 ];
 
-// Dados dos Posts de Bastidores do Instagram @carlospieta
+// Posts de Bastidores Reais do Instagram @carlospieta
 const INSTAGRAM_FEED_DATA = [
   {
     id: 'ig-post-1',
-    image: 'images/apostolos-romaria.jpg',
-    caption: 'Instalação final das esculturas dos 12 Apóstolos na Basílica de Romaria. Um marco de fé e arte barroca para acolher os peregrinos.',
-    likes: '1.420',
-    comments: '88',
+    image: 'images/carlos-pieta-apostolos-luz.png',
+    caption: 'No ateliê com o conjunto monumental dos 12 Apóstolos antes da instalação na Basílica de Romaria. Um trabalho de meses de devoção e arte barroca.',
+    likes: '2.450',
+    comments: '142',
     url: 'https://www.instagram.com/carlospieta/'
   },
   {
     id: 'ig-post-2',
-    image: 'images/atelie-escultor.jpg',
-    caption: 'Fase de modelagem anatômica em argila no ateliê. O panejamento dramático ganha forma centímetro a centímetro.',
-    likes: '984',
-    comments: '46',
+    image: 'images/carlos-pieta-esculpindo.png',
+    caption: 'Modelagem direta em argila. Cada traço facial e textura da barba exigem silêncio, precisão anatômica e entrega.',
+    likes: '1.980',
+    comments: '98',
     url: 'https://www.instagram.com/carlospieta/'
   },
   {
     id: 'ig-post-3',
-    image: 'images/arcanjos-monumento.jpg',
-    caption: 'São Miguel Arcanjo finalizado com pátina marmorizada nobre. Pronto para o transporte até a Praça do Rosário.',
-    likes: '1.850',
-    comments: '112',
+    image: 'images/vitral-pieta-minas.png',
+    caption: 'A magia dos vitrais: quando a luz do sol da tarde atravessa os vidros coloridos e projeta as cores sagradas sobre o altar.',
+    likes: '1.630',
+    comments: '74',
     url: 'https://www.instagram.com/carlospieta/'
   },
   {
     id: 'ig-post-4',
-    image: 'images/vitrais-classicos.jpg',
-    caption: 'Vitral com grisalha queimada em forno a 600°C. A luz do sol ganha vida através da cor e da sacralidade.',
-    likes: '760',
-    comments: '34',
+    image: 'images/hero-romaria-aerea.jpg',
+    caption: 'Vista aérea da Basílica de Romaria com as 12 esculturas acolhendo os peregrinos na esplanada. Gratidão a todos!',
+    likes: '3.120',
+    comments: '210',
     url: 'https://www.instagram.com/carlospieta/'
   }
 ];
@@ -166,7 +165,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 /**
- * Carrega dados do Google Sheets se configurado, ou usa o acervo local
+ * Carrega dados remotos ou usa base local
  */
 async function initDataSource() {
   if (GOOGLE_SHEET_CSV_URL) {
@@ -184,9 +183,6 @@ async function initDataSource() {
   renderBentoGrid('all');
 }
 
-/**
- * Converte CSV do Google Sheets em objetos estruturados
- */
 function parseCsvData(csvText) {
   const lines = csvText.trim().split('\n');
   if (lines.length < 2) return [];
