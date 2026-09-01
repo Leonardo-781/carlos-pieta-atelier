@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --color-bg: #F7F6F2;
+  --color-dark: #151515;
+  --color-graphite: #1C1C1C;
+  --color-bronze: #A36A4F;
+  --color-bronze-dark: #87533B;
+  --color-bronze-light: #C48E75;
+  --color-stone-line: rgba(214, 211, 201, 0.7);
+  --color-card-bg: #FFFFFF;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: var(--color-bg);
+  color: var(--color-graphite);
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Tipografia Editorial */
+.font-serif-display {
+  font-family: 'Playfair Display', Georgia, serif;
+}
+
+.font-serif-cormorant {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+}
+
+.font-sans-body {
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* Suavização de Rolagem e Seleção */
+::selection {
+  background-color: #A36A4F;
+  color: #FFFFFF;
+}
+
+/* Linha Editorial */
+.editorial-line {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--color-stone-line), transparent);
+}
+
+/* Efeito de Vidro Fosco (Frosted Glass) */
+.glass-nav {
+  background: rgba(247, 246, 242, 0.88);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.glass-nav-dark {
+  background: rgba(21, 21, 21, 0.88);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+/* Sombra Editorial Fina */
+.shadow-editorial {
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.05), 0 4px 12px -4px rgba(0, 0, 0, 0.03);
+}
+
+.shadow-editorial-hover {
+  box-shadow: 0 20px 40px -15px rgba(163, 106, 79, 0.12), 0 8px 16px -6px rgba(0, 0, 0, 0.06);
+}
+
+/* Transições Suaves */
+.transition-editorial {
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Micro-interação da Imagem no Card */
+.artwork-card {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.artwork-card img {
+  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), filter 0.6s ease;
+}
+
+.artwork-card:hover img {
+  transform: scale(1.04);
+}
+
+/* Scrollbar Customizada Estilo Galeria */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #EFECE6;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #C4BDB4;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #A36A4F;
+}
+
+/* Tags e Badges Editoriais */
+.badge-editorial {
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-size: 0.72rem;
+  font-weight: 600;
+}
+
+/* Animação de Pulso Suave para Status Ateliê */
+@keyframes subtle-pulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.6;
+    transform: scale(1.15);
+  }
+}
+
+.animate-subtle-pulse {
+  animation: subtle-pulse 3s infinite ease-in-out;
+}
+
+/* Efeito de Ruído Fino / Textura Orgânica Opcional */
+.bg-marble-texture {
+  background-image: radial-gradient(#d3cec4 0.65px, transparent 0.65px);
+  background-size: 24px 24px;
+}
