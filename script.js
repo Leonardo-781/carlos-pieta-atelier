@@ -15,7 +15,7 @@ const ARTWORKS_DATA = [
     dimensions: '2,60m de altura cada (Conjunto de 12 esculturas)',
     weight: '300 kg cada (~3.600 kg total)',
     image: 'https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&w=1600&q=80',
-    description: 'Conjunto escultórico monumental composto pelos 12 apóstolos de Cristo, instalado na praça principal para acolhimento dos peregrinos. Inspirado no barroco italiano e nas célebres estátuas da Arquibasílica de São João de Latrão em Roma. Esculpido com panejamentos expressivos e acabamento marmorizado de altíssima durabilidade contra o sol e chuva.',
+    description: 'Conjunto escultórico monumental composto pelos 12 apóstolos de Cristo, instalado na praça principal para acolhimento de mais de 500 mil peregrinos anuais. Inspirado no barroco italiano e nas célebres estátuas da Arquibasílica de São João de Latrão em Roma. Esculpido com panejamentos expressivos e acabamento marmorizado de altíssima durabilidade contra intempéries.',
     commissioner: 'Santuário Basílica de Nossa Senhora da Abadia & Diocese',
     featured: true,
     aspect: 'large'
@@ -32,7 +32,7 @@ const ARTWORKS_DATA = [
     dimensions: '3,00m de envergadura com asas',
     weight: '380 kg cada',
     image: 'https://images.unsplash.com/photo-1569705460033-cfaa4bf9f822?auto=format&fit=crop&w=1200&q=80',
-    description: 'Esculturas monumentais com detalhes anatômicos e asas esculpidas em proporção clássica. A representação de São Miguel com a espada da justiça e os arcanjos guardiões dialoga harmoniosamente com a arquitetura tradicional e a devoção popular.',
+    description: 'Esculturas monumentais com detalhes anatômicos e asas esculpidas em proporção clássica. A representação de São Miguel com a espada da justiça e os arcanjos guardiões dialoga harmoniosamente com a arquitetura tradicional e a fé popular.',
     commissioner: 'Comissão Cívica e Religiosa Municipal',
     featured: false,
     aspect: 'tall'
@@ -49,7 +49,7 @@ const ARTWORKS_DATA = [
     dimensions: '2,90m de altura',
     weight: '320 kg',
     image: 'https://images.unsplash.com/photo-1582561424760-0321d75e81fa?auto=format&fit=crop&w=1200&q=80',
-    description: 'Escultura sacra de grande escala instalada na torre da igreja, visível a centenas de metros no horizonte urbano. Desenvolvida para resistir a rajadas de vento e variações térmicas extremas.',
+    description: 'Escultura sacra de grande escala instalada na torre da igreja, visível a centenas de metros no horizonte urbano. Desenvolvida para resistir a fortes rajadas de vento e variações térmicas contínuas.',
     commissioner: 'Paróquia e Comunidade Nossa Senhora do Rosário',
     featured: false,
     aspect: 'normal'
@@ -58,15 +58,15 @@ const ARTWORKS_DATA = [
     id: 'vitrais-arte-sacra',
     title: 'Vitrais Clássicos e Painéis em Vidro Artístico',
     category: 'vitrais',
-    categoryLabel: 'Vitrais & Painéis',
+    categoryLabel: 'Vitrais Clássicos',
     year: '2023',
     city: 'Triângulo Mineiro, MG',
     location: 'Templos e Residências Tradicionais',
-    material: 'Vidro Nobre Colorido, Chumbo Estrutural e Grisalha Queimada a Fogo',
+    material: 'Vidro Nobre Colorido, Chumbo Estrutural e Grisalha Queimada a Fogo (600°C)',
     dimensions: 'Formatos Variados sob Medida',
     weight: 'Conforme projeto arquitetônico',
     image: 'https://images.unsplash.com/photo-1513364776144-60967b0f800f?auto=format&fit=crop&w=1200&q=80',
-    description: 'Criação e restauração de vitrais clássicos que banham os ambientes com luz sacra e mística. Composições geométricas e figurativas produzidas segundo a tradição milenar das catedrais.',
+    description: 'Criação e restauração de vitrais clássicos que banham os ambientes com luz sacra e mística. Composições geométricas e figurativas produzidas segundo a tradição milenar das catedrais europeias.',
     commissioner: 'Curadorias Sacras e Arquitetura Tradicional',
     featured: false,
     aspect: 'wide'
@@ -77,10 +77,10 @@ const ARTWORKS_DATA = [
     category: 'vitrais',
     categoryLabel: 'Mosaicos & Murais',
     year: '2024',
-    city: 'Minas Gerais',
+    city: 'Minas Gerais & São Paulo',
     location: 'Ábsides, Capelas e Fachadas Cívicas',
     material: 'Tesselas de Vidro Murano, Mármores e Granitos Nobres',
-    dimensions: 'Painéis de 5m a 12m de extensão',
+    dimensions: 'Painéis de 5m a 14m de extensão',
     weight: 'Estrutura integrada à alvenaria',
     image: 'https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?auto=format&fit=crop&w=1200&q=80',
     description: 'Painéis em mosaico artístico com acabamento minucioso, unindo cores vivas e durabilidade milenar para fachadas, nichos de monumentos e interiores de templos.',
@@ -93,14 +93,14 @@ const ARTWORKS_DATA = [
     title: 'Bustos Cívicos & Esculturas Decorativas Clássicas',
     category: 'monumentos',
     categoryLabel: 'Bustos Cívicos & Clássicos',
-    year: '2021',
+    year: '2022',
     city: 'Minas Gerais & São Paulo',
     location: 'Praças Públicas, Palácios e Jardins',
     material: 'Bronze Fundido / Resina Marmorizada com Pátina Italiana',
     dimensions: 'Escala 1:1 e Heroica (com pedestal)',
     weight: '150 a 500 kg',
     image: 'https://images.unsplash.com/photo-1563089145-599997674d42?auto=format&fit=crop&w=1200&q=80',
-    description: 'Modelagem realista e expressiva de patronos históricos, fundadores municipais e santos padroeiros. Fidelidade anatômica e nobreza de acabamento para homenagens duradouras.',
+    description: 'Modelagem realista e expressiva de patronos históricos, fundadores municipais e figuras cívicas. Fidelidade anatômica e nobreza de acabamento para homenagens perpétuas.',
     commissioner: 'Prefeituras Municipais e Câmaras de Vereadores',
     featured: false,
     aspect: 'normal'
@@ -115,6 +115,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initMobileMenu();
   initBriefingForm();
   initModalHandlers();
+  initFaqAccordion();
   
   // Lucide Icons Render
   if (window.lucide) {
@@ -297,6 +298,31 @@ function openArtworkModal(artwork) {
   if (window.lucide) {
     window.lucide.createIcons();
   }
+}
+
+/**
+ * Accordion Interativo de FAQ / Dúvidas Frequentes
+ */
+function initFaqAccordion() {
+  const faqItems = document.querySelectorAll('.faq-item');
+  faqItems.forEach(item => {
+    const header = item.querySelector('.faq-header');
+    if (!header) return;
+
+    header.addEventListener('click', () => {
+      const isActive = item.classList.contains('active');
+      
+      // Fecha todos os outros
+      faqItems.forEach(other => {
+        other.classList.remove('active');
+      });
+
+      // Alterna o atual
+      if (!isActive) {
+        item.classList.add('active');
+      }
+    });
+  });
 }
 
 /**

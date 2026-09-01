@@ -81,7 +81,9 @@
       <nav class="hidden md:flex items-center space-x-8 text-xs uppercase tracking-widest font-semibold text-stone-700">
         <a href="#obras" class="hover:text-[#A36A4F] transition-colors py-1 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1.5px] after:bg-[#A36A4F] hover:after:w-full after:transition-all">Acervo & Obras</a>
         <a href="#processo" class="hover:text-[#A36A4F] transition-colors py-1 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1.5px] after:bg-[#A36A4F] hover:after:w-full after:transition-all">Processo & Técnica</a>
+        <a href="#reconhecimento" class="hover:text-[#A36A4F] transition-colors py-1 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1.5px] after:bg-[#A36A4F] hover:after:w-full after:transition-all">Na Mídia</a>
         <a href="#sobre" class="hover:text-[#A36A4F] transition-colors py-1 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1.5px] after:bg-[#A36A4F] hover:after:w-full after:transition-all">O Artista</a>
+        <a href="#faq" class="hover:text-[#A36A4F] transition-colors py-1 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1.5px] after:bg-[#A36A4F] hover:after:w-full after:transition-all">FAQ</a>
         <a href="#contato" class="hover:text-[#A36A4F] transition-colors py-1 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1.5px] after:bg-[#A36A4F] hover:after:w-full after:transition-all">Contato</a>
       </nav>
 
@@ -90,10 +92,10 @@
         <a 
           href="https://www.instagram.com/carlospieta/" 
           target="_blank"
-          class="p-2.5 rounded-xl border border-stone-300 bg-white text-stone-700 hover:text-[#A36A4F] hover:border-[#A36A4F] transition-all shadow-sm flex items-center justify-center"
+          class="p-2.5 rounded-xl border border-stone-300 bg-white text-stone-700 hover:text-[#A36A4F] hover:border-[#A36A4F] transition-all shadow-sm flex items-center justify-center group"
           title="Instagram @carlospieta"
         >
-          <i data-lucide="instagram" class="w-4 h-4"></i>
+          <i data-lucide="instagram" class="w-4 h-4 group-hover:scale-110 transition-transform"></i>
         </a>
 
         <a 
@@ -137,8 +139,16 @@
           <span>Processo Técnico</span>
           <i data-lucide="chevron-right" class="w-4 h-4 text-stone-400"></i>
         </a>
+        <a href="#reconhecimento" class="mobile-nav-link hover:text-[#A36A4F] py-2 border-b border-stone-200/50 flex items-center justify-between">
+          <span>Na Mídia & Destaques</span>
+          <i data-lucide="chevron-right" class="w-4 h-4 text-stone-400"></i>
+        </a>
         <a href="#sobre" class="mobile-nav-link hover:text-[#A36A4F] py-2 border-b border-stone-200/50 flex items-center justify-between">
           <span>Sobre Carlos Pietá</span>
+          <i data-lucide="chevron-right" class="w-4 h-4 text-stone-400"></i>
+        </a>
+        <a href="#faq" class="mobile-nav-link hover:text-[#A36A4F] py-2 border-b border-stone-200/50 flex items-center justify-between">
+          <span>Perguntas Frequentes</span>
           <i data-lucide="chevron-right" class="w-4 h-4 text-stone-400"></i>
         </a>
         <a href="#contato" class="mobile-nav-link hover:text-[#A36A4F] py-2 border-b border-stone-200/50 flex items-center justify-between">
@@ -152,15 +162,15 @@
       <a 
         href="https://www.instagram.com/carlospieta/" 
         target="_blank"
-        class="w-full py-3 text-center rounded-xl bg-gradient-to-r from-[#833AB4] via-[#FD1D1D] to-[#FCB045] text-white text-xs font-semibold tracking-widest uppercase flex items-center justify-center gap-2 shadow-sm"
+        class="w-full py-3 text-center rounded-xl bg-stone-900 text-white text-xs font-semibold tracking-widest uppercase flex items-center justify-center gap-2 shadow-sm hover:bg-[#A36A4F] transition-colors"
       >
-        <i data-lucide="instagram" class="w-4 h-4"></i>
+        <i data-lucide="instagram" class="w-4 h-4 text-[#E8C5B0]"></i>
         <span>Instagram @carlospieta</span>
       </a>
 
       <a 
         href="#contato" 
-        class="mobile-nav-link w-full py-3 text-center rounded-xl bg-stone-900 text-white text-xs font-semibold tracking-widest uppercase hover:bg-[#A36A4F] transition-colors"
+        class="mobile-nav-link w-full py-3 text-center rounded-xl border border-stone-400 text-stone-900 text-xs font-semibold tracking-widest uppercase hover:bg-stone-200 transition-colors"
       >
         Solicitar Projeto
       </a>
@@ -447,6 +457,91 @@
   </section>
 
   <!-- ========================================================================= -->
+  <!-- NOVO: RECONHECIMENTO NA MÍDIA & CITAÇÕES REAIS -->
+  <!-- ========================================================================= -->
+  <section id="reconhecimento" class="py-24 bg-white border-y border-stone-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="max-w-3xl mb-14">
+        <span class="text-xs font-semibold tracking-[0.25em] text-[#A36A4F] uppercase">Reconhecimento & Imprensa</span>
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-serifDisplay font-semibold text-stone-900 mt-2">
+          A Voz do Escultor & Cobertura Nacional
+        </h2>
+        <p class="text-stone-600 text-sm sm:text-base font-light mt-3">
+          As criações de Carlos Pietá acolhem milhões de devotos e visitantes em santuários e praças públicas de Minas Gerais.
+        </p>
+      </div>
+
+      <!-- Grid de Destaque Editorial e Matérias -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+        
+        <!-- Citação Real do Artista -->
+        <div class="lg:col-span-7 bg-[#F7F6F2] p-8 sm:p-12 rounded-3xl border border-stone-200 flex flex-col justify-between relative overflow-hidden">
+          <span class="quote-mark text-8xl text-[#A36A4F]/20 absolute -top-2 left-6 select-none">“</span>
+          
+          <div class="relative z-10 pt-4">
+            <p class="font-serifCormorant italic text-2xl sm:text-3xl text-stone-900 leading-relaxed">
+              "Enxergar que as pessoas veem beleza em algo que você fez é gratificante. Não tenho palavras para descrever... O difícil mesmo é harmonizar uma escultura para que ela fique bonita e viva no espaço público."
+            </p>
+          </div>
+
+          <div class="pt-8 mt-6 border-t border-stone-300/80 flex items-center justify-between">
+            <div>
+              <h4 class="font-serifDisplay font-semibold text-base text-stone-900">Carlos Pietá</h4>
+              <p class="text-xs text-stone-500">Em entrevista sobre o Conjunto dos 12 Apóstolos de Romaria (MG)</p>
+            </div>
+            <a 
+              href="https://www.instagram.com/carlospieta/" 
+              target="_blank" 
+              class="inline-flex items-center gap-1.5 text-xs font-semibold text-[#A36A4F] hover:underline"
+            >
+              <span>@carlospieta</span>
+              <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Cobertura de Imprensa & Selos -->
+        <div class="lg:col-span-5 flex flex-col justify-between space-y-4">
+          
+          <div class="p-6 rounded-2xl bg-white border border-stone-200 shadow-sm flex items-start gap-4">
+            <div class="w-10 h-10 rounded-xl bg-stone-100 flex items-center justify-center text-[#A36A4F] shrink-0">
+              <i data-lucide="newspaper" class="w-5 h-5"></i>
+            </div>
+            <div>
+              <span class="text-[11px] font-bold uppercase tracking-wider text-red-700 block">G1 Triângulo & TV Globo</span>
+              <h5 class="text-sm font-semibold text-stone-900 mt-0.5">"Escultor cria 12 apóstolos monumentais para Basílica de Romaria"</h5>
+              <p class="text-xs text-stone-500 font-light mt-1">Destaque para o acabamento marmorizado e a inspiração em São João de Latrão em Roma.</p>
+            </div>
+          </div>
+
+          <div class="p-6 rounded-2xl bg-white border border-stone-200 shadow-sm flex items-start gap-4">
+            <div class="w-10 h-10 rounded-xl bg-stone-100 flex items-center justify-center text-[#A36A4F] shrink-0">
+              <i data-lucide="tv" class="w-5 h-5"></i>
+            </div>
+            <div>
+              <span class="text-[11px] font-bold uppercase tracking-wider text-[#A36A4F] block">Jornal Estado de Minas</span>
+              <h5 class="text-sm font-semibold text-stone-900 mt-0.5">"Arte Sacra e Tradição: As novas obras de Carlos Pietá"</h5>
+              <p class="text-xs text-stone-500 font-light mt-1">Reportagem sobre a chegada das estátuas dos santos arcanjos e a revitalização cívico-religiosa.</p>
+            </div>
+          </div>
+
+          <div class="p-6 rounded-2xl bg-stone-900 text-white flex items-center justify-between gap-4">
+            <div>
+              <span class="text-xs font-semibold uppercase tracking-wider text-[#E8C5B0]">Santuário Basílica</span>
+              <p class="text-xs text-stone-300 mt-0.5">+500.000 fiéis e turistas acolhidos anualmente pelo conjunto escultórico.</p>
+            </div>
+            <i data-lucide="church" class="w-8 h-8 text-[#E8C5B0] shrink-0"></i>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================================================= -->
   <!-- 5. SOBRE O ARTISTA (ATELIÊ & TRAJETÓRIA) -->
   <!-- ========================================================================= -->
   <section id="sobre" class="py-24 bg-[#F7F6F2] relative">
@@ -546,9 +641,76 @@
   </section>
 
   <!-- ========================================================================= -->
+  <!-- NOVO: FAQ (PERGUNTAS FREQUENTES SOBRE PROJETOS E ENCOMENDAS) -->
+  <!-- ========================================================================= -->
+  <section id="faq" class="py-24 bg-white border-t border-stone-200">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center mb-16">
+        <span class="text-xs font-semibold tracking-[0.25em] text-[#A36A4F] uppercase">Esclarecimentos Técnicos</span>
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-serifDisplay font-semibold text-stone-900 mt-2">
+          Perguntas Frequentes
+        </h2>
+        <p class="text-stone-600 text-sm sm:text-base font-light mt-3">
+          Informações essenciais para prefeituras, padres, secretarias de cultura e arquitetos.
+        </p>
+      </div>
+
+      <div class="space-y-4">
+        
+        <!-- Item 1 -->
+        <div class="faq-item rounded-2xl bg-[#F7F6F2] border border-stone-200 overflow-hidden transition-all">
+          <button class="faq-header w-full p-6 text-left flex items-center justify-between gap-4 focus:outline-none">
+            <span class="font-serifDisplay font-semibold text-base sm:text-lg text-stone-900">Qual a vantagem da resina estrutural marmorizada em relação à pedra maciça?</span>
+            <i data-lucide="chevron-down" class="faq-icon w-5 h-5 text-stone-500 shrink-0 transition-transform duration-300"></i>
+          </button>
+          <div class="faq-content px-6 pb-6 text-xs sm:text-sm text-stone-600 font-light leading-relaxed">
+            A resina estrutural reforçada com fibra de vidro proporciona altíssima resistência mecânica e impermeabilidade total a chuvas e radiação UV, mantendo a textura e a nobreza visual do mármore clássico. Além disso, por ter peso otimizado (~300kg para estátuas de quase 3 metros), viabiliza o transporte e a fixação em torres e praças sem sobrecarregar as fundações.
+          </div>
+        </div>
+
+        <!-- Item 2 -->
+        <div class="faq-item rounded-2xl bg-[#F7F6F2] border border-stone-200 overflow-hidden transition-all">
+          <button class="faq-header w-full p-6 text-left flex items-center justify-between gap-4 focus:outline-none">
+            <span class="font-serifDisplay font-semibold text-base sm:text-lg text-stone-900">O ateliê atende projetos em todo o Brasil?</span>
+            <i data-lucide="chevron-down" class="faq-icon w-5 h-5 text-stone-500 shrink-0 transition-transform duration-300"></i>
+          </button>
+          <div class="faq-content px-6 pb-6 text-xs sm:text-sm text-stone-600 font-light leading-relaxed">
+            Sim. O ateliê conta com logística especializada para transporte com caminhões munck e guindastes em qualquer estado brasileiro, garantindo a entrega e orientação técnica para a fixação na base de destino.
+          </div>
+        </div>
+
+        <!-- Item 3 -->
+        <div class="faq-item rounded-2xl bg-[#F7F6F2] border border-stone-200 overflow-hidden transition-all">
+          <button class="faq-header w-full p-6 text-left flex items-center justify-between gap-4 focus:outline-none">
+            <span class="font-serifDisplay font-semibold text-base sm:text-lg text-stone-900">Qual o prazo médio de produção para uma escultura monumental?</span>
+            <i data-lucide="chevron-down" class="faq-icon w-5 h-5 text-stone-500 shrink-0 transition-transform duration-300"></i>
+          </button>
+          <div class="faq-content px-6 pb-6 text-xs sm:text-sm text-stone-600 font-light leading-relaxed">
+            O prazo varia conforme a escala e a complexidade do projeto. Uma escultura individual de grande porte costuma levar de 3 a 6 meses desde os croquis e maquetes até o acabamento final marmorizado. Conjuntos monumentais completos (como os 12 apóstolos) seguem cronograma planejado com a comissão contratante.
+          </div>
+        </div>
+
+        <!-- Item 4 -->
+        <div class="faq-item rounded-2xl bg-[#F7F6F2] border border-stone-200 overflow-hidden transition-all">
+          <button class="faq-header w-full p-6 text-left flex items-center justify-between gap-4 focus:outline-none">
+            <span class="font-serifDisplay font-semibold text-base sm:text-lg text-stone-900">Como é feito o processo para vitrais e mosaicos?</span>
+            <i data-lucide="chevron-down" class="faq-icon w-5 h-5 text-stone-500 shrink-0 transition-transform duration-300"></i>
+          </button>
+          <div class="faq-content px-6 pb-6 text-xs sm:text-sm text-stone-600 font-light leading-relaxed">
+            Os vitrais são produzidos sob medida para os vãos arquitetônicos, utilizando vidros coloridos importados, pintura em grisalha queimada em forno a mais de 600°C e montagem em perfis de chumbo estrutural. Os mosaicos utilizam tesselas nobres e argamassa de alta aderência para ambientes internos e externos.
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================================================= -->
   <!-- 6. FORMULÁRIO DE BRIEFING & CONTATO -->
   <!-- ========================================================================= -->
-  <section id="contato" class="py-24 bg-white border-t border-stone-200 relative">
+  <section id="contato" class="py-24 bg-[#F7F6F2] border-t border-stone-200 relative">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <div class="max-w-3xl mx-auto text-center mb-16">
@@ -564,7 +726,7 @@
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
         
         <!-- Formulário Institucional -->
-        <div class="lg:col-span-7 bg-[#F7F6F2] p-8 sm:p-10 rounded-3xl border border-stone-200/80 shadow-sm">
+        <div class="lg:col-span-7 bg-white p-8 sm:p-10 rounded-3xl border border-stone-200/80 shadow-sm">
           <form id="briefing-form" class="space-y-6">
             
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
@@ -577,7 +739,7 @@
                   id="form-name" 
                   required
                   placeholder="Ex: Padre Roberto / Arq. Marina" 
-                  class="w-full px-4 py-3 rounded-xl bg-white border border-stone-200 text-sm text-stone-900 placeholder-stone-400 focus:outline-none focus:border-[#A36A4F] focus:ring-1 focus:ring-[#A36A4F] transition-all"
+                  class="w-full px-4 py-3 rounded-xl bg-stone-50 border border-stone-200 text-sm text-stone-900 placeholder-stone-400 focus:outline-none focus:border-[#A36A4F] focus:ring-1 focus:ring-[#A36A4F] transition-all"
                 />
               </div>
 
@@ -589,7 +751,7 @@
                   type="text" 
                   id="form-org" 
                   placeholder="Ex: Paróquia São José ou Prefeitura" 
-                  class="w-full px-4 py-3 rounded-xl bg-white border border-stone-200 text-sm text-stone-900 placeholder-stone-400 focus:outline-none focus:border-[#A36A4F] focus:ring-1 focus:ring-[#A36A4F] transition-all"
+                  class="w-full px-4 py-3 rounded-xl bg-stone-50 border border-stone-200 text-sm text-stone-900 placeholder-stone-400 focus:outline-none focus:border-[#A36A4F] focus:ring-1 focus:ring-[#A36A4F] transition-all"
                 />
               </div>
             </div>
@@ -602,7 +764,7 @@
                 <select 
                   id="form-type" 
                   required
-                  class="w-full px-4 py-3 rounded-xl bg-white border border-stone-200 text-sm text-stone-900 focus:outline-none focus:border-[#A36A4F] focus:ring-1 focus:ring-[#A36A4F] transition-all"
+                  class="w-full px-4 py-3 rounded-xl bg-stone-50 border border-stone-200 text-sm text-stone-900 focus:outline-none focus:border-[#A36A4F] focus:ring-1 focus:ring-[#A36A4F] transition-all"
                 >
                   <option value="Escultura Monumental Sacra / Praça">Escultura Monumental Sacra / de Praça</option>
                   <option value="Conjunto de Imagens / Apóstolos / Santos">Conjunto Escultórico (Santos / Apóstolos / Arcanjos)</option>
@@ -622,7 +784,7 @@
                   id="form-city" 
                   required
                   placeholder="Ex: Romaria, MG ou São Paulo, SP" 
-                  class="w-full px-4 py-3 rounded-xl bg-white border border-stone-200 text-sm text-stone-900 placeholder-stone-400 focus:outline-none focus:border-[#A36A4F] focus:ring-1 focus:ring-[#A36A4F] transition-all"
+                  class="w-full px-4 py-3 rounded-xl bg-stone-50 border border-stone-200 text-sm text-stone-900 placeholder-stone-400 focus:outline-none focus:border-[#A36A4F] focus:ring-1 focus:ring-[#A36A4F] transition-all"
                 />
               </div>
             </div>
@@ -633,7 +795,7 @@
               </label>
               <select 
                 id="form-deadline" 
-                class="w-full px-4 py-3 rounded-xl bg-white border border-stone-200 text-sm text-stone-900 focus:outline-none focus:border-[#A36A4F] focus:ring-1 focus:ring-[#A36A4F] transition-all"
+                class="w-full px-4 py-3 rounded-xl bg-stone-50 border border-stone-200 text-sm text-stone-900 focus:outline-none focus:border-[#A36A4F] focus:ring-1 focus:ring-[#A36A4F] transition-all"
               >
                 <option value="Curto Prazo (3 a 6 meses)">Curto Prazo (3 a 6 meses)</option>
                 <option value="Médio Prazo (6 a 12 meses)" selected>Médio Prazo (6 a 12 meses)</option>
@@ -651,7 +813,7 @@
                 rows="4" 
                 required
                 placeholder="Descreva a imagem pretendida (altura, pedestal, fachada, praça ou torre), contexto da homenagem ou detalhes arquitetônicos..." 
-                class="w-full px-4 py-3 rounded-xl bg-white border border-stone-200 text-sm text-stone-900 placeholder-stone-400 focus:outline-none focus:border-[#A36A4F] focus:ring-1 focus:ring-[#A36A4F] transition-all resize-none"
+                class="w-full px-4 py-3 rounded-xl bg-stone-50 border border-stone-200 text-sm text-stone-900 placeholder-stone-400 focus:outline-none focus:border-[#A36A4F] focus:ring-1 focus:ring-[#A36A4F] transition-all resize-none"
               ></textarea>
             </div>
 
@@ -683,12 +845,12 @@
         <!-- Informações do Ateliê & Redes -->
         <div class="lg:col-span-5 flex flex-col justify-between space-y-8">
           
-          <div class="bg-[#F7F6F2] p-8 rounded-3xl border border-stone-200/80">
+          <div class="bg-white p-8 rounded-3xl border border-stone-200/80 shadow-sm">
             <h3 class="font-serifDisplay font-semibold text-2xl text-stone-900 mb-6">Ateliê & Contato</h3>
             
             <div class="space-y-5 text-sm text-stone-700">
               <div class="flex items-start gap-4">
-                <div class="w-9 h-9 rounded-xl bg-stone-200/80 flex items-center justify-center text-[#A36A4F] shrink-0">
+                <div class="w-9 h-9 rounded-xl bg-stone-100 flex items-center justify-center text-[#A36A4F] shrink-0">
                   <i data-lucide="instagram" class="w-4 h-4"></i>
                 </div>
                 <div>
@@ -698,7 +860,7 @@
               </div>
 
               <div class="flex items-start gap-4">
-                <div class="w-9 h-9 rounded-xl bg-stone-200/80 flex items-center justify-center text-[#A36A4F] shrink-0">
+                <div class="w-9 h-9 rounded-xl bg-stone-100 flex items-center justify-center text-[#A36A4F] shrink-0">
                   <i data-lucide="map-pin" class="w-4 h-4"></i>
                 </div>
                 <div>
@@ -708,7 +870,7 @@
               </div>
 
               <div class="flex items-start gap-4">
-                <div class="w-9 h-9 rounded-xl bg-stone-200/80 flex items-center justify-center text-[#A36A4F] shrink-0">
+                <div class="w-9 h-9 rounded-xl bg-stone-100 flex items-center justify-center text-[#A36A4F] shrink-0">
                   <i data-lucide="mail" class="w-4 h-4"></i>
                 </div>
                 <div>
@@ -718,7 +880,7 @@
               </div>
 
               <div class="flex items-start gap-4">
-                <div class="w-9 h-9 rounded-xl bg-stone-200/80 flex items-center justify-center text-[#A36A4F] shrink-0">
+                <div class="w-9 h-9 rounded-xl bg-stone-100 flex items-center justify-center text-[#A36A4F] shrink-0">
                   <i data-lucide="phone" class="w-4 h-4"></i>
                 </div>
                 <div>
@@ -773,7 +935,9 @@
             <li><a href="#hero" class="hover:text-white transition-colors">Início</a></li>
             <li><a href="#obras" class="hover:text-white transition-colors">Acervo & Obras</a></li>
             <li><a href="#processo" class="hover:text-white transition-colors">Processo & Técnica</a></li>
+            <li><a href="#reconhecimento" class="hover:text-white transition-colors">Na Mídia</a></li>
             <li><a href="#sobre" class="hover:text-white transition-colors">Sobre Carlos Pietá</a></li>
+            <li><a href="#faq" class="hover:text-white transition-colors">FAQ / Dúvidas</a></li>
             <li><a href="#contato" class="hover:text-white transition-colors">Solicitar Projeto</a></li>
           </ul>
         </div>

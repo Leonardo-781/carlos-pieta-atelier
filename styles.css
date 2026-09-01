@@ -90,6 +90,24 @@ body {
   transform: scale(1.04);
 }
 
+/* Accordion FAQ */
+.faq-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
+  opacity: 0;
+}
+
+.faq-item.active .faq-content {
+  max-height: 400px;
+  opacity: 1;
+}
+
+.faq-item.active .faq-icon {
+  transform: rotate(180deg);
+  color: #A36A4F;
+}
+
 /* Scrollbar Customizada Estilo Galeria */
 ::-webkit-scrollbar {
   width: 8px;
@@ -116,24 +134,8 @@ body {
   font-weight: 600;
 }
 
-/* Animação de Pulso Suave para Status Ateliê */
-@keyframes subtle-pulse {
-  0%, 100% {
-    opacity: 1;
-    transform: scale(1);
-  }
-  50% {
-    opacity: 0.6;
-    transform: scale(1.15);
-  }
-}
-
-.animate-subtle-pulse {
-  animation: subtle-pulse 3s infinite ease-in-out;
-}
-
-/* Efeito de Ruído Fino / Textura Orgânica Opcional */
-.bg-marble-texture {
-  background-image: radial-gradient(#d3cec4 0.65px, transparent 0.65px);
-  background-size: 24px 24px;
+/* Aspas Editoriais Gigantes */
+.quote-mark {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  line-height: 0.7;
 }
