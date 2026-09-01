@@ -1,6 +1,6 @@
 /**
  * Acervo e Obras Oficiais de Carlos Pietá (@carlospieta)
- * Base de dados com projetos reais, técnicas e especificações curatoriais
+ * Base de dados com imagens locais, projetos reais, técnicas e especificações curatoriais
  */
 const ARTWORKS_DATA = [
   {
@@ -14,7 +14,7 @@ const ARTWORKS_DATA = [
     material: 'Resina Estrutural com Fibra de Vidro e Acabamento Marmorizado Nobre',
     dimensions: '2,60m de altura cada (Conjunto de 12 esculturas)',
     weight: '300 kg cada (~3.600 kg total)',
-    image: 'https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&w=1600&q=80',
+    image: 'images/apostolos-romaria.jpg',
     description: 'Conjunto escultórico monumental composto pelos 12 apóstolos de Cristo, instalado na praça principal para acolhimento de mais de 500 mil peregrinos anuais. Inspirado no barroco italiano e nas célebres estátuas da Arquibasílica de São João de Latrão em Roma. Esculpido com panejamentos expressivos e acabamento marmorizado de altíssima durabilidade contra intempéries.',
     commissioner: 'Santuário Basílica de Nossa Senhora da Abadia & Diocese',
     featured: true,
@@ -31,7 +31,7 @@ const ARTWORKS_DATA = [
     material: 'Resina Estrutural de Alta Densidade e Pátina Clássica',
     dimensions: '3,00m de envergadura com asas',
     weight: '380 kg cada',
-    image: 'https://images.unsplash.com/photo-1569705460033-cfaa4bf9f822?auto=format&fit=crop&w=1200&q=80',
+    image: 'images/arcanjos-monumento.jpg',
     description: 'Esculturas monumentais com detalhes anatômicos e asas esculpidas em proporção clássica. A representação de São Miguel com a espada da justiça e os arcanjos guardiões dialoga harmoniosamente com a arquitetura tradicional e a fé popular.',
     commissioner: 'Comissão Cívica e Religiosa Municipal',
     featured: false,
@@ -48,7 +48,7 @@ const ARTWORKS_DATA = [
     material: 'Resina Estrutural Marmorizada com Proteção UV',
     dimensions: '2,90m de altura',
     weight: '320 kg',
-    image: 'https://images.unsplash.com/photo-1582561424760-0321d75e81fa?auto=format&fit=crop&w=1200&q=80',
+    image: 'images/rosario-patrocinio.jpg',
     description: 'Escultura sacra de grande escala instalada na torre da igreja, visível a centenas de metros no horizonte urbano. Desenvolvida para resistir a fortes rajadas de vento e variações térmicas contínuas.',
     commissioner: 'Paróquia e Comunidade Nossa Senhora do Rosário',
     featured: false,
@@ -65,7 +65,7 @@ const ARTWORKS_DATA = [
     material: 'Vidro Nobre Colorido, Chumbo Estrutural e Grisalha Queimada a Fogo (600°C)',
     dimensions: 'Formatos Variados sob Medida',
     weight: 'Conforme projeto arquitetônico',
-    image: 'https://images.unsplash.com/photo-1513364776144-60967b0f800f?auto=format&fit=crop&w=1200&q=80',
+    image: 'images/vitrais-classicos.jpg',
     description: 'Criação e restauração de vitrais clássicos que banham os ambientes com luz sacra e mística. Composições geométricas e figurativas produzidas segundo a tradição milenar das catedrais europeias.',
     commissioner: 'Curadorias Sacras e Arquitetura Tradicional',
     featured: false,
@@ -82,7 +82,7 @@ const ARTWORKS_DATA = [
     material: 'Tesselas de Vidro Murano, Mármores e Granitos Nobres',
     dimensions: 'Painéis de 5m a 14m de extensão',
     weight: 'Estrutura integrada à alvenaria',
-    image: 'https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?auto=format&fit=crop&w=1200&q=80',
+    image: 'images/mosaicos-sacros.jpg',
     description: 'Painéis em mosaico artístico com acabamento minucioso, unindo cores vivas e durabilidade milenar para fachadas, nichos de monumentos e interiores de templos.',
     commissioner: 'Acervos Institucionais e Comitês Artísticos',
     featured: false,
@@ -99,7 +99,7 @@ const ARTWORKS_DATA = [
     material: 'Bronze Fundido / Resina Marmorizada com Pátina Italiana',
     dimensions: 'Escala 1:1 e Heroica (com pedestal)',
     weight: '150 a 500 kg',
-    image: 'https://images.unsplash.com/photo-1563089145-599997674d42?auto=format&fit=crop&w=1200&q=80',
+    image: 'images/bustos-classicos.jpg',
     description: 'Modelagem realista e expressiva de patronos históricos, fundadores municipais e figuras cívicas. Fidelidade anatômica e nobreza de acabamento para homenagens perpétuas.',
     commissioner: 'Prefeituras Municipais e Câmaras de Vereadores',
     featured: false,
@@ -334,11 +334,11 @@ function initNavbarScroll() {
 
   window.addEventListener('scroll', () => {
     if (window.scrollY > 40) {
-      navbar.classList.add('shadow-md', 'py-3.5', 'border-b', 'border-stone-200/80');
-      navbar.classList.remove('py-5', 'border-transparent');
+      navbar.classList.add('shadow-md', 'bg-[#F7F6F2]/95', 'border-stone-200/80');
+      navbar.classList.remove('border-transparent');
     } else {
-      navbar.classList.remove('shadow-md', 'py-3.5', 'border-b', 'border-stone-200/80');
-      navbar.classList.add('py-5', 'border-transparent');
+      navbar.classList.remove('shadow-md', 'bg-[#F7F6F2]/95', 'border-stone-200/80');
+      navbar.classList.add('border-transparent');
     }
   });
 }

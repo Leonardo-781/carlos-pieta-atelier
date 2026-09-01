@@ -59,58 +59,66 @@
 <body class="bg-[#F7F6F2] text-stone-900 font-sans selection:bg-[#A36A4F] selection:text-white relative">
 
   <!-- ========================================================================= -->
-  <!-- 1. NAVBAR -->
+  <!-- 1. NAVBAR PERFEITA E RESPONSIVA -->
   <!-- ========================================================================= -->
-  <header id="main-navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-5 bg-[#F7F6F2]/90 backdrop-blur-md border-b border-transparent">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
+  <header id="main-navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-[#F7F6F2]/90 backdrop-blur-md border-b border-stone-200/60 h-20 flex items-center">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex items-center justify-between">
       
       <!-- Monograma & Nome do Artista -->
-      <a href="#hero" class="flex items-center gap-3.5 group">
-        <div class="w-10 h-10 rounded-full border border-stone-300 flex items-center justify-center bg-white shadow-sm group-hover:border-[#A36A4F] transition-colors">
+      <a href="#hero" class="flex items-center gap-3 group shrink-0">
+        <div class="w-10 h-10 rounded-full border border-stone-300 flex items-center justify-center bg-white shadow-sm group-hover:border-[#A36A4F] transition-colors shrink-0">
           <span class="font-serifDisplay font-bold text-sm tracking-widest text-[#A36A4F]">CP</span>
         </div>
         <div class="flex flex-col">
-          <div class="flex items-center gap-2">
-            <span class="font-serifDisplay font-bold text-lg sm:text-xl tracking-wider text-stone-900 uppercase">Carlos Pietá</span>
-          </div>
-          <span class="text-[10px] tracking-[0.22em] text-stone-500 uppercase font-medium">Escultor • Monumentos & Arte Sacra</span>
+          <span class="font-serifDisplay font-bold text-base sm:text-lg tracking-wider text-stone-900 uppercase whitespace-nowrap">Carlos Pietá</span>
+          <span class="text-[9px] sm:text-[10px] tracking-[0.2em] text-stone-500 uppercase font-medium whitespace-nowrap">Escultor • Monumentos & Arte Sacra</span>
         </div>
       </a>
 
-      <!-- Menu Desktop -->
-      <nav class="hidden md:flex items-center space-x-8 text-xs uppercase tracking-widest font-semibold text-stone-700">
-        <a href="#obras" class="hover:text-[#A36A4F] transition-colors py-1 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1.5px] after:bg-[#A36A4F] hover:after:w-full after:transition-all">Acervo & Obras</a>
-        <a href="#processo" class="hover:text-[#A36A4F] transition-colors py-1 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1.5px] after:bg-[#A36A4F] hover:after:w-full after:transition-all">Processo & Técnica</a>
+      <!-- Menu Desktop (Links limpos e sem quebra) -->
+      <nav class="hidden lg:flex items-center space-x-6 xl:space-x-8 text-xs uppercase tracking-widest font-semibold text-stone-700 whitespace-nowrap">
+        <a href="#obras" class="hover:text-[#A36A4F] transition-colors py-1 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1.5px] after:bg-[#A36A4F] hover:after:w-full after:transition-all">Obras</a>
+        <a href="#processo" class="hover:text-[#A36A4F] transition-colors py-1 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1.5px] after:bg-[#A36A4F] hover:after:w-full after:transition-all">Processo</a>
         <a href="#reconhecimento" class="hover:text-[#A36A4F] transition-colors py-1 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1.5px] after:bg-[#A36A4F] hover:after:w-full after:transition-all">Na Mídia</a>
         <a href="#sobre" class="hover:text-[#A36A4F] transition-colors py-1 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1.5px] after:bg-[#A36A4F] hover:after:w-full after:transition-all">O Artista</a>
         <a href="#faq" class="hover:text-[#A36A4F] transition-colors py-1 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1.5px] after:bg-[#A36A4F] hover:after:w-full after:transition-all">FAQ</a>
         <a href="#contato" class="hover:text-[#A36A4F] transition-colors py-1 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1.5px] after:bg-[#A36A4F] hover:after:w-full after:transition-all">Contato</a>
       </nav>
 
-      <!-- CTA Direito & Link Instagram -->
-      <div class="hidden md:flex items-center gap-3">
+      <!-- Botões de Ação à Direita -->
+      <div class="hidden sm:flex items-center gap-3 shrink-0">
+        <!-- Instagram Oficial -->
         <a 
           href="https://www.instagram.com/carlospieta/" 
           target="_blank"
-          class="p-2.5 rounded-xl border border-stone-300 bg-white text-stone-700 hover:text-[#A36A4F] hover:border-[#A36A4F] transition-all shadow-sm flex items-center justify-center group"
+          class="inline-flex items-center gap-1.5 px-3 py-2 rounded-xl border border-stone-300 bg-white hover:bg-stone-100 text-stone-800 text-xs font-semibold tracking-wide transition-all shadow-sm group"
           title="Instagram @carlospieta"
         >
-          <i data-lucide="instagram" class="w-4 h-4 group-hover:scale-110 transition-transform"></i>
+          <svg class="w-4 h-4 text-stone-700 group-hover:text-[#A36A4F] transition-colors" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+          </svg>
+          <span class="hidden md:inline">@carlospieta</span>
         </a>
 
+        <!-- Solicitar Projeto CTA -->
         <a 
           href="#contato" 
-          class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl border border-stone-800 text-xs font-semibold uppercase tracking-wider text-stone-900 bg-white hover:bg-stone-900 hover:text-white transition-all shadow-sm hover:shadow"
+          class="inline-flex items-center gap-2 px-4 sm:px-5 py-2.5 rounded-xl bg-stone-900 hover:bg-[#A36A4F] text-white text-xs font-semibold uppercase tracking-wider transition-all shadow-sm whitespace-nowrap"
         >
           <span>Solicitar Projeto</span>
-          <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+          <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
         </a>
       </div>
 
       <!-- Botão Menu Mobile -->
       <button 
         id="mobile-menu-btn" 
-        class="md:hidden p-2.5 rounded-lg border border-stone-200 bg-white text-stone-800 hover:text-[#A36A4F] focus:outline-none"
+        class="lg:hidden p-2 rounded-xl border border-stone-200 bg-white text-stone-800 hover:text-[#A36A4F] focus:outline-none shrink-0"
         aria-label="Abrir Menu"
       >
         <i data-lucide="menu" class="w-5 h-5"></i>
@@ -130,9 +138,9 @@
         </button>
       </div>
 
-      <nav class="mt-8 flex flex-col space-y-5 text-sm uppercase tracking-widest font-semibold text-stone-800">
+      <nav class="mt-8 flex flex-col space-y-4 text-sm uppercase tracking-widest font-semibold text-stone-800">
         <a href="#obras" class="mobile-nav-link hover:text-[#A36A4F] py-2 border-b border-stone-200/50 flex items-center justify-between">
-          <span>Acervo & Obras</span>
+          <span>Obras & Acervo</span>
           <i data-lucide="chevron-right" class="w-4 h-4 text-stone-400"></i>
         </a>
         <a href="#processo" class="mobile-nav-link hover:text-[#A36A4F] py-2 border-b border-stone-200/50 flex items-center justify-between">
@@ -164,7 +172,11 @@
         target="_blank"
         class="w-full py-3 text-center rounded-xl bg-stone-900 text-white text-xs font-semibold tracking-widest uppercase flex items-center justify-center gap-2 shadow-sm hover:bg-[#A36A4F] transition-colors"
       >
-        <i data-lucide="instagram" class="w-4 h-4 text-[#E8C5B0]"></i>
+        <svg class="w-4 h-4 text-[#E8C5B0]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+          <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+          <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+        </svg>
         <span>Instagram @carlospieta</span>
       </a>
 
@@ -215,7 +227,11 @@
               target="_blank"
               class="px-6 py-3.5 rounded-xl border border-stone-300 text-stone-800 bg-white hover:bg-stone-100 text-xs font-semibold tracking-widest uppercase transition-all flex items-center gap-2"
             >
-              <i data-lucide="instagram" class="w-4 h-4 text-[#A36A4F]"></i>
+              <svg class="w-4 h-4 text-[#A36A4F]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+              </svg>
               <span>@carlospieta</span>
             </a>
           </div>
@@ -226,7 +242,7 @@
       <div class="relative rounded-3xl overflow-hidden border border-stone-200/80 shadow-2xl bg-stone-900 group">
         <div class="relative h-[380px] sm:h-[480px] lg:h-[580px] w-full overflow-hidden">
           <img 
-            src="https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&w=1920&q=85" 
+            src="images/hero-monumento.jpg" 
             alt="Conjunto Monumental dos 12 Apóstolos por Carlos Pietá" 
             class="w-full h-full object-cover object-center group-hover:scale-102 transition-transform duration-1000 ease-out"
           />
@@ -315,7 +331,7 @@
         </button>
       </div>
 
-      <!-- Container do Bento Grid (Gerado Dinamicamente via script.js) -->
+      <!-- Container do Bento Grid (Gerado Dinamicamente via script.js com fotos locais) -->
       <div id="bento-gallery-grid" class="grid grid-cols-12 gap-6 lg:gap-8">
         <!-- Renderizado por script.js -->
       </div>
@@ -457,7 +473,7 @@
   </section>
 
   <!-- ========================================================================= -->
-  <!-- NOVO: RECONHECIMENTO NA MÍDIA & CITAÇÕES REAIS -->
+  <!-- 5. RECONHECIMENTO NA MÍDIA & CITAÇÕES REAIS -->
   <!-- ========================================================================= -->
   <section id="reconhecimento" class="py-24 bg-white border-y border-stone-200">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -542,7 +558,7 @@
   </section>
 
   <!-- ========================================================================= -->
-  <!-- 5. SOBRE O ARTISTA (ATELIÊ & TRAJETÓRIA) -->
+  <!-- 6. SOBRE O ARTISTA (ATELIÊ & TRAJETÓRIA) -->
   <!-- ========================================================================= -->
   <section id="sobre" class="py-24 bg-[#F7F6F2] relative">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -553,7 +569,7 @@
         <div class="lg:col-span-5 relative">
           <div class="relative rounded-3xl overflow-hidden shadow-2xl border border-stone-200/80 bg-stone-200">
             <img 
-              src="https://images.unsplash.com/photo-1578925518470-4def7a0f08bb?auto=format&fit=crop&w=1000&q=80" 
+              src="images/atelie-escultor.jpg" 
               alt="Carlos Pietá esculpindo em seu ateliê" 
               class="w-full h-[520px] object-cover object-center"
             />
@@ -628,7 +644,11 @@
               target="_blank"
               class="inline-flex items-center gap-3 px-6 py-3.5 rounded-xl bg-stone-900 hover:bg-[#A36A4F] text-white text-xs font-semibold uppercase tracking-wider transition-all shadow-sm"
             >
-              <i data-lucide="instagram" class="w-4 h-4"></i>
+              <svg class="w-4 h-4 text-[#E8C5B0]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+              </svg>
               <span>Acompanhar Bastidores no Instagram (@carlospieta)</span>
             </a>
           </div>
@@ -641,7 +661,7 @@
   </section>
 
   <!-- ========================================================================= -->
-  <!-- NOVO: FAQ (PERGUNTAS FREQUENTES SOBRE PROJETOS E ENCOMENDAS) -->
+  <!-- 7. FAQ (PERGUNTAS FREQUENTES SOBRE PROJETOS E ENCOMENDAS) -->
   <!-- ========================================================================= -->
   <section id="faq" class="py-24 bg-white border-t border-stone-200">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -708,7 +728,7 @@
   </section>
 
   <!-- ========================================================================= -->
-  <!-- 6. FORMULÁRIO DE BRIEFING & CONTATO -->
+  <!-- 8. FORMULÁRIO DE BRIEFING & CONTATO -->
   <!-- ========================================================================= -->
   <section id="contato" class="py-24 bg-[#F7F6F2] border-t border-stone-200 relative">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -851,7 +871,11 @@
             <div class="space-y-5 text-sm text-stone-700">
               <div class="flex items-start gap-4">
                 <div class="w-9 h-9 rounded-xl bg-stone-100 flex items-center justify-center text-[#A36A4F] shrink-0">
-                  <i data-lucide="instagram" class="w-4 h-4"></i>
+                  <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                  </svg>
                 </div>
                 <div>
                   <strong class="block text-stone-900 font-medium">Instagram Oficial</strong>
@@ -910,7 +934,7 @@
   </section>
 
   <!-- ========================================================================= -->
-  <!-- 7. FOOTER -->
+  <!-- 9. FOOTER -->
   <!-- ========================================================================= -->
   <footer class="bg-stone-950 text-white pt-16 pb-12 border-t border-stone-800">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -950,7 +974,11 @@
               target="_blank"
               class="inline-flex items-center gap-2 text-stone-300 hover:text-[#E8C5B0] transition-colors"
             >
-              <i data-lucide="instagram" class="w-4 h-4 text-[#E8C5B0]"></i>
+              <svg class="w-4 h-4 text-[#E8C5B0]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+              </svg>
               <span>@carlospieta (Instagram Oficial)</span>
             </a>
             <div class="inline-flex items-center gap-2 text-stone-400">
