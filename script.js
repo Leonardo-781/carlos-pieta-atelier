@@ -1,6 +1,7 @@
 /**
  * Acervo e Obras Oficiais de Carlos Pietá (@carlospieta)
  * Base de dados com fotos REAIS das obras, ateliê e instalações
+ * Inclui animações de Scroll Reveal, Contador Numérico e Barra de Progresso
  */
 
 const GOOGLE_SHEET_CSV_URL = ''; // Para sincronização remota via Google Sheets / Drive
@@ -153,16 +154,96 @@ document.addEventListener('DOMContentLoaded', () => {
   renderInstagramFeed();
   initFilterButtons();
   initNavbarScroll();
+  initScrollProgress();
+  initScrollReveal();
+  initCounterStats();
   initMobileMenu();
   initBriefingForm();
   initModalHandlers();
   initFaqAccordion();
   
-  // Lucide Icons Render
   if (window.lucide) {
     window.lucide.createIcons();
   }
 });
+
+/**
+ * Barra de Progresso de Rolagem
+ */
+function initScrollProgress() {
+  const progressBar = document.getElementById('scroll-progress');
+  if (!progressBar) return;
+
+  window.addEventListener('scroll', () => {
+    const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const progress = totalHeight > 0 ? (window.scrollY / totalHeight) * 100 : 0;
+    progressBar.style.width = `${progress}%`;
+  });
+}
+
+/**
+ * Animação de Scroll Reveal (Intersection Observer)
+ */
+function initScrollReveal() {
+  const revealElements = document.querySelectorAll('.reveal');
+  if (!revealElements.length) return;
+
+  const observer = new IntersectionObserver((entries, obs) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('active');
+        obs.unobserve(entry.target);
+      }
+    });
+  }, {
+    threshold: 0.12,
+    rootMargin: '0px 0px -40px 0px'
+  });
+
+  revealElements.forEach(el => observer.observe(el));
+}
+
+/**
+ * Animação de Contagem Numérica das Métricas
+ */
+function initCounterStats() {
+  const counters = document.querySelectorAll('.counter-stat');
+  if (!counters.length) return;
+
+  const observer = new IntersectionObserver((entries, obs) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const el = entry.target;
+        const targetNum = parseInt(el.getAttribute('data-target'), 10) || 0;
+        const prefix = el.getAttribute('data-prefix') || '';
+        const suffix = el.getAttribute('data-suffix') || '';
+        const duration = 1800;
+        const startTime = performance.now();
+
+        const updateCount = (currentTime) => {
+          const elapsed = currentTime - startTime;
+          const progress = Math.min(elapsed / duration, 1);
+          // Easing ease-out
+          const easeProgress = 1 - Math.pow(1 - progress, 3);
+          const currentVal = Math.floor(easeProgress * targetNum);
+
+          el.innerText = `${prefix}${currentVal.toLocaleString('pt-BR')}${suffix}`;
+
+          if (progress < 1) {
+            requestAnimationFrame(updateCount);
+          } else {
+            el.innerText = `${prefix}${targetNum.toLocaleString('pt-BR')}${suffix}`;
+          }
+        };
+
+        requestAnimationFrame(updateCount);
+        obs.unobserve(el);
+      }
+    });
+  }, { threshold: 0.5 });
+
+  counters.forEach(c => observer.observe(c));
+}
 
 /**
  * Carrega dados remotos ou usa base local
@@ -235,7 +316,7 @@ function renderBentoGrid(filterCategory = 'all') {
     }
 
     const card = document.createElement('div');
-    card.className = `${colSpanClass} artwork-card group rounded-2xl bg-white border border-stone-200/80 shadow-editorial hover:shadow-editorial-hover transition-editorial flex flex-col justify-between overflow-hidden relative`;
+    card.className = `${colSpanClass} artwork-card group rounded-2xl bg-white border border-stone-200/80 shadow-editorial hover:shadow-editorial-hover transition-editorial flex flex-col justify-between overflow-hidden relative reveal`;
     card.setAttribute('data-id', art.id);
 
     card.innerHTML = `
@@ -297,6 +378,9 @@ function renderBentoGrid(filterCategory = 'all') {
   if (window.lucide) {
     window.lucide.createIcons();
   }
+
+  // Re-observa elementos adicionados dinamicamente
+  initScrollReveal();
 }
 
 /**
@@ -312,7 +396,7 @@ function renderInstagramFeed() {
     const card = document.createElement('a');
     card.href = post.url;
     card.target = '_blank';
-    card.className = 'group relative rounded-2xl overflow-hidden bg-stone-900 border border-stone-200/80 shadow-editorial hover:shadow-xl transition-all duration-300 block';
+    card.className = 'group relative rounded-2xl overflow-hidden bg-stone-900 border border-stone-200/80 shadow-editorial hover:shadow-xl transition-all duration-300 block reveal';
 
     card.innerHTML = `
       <div class="relative h-72 w-full overflow-hidden">

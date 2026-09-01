@@ -13,6 +13,7 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 85px;
   background-color: var(--color-bg);
   color: var(--color-graphite);
 }
@@ -21,6 +22,18 @@ body {
   font-family: 'Plus Jakarta Sans', sans-serif;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
+}
+
+/* Barra de Progresso de Leitura no Topo */
+#scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #A36A4F, #E8C5B0);
+  z-index: 100;
+  width: 0%;
+  transition: width 0.1s ease-out;
 }
 
 /* Tipografia Editorial */
@@ -48,26 +61,13 @@ body {
   background: linear-gradient(90deg, transparent, var(--color-stone-line), transparent);
 }
 
-/* Efeito de Vidro Fosco (Frosted Glass) */
-.glass-nav {
-  background: rgba(247, 246, 242, 0.88);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-}
-
-.glass-nav-dark {
-  background: rgba(21, 21, 21, 0.88);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-}
-
 /* Sombra Editorial Fina */
 .shadow-editorial {
   box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.05), 0 4px 12px -4px rgba(0, 0, 0, 0.03);
 }
 
 .shadow-editorial-hover {
-  box-shadow: 0 20px 40px -15px rgba(163, 106, 79, 0.12), 0 8px 16px -6px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 20px 40px -15px rgba(163, 106, 79, 0.15), 0 8px 16px -6px rgba(0, 0, 0, 0.06);
 }
 
 /* Transições Suaves */
@@ -75,11 +75,33 @@ body {
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* Micro-interação da Imagem no Card */
+/* Micro-interação da Imagem no Card & Efeito Shine */
 .artwork-card {
   position: relative;
   overflow: hidden;
   cursor: pointer;
+}
+
+.artwork-card::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    60deg,
+    transparent 40%,
+    rgba(255, 255, 255, 0.15) 50%,
+    transparent 60%
+  );
+  transform: translateX(-100%) rotate(25deg);
+  transition: transform 0.8s ease-in-out;
+  pointer-events: none;
+}
+
+.artwork-card:hover::after {
+  transform: translateX(100%) rotate(25deg);
 }
 
 .artwork-card img {
@@ -87,7 +109,7 @@ body {
 }
 
 .artwork-card:hover img {
-  transform: scale(1.04);
+  transform: scale(1.05);
 }
 
 /* Accordion FAQ */
@@ -126,16 +148,38 @@ body {
   background: #A36A4F;
 }
 
-/* Tags e Badges Editoriais */
-.badge-editorial {
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  font-size: 0.72rem;
-  font-weight: 600;
-}
-
 /* Aspas Editoriais Gigantes */
 .quote-mark {
   font-family: 'Cormorant Garamond', Georgia, serif;
   line-height: 0.7;
+}
+
+/* Animações de Scroll Reveal */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Botão Flutuante de WhatsApp com Pulso Suave */
+@keyframes pulse-subtle {
+  0% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 14px rgba(37, 211, 102, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+  }
+}
+
+.floating-whatsapp {
+  animation: pulse-subtle 2.5s infinite;
 }

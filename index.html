@@ -6,6 +6,14 @@
   <title>Carlos Pietá (@carlospieta) | Esculturas Monumentais, Arte Sacra e Monumentos de Praça</title>
   <meta name="description" content="Ateliê e Portfólio Oficial do escultor Carlos Pietá (@carlospieta). Autor do Conjunto dos 12 Apóstolos da Basílica de Romaria, Arcanjos de Monte Carmelo, vitrais, mosaicos e monumentos cívicos." />
   
+  <!-- OpenGraph / Metatags para Compartilhamento Social (WhatsApp, Facebook, LinkedIn) -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Carlos Pietá | Esculturas Monumentais & Arte Sacra Barroca" />
+  <meta property="og:description" content="Ateliê de Escultura Clássica e Monumentos Cívicos. Autor do Conjunto dos 12 Apóstolos de Romaria (MG)." />
+  <meta property="og:image" content="images/hero-romaria-aerea.jpg" />
+  <meta property="og:url" content="https://carlospieta.art.br" />
+  <meta name="twitter:card" content="summary_large_image" />
+
   <!-- Favicon Oficial -->
   <link rel="icon" type="image/png" href="images/logo-carlos-pieta.png" />
 
@@ -60,6 +68,9 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body class="bg-[#F7F6F2] text-stone-900 font-sans selection:bg-[#A36A4F] selection:text-white relative">
+
+  <!-- Barra de Progresso de Rolagem -->
+  <div id="scroll-progress"></div>
 
   <!-- ========================================================================= -->
   <!-- 1. NAVBAR COM LOGO OFICIAL -->
@@ -205,7 +216,7 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <!-- Cabeçalho Editorial do Hero -->
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-end mb-12 lg:mb-16">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-end mb-12 lg:mb-16 reveal">
         <div class="lg:col-span-8">
           <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-stone-200/70 text-stone-800 text-xs font-semibold tracking-widest uppercase mb-6">
             <span class="w-2 h-2 rounded-full bg-[#A36A4F] animate-pulse"></span>
@@ -248,7 +259,7 @@
       </div>
 
       <!-- Banner Fotográfico Monumental -->
-      <div class="relative rounded-3xl overflow-hidden border border-stone-200/80 shadow-2xl bg-stone-900 group">
+      <div class="relative rounded-3xl overflow-hidden border border-stone-200/80 shadow-2xl bg-stone-900 group reveal">
         <div class="relative h-[380px] sm:h-[480px] lg:h-[580px] w-full overflow-hidden">
           <img 
             src="images/hero-romaria-aerea.jpg" 
@@ -276,22 +287,22 @@
         </div>
       </div>
 
-      <!-- Métricas Institucionais & Credibilidade -->
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mt-10 pt-8 border-t border-stone-200">
+      <!-- Métricas Institucionais & Credibilidade com Contadores Animados -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mt-10 pt-8 border-t border-stone-200 reveal">
         <div class="flex flex-col">
-          <span class="font-serifDisplay text-3xl sm:text-4xl font-semibold text-stone-900">12 Apóstolos</span>
+          <span class="font-serifDisplay text-3xl sm:text-4xl font-semibold text-stone-900 counter-stat" data-target="12" data-suffix=" Apóstolos">0</span>
           <span class="text-xs sm:text-sm text-stone-600 font-medium mt-1">Esculturas de 2,60m na Basílica de Romaria</span>
         </div>
         <div class="flex flex-col">
-          <span class="font-serifDisplay text-3xl sm:text-4xl font-semibold text-stone-900">3 Arcanjos</span>
+          <span class="font-serifDisplay text-3xl sm:text-4xl font-semibold text-stone-900 counter-stat" data-target="3" data-suffix=" Arcanjos">0</span>
           <span class="text-xs sm:text-sm text-stone-600 font-medium mt-1">Monumentos em Monte Carmelo & Romaria</span>
         </div>
         <div class="flex flex-col">
-          <span class="font-serifDisplay text-3xl sm:text-4xl font-semibold text-stone-900">Barroco</span>
-          <span class="text-xs sm:text-sm text-stone-600 font-medium mt-1">Inspiração em São João de Latrão (Roma)</span>
+          <span class="font-serifDisplay text-3xl sm:text-4xl font-semibold text-stone-900 counter-stat" data-target="500" data-prefix="+" data-suffix=" mil">0</span>
+          <span class="text-xs sm:text-sm text-stone-600 font-medium mt-1">Fiéis acolhidos anualmente pelo conjunto</span>
         </div>
         <div class="flex flex-col">
-          <span class="font-serifDisplay text-3xl sm:text-4xl font-semibold text-[#A36A4F]">Resina & Bronze</span>
+          <span class="font-serifDisplay text-3xl sm:text-4xl font-semibold text-[#A36A4F] counter-stat" data-target="100" data-suffix="% Autoral">0</span>
           <span class="text-xs sm:text-sm text-stone-600 font-medium mt-1">Tecnologia Estrutural Marmorizada</span>
         </div>
       </div>
@@ -306,7 +317,7 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <!-- Cabeçalho da Seção -->
-      <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 pb-6 border-b border-stone-200">
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 pb-6 border-b border-stone-200 reveal">
         <div>
           <span class="text-xs font-semibold tracking-[0.25em] text-[#A36A4F] uppercase">Acervo & Obras Oficiais</span>
           <h2 class="text-3xl sm:text-4xl lg:text-5xl font-serifDisplay font-semibold text-stone-900 mt-2">
@@ -319,7 +330,7 @@
       </div>
 
       <!-- Filtros de Categoria -->
-      <div class="flex flex-wrap items-center gap-2 mb-10">
+      <div class="flex flex-wrap items-center gap-2 mb-10 reveal">
         <button 
           data-filter="all" 
           class="filter-btn px-4 py-2 rounded-xl text-xs font-semibold tracking-wider uppercase transition-all bg-stone-900 text-white shadow-sm"
@@ -340,13 +351,13 @@
         </button>
       </div>
 
-      <!-- Container do Bento Grid (Gerado Dinamicamente com fotos reais) -->
+      <!-- Container do Bento Grid -->
       <div id="bento-gallery-grid" class="grid grid-cols-12 gap-6 lg:gap-8">
-        <!-- Renderizado por script.js -->
+        <!-- Renderizado por script.js com fotos reais -->
       </div>
 
       <!-- Informação Curatorial de Apoio -->
-      <div class="mt-14 p-6 sm:p-8 rounded-2xl bg-white border border-stone-200/80 shadow-sm flex flex-col md:flex-row items-center justify-between gap-6">
+      <div class="mt-14 p-6 sm:p-8 rounded-2xl bg-white border border-stone-200/80 shadow-sm flex flex-col md:flex-row items-center justify-between gap-6 reveal">
         <div class="flex items-center gap-4">
           <div class="w-12 h-12 rounded-xl bg-stone-100 flex items-center justify-center text-[#A36A4F]">
             <i data-lucide="landmark" class="w-6 h-6"></i>
@@ -373,7 +384,7 @@
   <section id="instagram-feed" class="py-24 bg-white border-y border-stone-200 relative overflow-hidden">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
-      <div class="flex flex-col md:flex-row md:items-end justify-between mb-14">
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-14 reveal">
         <div>
           <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#F7EDE7] text-[#A36A4F] text-xs font-semibold uppercase tracking-wider mb-3">
             <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -403,7 +414,7 @@
         </a>
       </div>
 
-      <!-- Grid de Posts do Instagram (Alimentado por script.js) -->
+      <!-- Grid de Posts do Instagram -->
       <div id="instagram-feed-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         <!-- Renderizado por script.js com fotos reais -->
       </div>
@@ -420,7 +431,7 @@
 
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
       
-      <div class="max-w-3xl mb-16">
+      <div class="max-w-3xl mb-16 reveal">
         <span class="text-xs font-semibold tracking-[0.25em] text-[#E8C5B0] uppercase">Rigor Técnico & Durabilidade Secular</span>
         <h2 class="text-3xl sm:text-4xl lg:text-5xl font-serifDisplay font-semibold text-white mt-2 leading-tight">
           Processo de Escultura, <span class="italic font-serifCormorant font-normal text-[#E8C5B0]">Resina Estrutural & Vitrais</span>
@@ -434,7 +445,7 @@
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
         
         <!-- Etapa 01 -->
-        <div class="p-8 rounded-2xl bg-stone-800/60 border border-stone-700/60 flex flex-col justify-between relative group hover:border-[#A36A4F] transition-all">
+        <div class="p-8 rounded-2xl bg-stone-800/60 border border-stone-700/60 flex flex-col justify-between relative group hover:border-[#A36A4F] transition-all reveal">
           <div>
             <div class="flex items-center justify-between mb-6">
               <span class="text-3xl font-serifDisplay font-bold text-[#E8C5B0]">01</span>
@@ -456,7 +467,7 @@
         </div>
 
         <!-- Etapa 02 -->
-        <div class="p-8 rounded-2xl bg-stone-800/60 border border-stone-700/60 flex flex-col justify-between relative group hover:border-[#A36A4F] transition-all">
+        <div class="p-8 rounded-2xl bg-stone-800/60 border border-stone-700/60 flex flex-col justify-between relative group hover:border-[#A36A4F] transition-all reveal">
           <div>
             <div class="flex items-center justify-between mb-6">
               <span class="text-3xl font-serifDisplay font-bold text-[#E8C5B0]">02</span>
@@ -478,7 +489,7 @@
         </div>
 
         <!-- Etapa 03 -->
-        <div class="p-8 rounded-2xl bg-stone-800/60 border border-stone-700/60 flex flex-col justify-between relative group hover:border-[#A36A4F] transition-all">
+        <div class="p-8 rounded-2xl bg-stone-800/60 border border-stone-700/60 flex flex-col justify-between relative group hover:border-[#A36A4F] transition-all reveal">
           <div>
             <div class="flex items-center justify-between mb-6">
               <span class="text-3xl font-serifDisplay font-bold text-[#E8C5B0]">03</span>
@@ -502,7 +513,7 @@
       </div>
 
       <!-- Painel de Técnicas e Materiais -->
-      <div class="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+      <div class="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 reveal">
         <div class="p-4 rounded-xl bg-stone-800/40 border border-stone-700/40">
           <span class="text-xs uppercase font-semibold text-[#E8C5B0] block mb-1">Resina Marmorizada</span>
           <p class="text-xs text-stone-400">Acabamento com textura de mármore clássico de alta resistência.</p>
@@ -530,7 +541,7 @@
   <section id="reconhecimento" class="py-24 bg-white border-y border-stone-200">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
-      <div class="max-w-3xl mb-14">
+      <div class="max-w-3xl mb-14 reveal">
         <span class="text-xs font-semibold tracking-[0.25em] text-[#A36A4F] uppercase">Reconhecimento & Imprensa</span>
         <h2 class="text-3xl sm:text-4xl lg:text-5xl font-serifDisplay font-semibold text-stone-900 mt-2">
           A Voz do Escultor & Cobertura Nacional
@@ -544,7 +555,7 @@
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
         
         <!-- Citação Real do Artista -->
-        <div class="lg:col-span-7 bg-[#F7F6F2] p-8 sm:p-12 rounded-3xl border border-stone-200 flex flex-col justify-between relative overflow-hidden">
+        <div class="lg:col-span-7 bg-[#F7F6F2] p-8 sm:p-12 rounded-3xl border border-stone-200 flex flex-col justify-between relative overflow-hidden reveal">
           <span class="quote-mark text-8xl text-[#A36A4F]/20 absolute -top-2 left-6 select-none">“</span>
           
           <div class="relative z-10 pt-4">
@@ -572,7 +583,7 @@
         <!-- Cobertura de Imprensa & Selos -->
         <div class="lg:col-span-5 flex flex-col justify-between space-y-4">
           
-          <div class="p-6 rounded-2xl bg-white border border-stone-200 shadow-sm flex items-start gap-4">
+          <div class="p-6 rounded-2xl bg-white border border-stone-200 shadow-sm flex items-start gap-4 reveal">
             <div class="w-10 h-10 rounded-xl bg-stone-100 flex items-center justify-center text-[#A36A4F] shrink-0">
               <i data-lucide="newspaper" class="w-5 h-5"></i>
             </div>
@@ -583,7 +594,7 @@
             </div>
           </div>
 
-          <div class="p-6 rounded-2xl bg-white border border-stone-200 shadow-sm flex items-start gap-4">
+          <div class="p-6 rounded-2xl bg-white border border-stone-200 shadow-sm flex items-start gap-4 reveal">
             <div class="w-10 h-10 rounded-xl bg-stone-100 flex items-center justify-center text-[#A36A4F] shrink-0">
               <i data-lucide="tv" class="w-5 h-5"></i>
             </div>
@@ -594,7 +605,7 @@
             </div>
           </div>
 
-          <div class="p-6 rounded-2xl bg-stone-900 text-white flex items-center justify-between gap-4">
+          <div class="p-6 rounded-2xl bg-stone-900 text-white flex items-center justify-between gap-4 reveal">
             <div>
               <span class="text-xs font-semibold uppercase tracking-wider text-[#E8C5B0]">Santuário Basílica</span>
               <p class="text-xs text-stone-300 mt-0.5">+500.000 fiéis e turistas acolhidos anualmente pelo conjunto escultórico.</p>
@@ -610,7 +621,7 @@
   </section>
 
   <!-- ========================================================================= -->
-  <!-- 6. SOBRE O ARTISTA (COM FOTO REAL DE CARLOS PIETÁ NO ATELIÊ) -->
+  <!-- 6. SOBRE O ARTISTA -->
   <!-- ========================================================================= -->
   <section id="sobre" class="py-24 bg-[#F7F6F2] relative">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -618,7 +629,7 @@
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
         
         <!-- Coluna Esquerda: Fotografia Real do Artista Carlos Pietá Esculpindo -->
-        <div class="lg:col-span-5 relative">
+        <div class="lg:col-span-5 relative reveal">
           <div class="relative rounded-3xl overflow-hidden shadow-2xl border border-stone-200/80 bg-stone-200">
             <img 
               src="images/carlos-pieta-esculpindo.png" 
@@ -648,7 +659,7 @@
         </div>
 
         <!-- Coluna Direita: Biografia & Dados Institucionais -->
-        <div class="lg:col-span-7">
+        <div class="lg:col-span-7 reveal">
           <span class="text-xs font-semibold tracking-[0.25em] text-[#A36A4F] uppercase">O Artista Plástico</span>
           <h2 class="text-3xl sm:text-4xl lg:text-5xl font-serifDisplay font-semibold text-stone-900 mt-2 mb-6">
             Carlos Pietá: Tradição Barroca & Monumentalidade
@@ -713,12 +724,12 @@
   </section>
 
   <!-- ========================================================================= -->
-  <!-- 7. FAQ (PERGUNTAS FREQUENTES SOBRE PROJETOS E ENCOMENDAS) -->
+  <!-- 7. FAQ -->
   <!-- ========================================================================= -->
   <section id="faq" class="py-24 bg-white border-t border-stone-200">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
       
-      <div class="text-center mb-16">
+      <div class="text-center mb-16 reveal">
         <span class="text-xs font-semibold tracking-[0.25em] text-[#A36A4F] uppercase">Esclarecimentos Técnicos</span>
         <h2 class="text-3xl sm:text-4xl lg:text-5xl font-serifDisplay font-semibold text-stone-900 mt-2">
           Perguntas Frequentes
@@ -728,7 +739,7 @@
         </p>
       </div>
 
-      <div class="space-y-4">
+      <div class="space-y-4 reveal">
         
         <!-- Item 1 -->
         <div class="faq-item rounded-2xl bg-[#F7F6F2] border border-stone-200 overflow-hidden transition-all">
@@ -785,7 +796,7 @@
   <section id="contato" class="py-24 bg-[#F7F6F2] border-t border-stone-200 relative">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
-      <div class="max-w-3xl mx-auto text-center mb-16">
+      <div class="max-w-3xl mx-auto text-center mb-16 reveal">
         <span class="text-xs font-semibold tracking-[0.25em] text-[#A36A4F] uppercase">Solicitação de Projeto</span>
         <h2 class="text-3xl sm:text-4xl lg:text-5xl font-serifDisplay font-semibold text-stone-900 mt-2">
           Briefing Direto com o Ateliê
@@ -795,7 +806,7 @@
         </p>
       </div>
 
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 reveal">
         
         <!-- Formulário Institucional -->
         <div class="lg:col-span-7 bg-white p-8 sm:p-10 rounded-3xl border border-stone-200/80 shadow-sm">
@@ -1059,6 +1070,25 @@
   </footer>
 
   <!-- ========================================================================= -->
+  <!-- BOTÃO FLUTUANTE DE WHATSAPP DIRETO DE ALTA CONVERSÃO -->
+  <!-- ========================================================================= -->
+  <aside aria-label="Atendimento Direto WhatsApp" class="fixed bottom-6 right-6 z-40 flex items-center group">
+    <!-- Tooltip Editorial -->
+    <span class="mr-3 px-3.5 py-1.5 rounded-xl bg-stone-900 text-white text-xs font-medium tracking-wide shadow-xl border border-stone-700 opacity-0 group-hover:opacity-100 transition-all duration-300 pointer-events-none translate-x-2 group-hover:translate-x-0 hidden sm:inline-block">
+      Conversar com Ateliê
+    </span>
+    <a 
+      href="https://wa.me/5534999998888?text=Ol%C3%A1%2C%20Carlos%20Piet%C3%A1.%20Gostaria%20de%20conversar%20sobre%20um%20projeto%20de%20escultura%20ou%20arte%20sacra." 
+      target="_blank" 
+      class="w-14 h-14 rounded-full bg-[#25D366] hover:bg-[#20bd5a] text-white flex items-center justify-center shadow-2xl transition-all duration-300 hover:scale-110 floating-whatsapp"
+      title="Falar no WhatsApp"
+      aria-label="Falar no WhatsApp com o escultor Carlos Pietá"
+    >
+      <i data-lucide="message-circle" class="w-7 h-7 fill-white/20"></i>
+    </a>
+  </aside>
+
+  <!-- ========================================================================= -->
   <!-- MODAL LIGHTBOX INTERATIVO PARA AS OBRAS -->
   <!-- ========================================================================= -->
   <div id="artwork-modal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 sm:p-6 lg:p-10">
@@ -1142,7 +1172,7 @@
   <!-- ========================================================================= -->
   <div 
     id="toast-notification" 
-    class="fixed bottom-6 right-6 z-50 bg-stone-900 text-white px-6 py-4 rounded-2xl shadow-2xl border border-stone-700 flex items-center gap-3.5 transform translate-y-4 opacity-0 pointer-events-none transition-all duration-300"
+    class="fixed bottom-24 right-6 z-50 bg-stone-900 text-white px-6 py-4 rounded-2xl shadow-2xl border border-stone-700 flex items-center gap-3.5 transform translate-y-4 opacity-0 pointer-events-none transition-all duration-300"
   >
     <div class="w-8 h-8 rounded-full bg-green-900/80 text-green-400 flex items-center justify-center shrink-0">
       <i data-lucide="check" class="w-4 h-4"></i>
