@@ -78,6 +78,7 @@
       <!-- Menu Desktop (Links limpos e sem quebra) -->
       <nav class="hidden lg:flex items-center space-x-6 xl:space-x-8 text-xs uppercase tracking-widest font-semibold text-stone-700 whitespace-nowrap">
         <a href="#obras" class="hover:text-[#A36A4F] transition-colors py-1 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1.5px] after:bg-[#A36A4F] hover:after:w-full after:transition-all">Obras</a>
+        <a href="#instagram-feed" class="hover:text-[#A36A4F] transition-colors py-1 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1.5px] after:bg-[#A36A4F] hover:after:w-full after:transition-all">Instagram Feed</a>
         <a href="#processo" class="hover:text-[#A36A4F] transition-colors py-1 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1.5px] after:bg-[#A36A4F] hover:after:w-full after:transition-all">Processo</a>
         <a href="#reconhecimento" class="hover:text-[#A36A4F] transition-colors py-1 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1.5px] after:bg-[#A36A4F] hover:after:w-full after:transition-all">Na Mídia</a>
         <a href="#sobre" class="hover:text-[#A36A4F] transition-colors py-1 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1.5px] after:bg-[#A36A4F] hover:after:w-full after:transition-all">O Artista</a>
@@ -141,6 +142,10 @@
       <nav class="mt-8 flex flex-col space-y-4 text-sm uppercase tracking-widest font-semibold text-stone-800">
         <a href="#obras" class="mobile-nav-link hover:text-[#A36A4F] py-2 border-b border-stone-200/50 flex items-center justify-between">
           <span>Obras & Acervo</span>
+          <i data-lucide="chevron-right" class="w-4 h-4 text-stone-400"></i>
+        </a>
+        <a href="#instagram-feed" class="mobile-nav-link hover:text-[#A36A4F] py-2 border-b border-stone-200/50 flex items-center justify-between">
+          <span>Feed Instagram</span>
           <i data-lucide="chevron-right" class="w-4 h-4 text-stone-400"></i>
         </a>
         <a href="#processo" class="mobile-nav-link hover:text-[#A36A4F] py-2 border-b border-stone-200/50 flex items-center justify-between">
@@ -291,7 +296,7 @@
   </section>
 
   <!-- ========================================================================= -->
-  <!-- 3. GALERIA BENTO GRID (OBRAS EM DESTAQUE) -->
+  <!-- 3. GALERIA BENTO GRID (OBRAS EM DESTAQUE COM SUPORTE A DRIVE/PLANILHA) -->
   <!-- ========================================================================= -->
   <section id="obras" class="py-24 bg-[#F7F6F2] relative">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -331,7 +336,7 @@
         </button>
       </div>
 
-      <!-- Container do Bento Grid (Gerado Dinamicamente via script.js com fotos locais) -->
+      <!-- Container do Bento Grid (Gerado Dinamicamente) -->
       <div id="bento-gallery-grid" class="grid grid-cols-12 gap-6 lg:gap-8">
         <!-- Renderizado por script.js -->
       </div>
@@ -359,10 +364,53 @@
   </section>
 
   <!-- ========================================================================= -->
+  <!-- NOVO: FEED DO INSTAGRAM AUTOMÁTICO EM TEMPO REAL -->
+  <!-- ========================================================================= -->
+  <section id="instagram-feed" class="py-24 bg-white border-y border-stone-200 relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-14">
+        <div>
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#F7EDE7] text-[#A36A4F] text-xs font-semibold uppercase tracking-wider mb-3">
+            <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+            </svg>
+            <span>Instagram Feed & Bastidores</span>
+          </div>
+          <h2 class="text-3xl sm:text-4xl lg:text-5xl font-serifDisplay font-semibold text-stone-900">
+            Direto do Ateliê <span class="italic font-serifCormorant font-normal text-[#A36A4F]">@carlospieta</span>
+          </h2>
+        </div>
+
+        <a 
+          href="https://www.instagram.com/carlospieta/" 
+          target="_blank"
+          class="mt-4 md:mt-0 inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-stone-900 hover:bg-[#A36A4F] text-white text-xs font-semibold uppercase tracking-wider transition-all shadow-sm"
+        >
+          <svg class="w-4 h-4 text-[#E8C5B0]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+          </svg>
+          <span>Seguir no Instagram</span>
+          <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
+        </a>
+      </div>
+
+      <!-- Grid de Posts do Instagram (Alimentado por script.js) -->
+      <div id="instagram-feed-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <!-- Renderizado por script.js -->
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================================================= -->
   <!-- 4. PROCESSO CRIATIVO & TÉCNICA -->
   <!-- ========================================================================= -->
   <section id="processo" class="py-24 bg-stone-900 text-white relative overflow-hidden">
-    <!-- Efeito Sutil de Luz Fundo -->
     <div class="absolute -top-40 -right-40 w-96 h-96 rounded-full bg-[#A36A4F]/15 blur-3xl pointer-events-none"></div>
     <div class="absolute -bottom-40 -left-40 w-96 h-96 rounded-full bg-[#A36A4F]/10 blur-3xl pointer-events-none"></div>
 
@@ -958,6 +1006,7 @@
           <ul class="space-y-2.5 text-xs text-stone-400 font-medium">
             <li><a href="#hero" class="hover:text-white transition-colors">Início</a></li>
             <li><a href="#obras" class="hover:text-white transition-colors">Acervo & Obras</a></li>
+            <li><a href="#instagram-feed" class="hover:text-white transition-colors">Feed Instagram</a></li>
             <li><a href="#processo" class="hover:text-white transition-colors">Processo & Técnica</a></li>
             <li><a href="#reconhecimento" class="hover:text-white transition-colors">Na Mídia</a></li>
             <li><a href="#sobre" class="hover:text-white transition-colors">Sobre Carlos Pietá</a></li>

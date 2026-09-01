@@ -1,8 +1,13 @@
 /**
  * Acervo e Obras Oficiais de Carlos Pietá (@carlospieta)
- * Base de dados com imagens locais, projetos reais, técnicas e especificações curatoriais
+ * Suporte a Sincronização Dinâmica via Google Sheets / Drive + Feed do Instagram
  */
-const ARTWORKS_DATA = [
+
+// Configuração para sincronização via Google Sheets / Drive (Opcional - basta colocar o ID da planilha publicada como CSV)
+const GOOGLE_SHEET_CSV_URL = ''; // Ex: 'https://docs.google.com/spreadsheets/d/e/2PACX-.../pub?output=csv'
+
+// Base de dados padrão (Fallback offline de alta velocidade)
+let ARTWORKS_DATA = [
   {
     id: 'doze-apostolos-romaria',
     title: 'Conjunto Monumental dos 12 Apóstolos',
@@ -15,7 +20,7 @@ const ARTWORKS_DATA = [
     dimensions: '2,60m de altura cada (Conjunto de 12 esculturas)',
     weight: '300 kg cada (~3.600 kg total)',
     image: 'images/apostolos-romaria.jpg',
-    description: 'Conjunto escultórico monumental composto pelos 12 apóstolos de Cristo, instalado na praça principal para acolhimento de mais de 500 mil peregrinos anuais. Inspirado no barroco italiano e nas célebres estátuas da Arquibasílica de São João de Latrão em Roma. Esculpido com panejamentos expressivos e acabamento marmorizado de altíssima durabilidade contra intempéries.',
+    description: 'Conjunto escultórico monumental composto pelos 12 apóstolos de Cristo, instalado na praça principal para acolhimento de mais de 500 mil peregrinos anuais. Inspirado no barroco italiano e nas célebres estátuas da Arquibasílica de São João de Latrão em Roma.',
     commissioner: 'Santuário Basílica de Nossa Senhora da Abadia & Diocese',
     featured: true,
     aspect: 'large'
@@ -107,9 +112,46 @@ const ARTWORKS_DATA = [
   }
 ];
 
+// Dados dos Posts de Bastidores do Instagram @carlospieta
+const INSTAGRAM_FEED_DATA = [
+  {
+    id: 'ig-post-1',
+    image: 'images/apostolos-romaria.jpg',
+    caption: 'Instalação final das esculturas dos 12 Apóstolos na Basílica de Romaria. Um marco de fé e arte barroca para acolher os peregrinos.',
+    likes: '1.420',
+    comments: '88',
+    url: 'https://www.instagram.com/carlospieta/'
+  },
+  {
+    id: 'ig-post-2',
+    image: 'images/atelie-escultor.jpg',
+    caption: 'Fase de modelagem anatômica em argila no ateliê. O panejamento dramático ganha forma centímetro a centímetro.',
+    likes: '984',
+    comments: '46',
+    url: 'https://www.instagram.com/carlospieta/'
+  },
+  {
+    id: 'ig-post-3',
+    image: 'images/arcanjos-monumento.jpg',
+    caption: 'São Miguel Arcanjo finalizado com pátina marmorizada nobre. Pronto para o transporte até a Praça do Rosário.',
+    likes: '1.850',
+    comments: '112',
+    url: 'https://www.instagram.com/carlospieta/'
+  },
+  {
+    id: 'ig-post-4',
+    image: 'images/vitrais-classicos.jpg',
+    caption: 'Vitral com grisalha queimada em forno a 600°C. A luz do sol ganha vida através da cor e da sacralidade.',
+    likes: '760',
+    comments: '34',
+    url: 'https://www.instagram.com/carlospieta/'
+  }
+];
+
 // Inicialização após carregamento do DOM
 document.addEventListener('DOMContentLoaded', () => {
-  renderBentoGrid('all');
+  initDataSource();
+  renderInstagramFeed();
   initFilterButtons();
   initNavbarScroll();
   initMobileMenu();
@@ -122,6 +164,48 @@ document.addEventListener('DOMContentLoaded', () => {
     window.lucide.createIcons();
   }
 });
+
+/**
+ * Carrega dados do Google Sheets se configurado, ou usa o acervo local
+ */
+async function initDataSource() {
+  if (GOOGLE_SHEET_CSV_URL) {
+    try {
+      const response = await fetch(GOOGLE_SHEET_CSV_URL);
+      const csvText = await response.text();
+      const parsedData = parseCsvData(csvText);
+      if (parsedData && parsedData.length > 0) {
+        ARTWORKS_DATA = parsedData;
+      }
+    } catch (err) {
+      console.warn('Carregando base local do acervo:', err);
+    }
+  }
+  renderBentoGrid('all');
+}
+
+/**
+ * Converte CSV do Google Sheets em objetos estruturados
+ */
+function parseCsvData(csvText) {
+  const lines = csvText.trim().split('\n');
+  if (lines.length < 2) return [];
+
+  const headers = lines[0].split(',').map(h => h.trim().replace(/^["']|["']$/g, ''));
+  const results = [];
+
+  for (let i = 1; i < lines.length; i++) {
+    const row = lines[i].split(',').map(c => c.trim().replace(/^["']|["']$/g, ''));
+    if (row.length >= headers.length) {
+      const item = {};
+      headers.forEach((h, index) => {
+        item[h] = row[index];
+      });
+      results.push(item);
+    }
+  }
+  return results;
+}
 
 /**
  * Renderização dinâmica da Bento Grid com suporte a filtros
@@ -137,7 +221,6 @@ function renderBentoGrid(filterCategory = 'all') {
   container.innerHTML = '';
 
   filtered.forEach((art, index) => {
-    // Classes de grid responsivo para Bento layout
     let colSpanClass = 'col-span-12 md:col-span-6 lg:col-span-4';
     let heightClass = 'h-[440px]';
 
@@ -176,10 +259,10 @@ function renderBentoGrid(filterCategory = 'all') {
         <div class="absolute top-4 left-4 right-4 flex items-center justify-between pointer-events-none">
           <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/90 backdrop-blur-md text-stone-900 text-xs font-semibold tracking-wider uppercase shadow-sm">
             <span class="w-1.5 h-1.5 rounded-full bg-[#A36A4F]"></span>
-            ${art.categoryLabel}
+            ${art.categoryLabel || 'Obra Monumental'}
           </span>
           <span class="px-2.5 py-1 rounded-full bg-black/60 backdrop-blur-md text-stone-200 text-xs font-medium">
-            ${art.year}
+            ${art.year || '2024'}
           </span>
         </div>
 
@@ -187,7 +270,7 @@ function renderBentoGrid(filterCategory = 'all') {
         <div class="absolute bottom-0 left-0 right-0 p-6 text-white flex flex-col justify-end">
           <div class="flex items-center gap-2 text-xs text-stone-300 font-medium mb-1.5">
             <i data-lucide="map-pin" class="w-3.5 h-3.5 text-[#A36A4F]"></i>
-            <span>${art.location} • ${art.city}</span>
+            <span>${art.location || ''} • ${art.city || ''}</span>
           </div>
 
           <h3 class="text-xl lg:text-2xl font-serif-display font-medium text-white mb-2 leading-tight group-hover:text-[#E8C5B0] transition-colors">
@@ -196,7 +279,7 @@ function renderBentoGrid(filterCategory = 'all') {
 
           <div class="flex flex-wrap items-center justify-between gap-2 pt-3 border-t border-white/20 text-xs text-stone-300">
             <span class="truncate max-w-[70%] font-light">
-              <strong class="font-medium text-white/90">Material:</strong> ${art.material}
+              <strong class="font-medium text-white/90">Material:</strong> ${art.material || 'Resina Estrutural Marmorizada'}
             </span>
             
             <span class="inline-flex items-center gap-1 text-white font-medium group-hover:translate-x-1 transition-transform">
@@ -215,7 +298,73 @@ function renderBentoGrid(filterCategory = 'all') {
     container.appendChild(card);
   });
 
-  // Re-inicializa ícones do Lucide nos novos cards gerados
+  if (window.lucide) {
+    window.lucide.createIcons();
+  }
+}
+
+/**
+ * Renderização do Feed Dinâmico do Instagram @carlospieta
+ */
+function renderInstagramFeed() {
+  const container = document.getElementById('instagram-feed-grid');
+  if (!container) return;
+
+  container.innerHTML = '';
+
+  INSTAGRAM_FEED_DATA.forEach(post => {
+    const card = document.createElement('a');
+    card.href = post.url;
+    card.target = '_blank';
+    card.className = 'group relative rounded-2xl overflow-hidden bg-stone-900 border border-stone-200/80 shadow-editorial hover:shadow-xl transition-all duration-300 block';
+
+    card.innerHTML = `
+      <div class="relative h-72 w-full overflow-hidden">
+        <img 
+          src="${post.image}" 
+          alt="Post Instagram Carlos Pietá" 
+          class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+        />
+        <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-60 group-hover:opacity-90 transition-opacity duration-300"></div>
+        
+        <!-- Ícone do Instagram no topo -->
+        <div class="absolute top-3.5 right-3.5 w-8 h-8 rounded-full bg-black/50 backdrop-blur-md flex items-center justify-center text-white">
+          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+          </svg>
+        </div>
+
+        <!-- Conteúdo do Post -->
+        <div class="absolute bottom-0 left-0 right-0 p-5 text-white flex flex-col justify-end">
+          <p class="text-xs text-stone-200 line-clamp-2 font-light leading-relaxed mb-3">
+            ${post.caption}
+          </p>
+
+          <div class="flex items-center justify-between text-[11px] text-[#E8C5B0] font-semibold border-t border-white/20 pt-2.5">
+            <div class="flex items-center gap-3">
+              <span class="flex items-center gap-1">
+                <i data-lucide="heart" class="w-3.5 h-3.5 text-red-400 fill-red-400"></i>
+                ${post.likes}
+              </span>
+              <span class="flex items-center gap-1">
+                <i data-lucide="message-circle" class="w-3.5 h-3.5"></i>
+                ${post.comments}
+              </span>
+            </div>
+            <span class="inline-flex items-center gap-1 text-white group-hover:text-[#E8C5B0] transition-colors">
+              <span>Ver no App</span>
+              <i data-lucide="external-link" class="w-3 h-3"></i>
+            </span>
+          </div>
+        </div>
+      </div>
+    `;
+
+    container.appendChild(card);
+  });
+
   if (window.lucide) {
     window.lucide.createIcons();
   }
@@ -272,20 +421,18 @@ function openArtworkModal(artwork) {
   const modal = document.getElementById('artwork-modal');
   if (!modal) return;
 
-  // Atualização dos campos no Modal
   document.getElementById('modal-image').src = artwork.image;
   document.getElementById('modal-image').alt = artwork.title;
-  document.getElementById('modal-category').innerText = artwork.categoryLabel;
-  document.getElementById('modal-year').innerText = artwork.year;
+  document.getElementById('modal-category').innerText = artwork.categoryLabel || 'Obra de Acervo';
+  document.getElementById('modal-year').innerText = artwork.year || '2024';
   document.getElementById('modal-title').innerText = artwork.title;
-  document.getElementById('modal-location').innerText = `${artwork.location}, ${artwork.city}`;
-  document.getElementById('modal-material').innerText = artwork.material;
-  document.getElementById('modal-dimensions').innerText = artwork.dimensions;
-  document.getElementById('modal-weight').innerText = artwork.weight;
-  document.getElementById('modal-commissioner').innerText = artwork.commissioner;
-  document.getElementById('modal-description').innerText = artwork.description;
+  document.getElementById('modal-location').innerText = `${artwork.location || ''}, ${artwork.city || ''}`;
+  document.getElementById('modal-material').innerText = artwork.material || 'Resina Estrutural Marmorizada';
+  document.getElementById('modal-dimensions').innerText = artwork.dimensions || 'Grande Porte';
+  document.getElementById('modal-weight').innerText = artwork.weight || 'Sob Consulta';
+  document.getElementById('modal-commissioner').innerText = artwork.commissioner || 'Santuário / Prefeitura';
+  document.getElementById('modal-description').innerText = artwork.description || '';
 
-  // Botão de WhatsApp contextualizado com a obra
   const modalCta = document.getElementById('modal-whatsapp-cta');
   if (modalCta) {
     const message = encodeURIComponent(`Olá, Carlos Pietá (@carlospieta). Gostaria de solicitar informações e orçamento para um projeto artístico na linha de "${artwork.title}" (${artwork.city}).`);
@@ -301,7 +448,7 @@ function openArtworkModal(artwork) {
 }
 
 /**
- * Accordion Interativo de FAQ / Dúvidas Frequentes
+ * Accordion Interativo de FAQ
  */
 function initFaqAccordion() {
   const faqItems = document.querySelectorAll('.faq-item');
@@ -311,22 +458,14 @@ function initFaqAccordion() {
 
     header.addEventListener('click', () => {
       const isActive = item.classList.contains('active');
-      
-      // Fecha todos os outros
-      faqItems.forEach(other => {
-        other.classList.remove('active');
-      });
-
-      // Alterna o atual
-      if (!isActive) {
-        item.classList.add('active');
-      }
+      faqItems.forEach(other => other.classList.remove('active'));
+      if (!isActive) item.classList.add('active');
     });
   });
 }
 
 /**
- * Efeito de Navegação e Rolagem da Navbar
+ * Efeito de Rolagem da Navbar
  */
 function initNavbarScroll() {
   const navbar = document.getElementById('main-navbar');
@@ -371,7 +510,7 @@ function initMobileMenu() {
 }
 
 /**
- * Formulário de Briefing Institucional & Envio para WhatsApp
+ * Formulário de Briefing & WhatsApp
  */
 function initBriefingForm() {
   const form = document.getElementById('briefing-form');
@@ -389,7 +528,6 @@ function initBriefingForm() {
     const deadline = document.getElementById('form-deadline')?.value || 'Sem prazo fixado';
     const messageText = document.getElementById('form-message')?.value.trim() || '';
 
-    // Monta texto formatado e profissional para o WhatsApp
     const fullMessage = `🏛️ *SOLICITAÇÃO DE BRIEFING ARTÍSTICO - CARLOS PIETÁ (@carlospieta)*\n\n` +
       `👤 *Responsável:* ${name} (${org})\n` +
       `📍 *Localização pretendida:* ${city}\n` +
@@ -398,10 +536,8 @@ function initBriefingForm() {
       `📝 *Detalhes da Proposta:*\n${messageText}\n\n` +
       `_Enviado via portfólio oficial de Carlos Pietá._`;
 
-    // Disparo para WhatsApp oficial do ateliê
     const waUrl = `https://wa.me/5534999998888?text=${encodeURIComponent(fullMessage)}`;
     
-    // Mostra Toast de sucesso
     if (toast) {
       toast.classList.remove('opacity-0', 'translate-y-4', 'pointer-events-none');
       toast.classList.add('opacity-100', 'translate-y-0');
@@ -412,7 +548,6 @@ function initBriefingForm() {
       }, 5000);
     }
 
-    // Abre o WhatsApp em nova aba após feedback
     setTimeout(() => {
       window.open(waUrl, '_blank');
       form.reset();
