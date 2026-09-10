@@ -22,6 +22,10 @@ body {
   font-family: 'Plus Jakarta Sans', sans-serif;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
+  background-color: var(--color-bg);
+  /* Textura de ruído editorial suave estilo papel de museu */
+  background-image: radial-gradient(rgba(163, 106, 79, 0.04) 1px, transparent 0);
+  background-size: 24px 24px;
 }
 
 /* Barra de Progresso de Leitura no Topo */
@@ -112,6 +116,192 @@ body {
   transform: scale(1.05);
 }
 
+/* Botões com Pátina Metálica e Efeito de Douramento */
+.btn-bronze-metallic {
+  background: linear-gradient(135deg, #1c1c1c 0%, #2a2722 50%, #1c1c1c 100%);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s ease;
+}
+
+.btn-bronze-metallic::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(232, 197, 176, 0.25),
+    transparent
+  );
+  transition: left 0.6s ease;
+}
+
+.btn-bronze-metallic:hover::before {
+  left: 100%;
+}
+
+.btn-bronze-metallic:hover {
+  background: linear-gradient(135deg, #A36A4F 0%, #8C573E 100%);
+  box-shadow: 0 10px 25px -5px rgba(163, 106, 79, 0.4);
+}
+
+/* ========================================================================= */
+/* SLIDER INTERATIVO ANTES & DEPOIS (DO BARRO AO MONUMENTO)                  */
+/* ========================================================================= */
+.before-after-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  user-select: none;
+  -webkit-user-select: none;
+  border-radius: 1.5rem;
+  touch-action: pan-y;
+}
+
+.before-after-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
+}
+
+.before-after-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
+  will-change: width;
+}
+
+.before-after-handle {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 3px;
+  background-color: #FFFFFF;
+  cursor: ew-resize;
+  z-index: 20;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.5);
+  transform: translateX(-50%);
+  will-change: left;
+}
+
+.before-after-circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #FFFFFF;
+  color: #1C1C1C;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
+  border: 2px solid #A36A4F;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.before-after-handle:hover .before-after-circle,
+.before-after-handle:active .before-after-circle {
+  transform: translate(-50%, -50%) scale(1.1);
+  background: #F7EDE7;
+}
+
+/* ========================================================================= */
+/* MODAL ZOOM LENS & PAN                                                     */
+/* ========================================================================= */
+.modal-image-container {
+  position: relative;
+  overflow: hidden;
+  cursor: zoom-in;
+}
+
+.modal-image-container.zoomed {
+  cursor: zoom-out;
+}
+
+.modal-image-container.zoomed img {
+  transform: scale(2.2);
+  transition: transform 0.2s ease-out;
+}
+
+.zoom-indicator-badge {
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(8px);
+  color: #FFFFFF;
+  font-size: 0.7rem;
+  padding: 0.35rem 0.75rem;
+  border-radius: 9999px;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  pointer-events: none;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  transition: opacity 0.3s ease;
+}
+
+/* ========================================================================= */
+/* BARRA FIXA MOBILE (STICKY BOTTOM ACTION BAR)                              */
+/* ========================================================================= */
+#mobile-sticky-bar {
+  transform: translateY(110%);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  padding-bottom: max(0.75rem, env(safe-area-inset-bottom));
+}
+
+#mobile-sticky-bar.visible {
+  transform: translateY(0%);
+}
+
+/* ========================================================================= */
+/* CURSOR MAGNÉTICO FLUTUANTE (DESKTOP)                                      */
+/* ========================================================================= */
+#custom-magnetic-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: rgba(163, 106, 79, 0.85);
+  color: #FFFFFF;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  z-index: 999;
+  transform: translate(-50%, -50%) scale(0);
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.2s ease;
+  backdrop-filter: blur(4px);
+  box-shadow: 0 8px 24px rgba(163, 106, 79, 0.3);
+  opacity: 0;
+}
+
+#custom-magnetic-cursor.active {
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 1;
+}
+
 /* Accordion FAQ */
 .faq-content {
   max-height: 0;
@@ -182,4 +372,11 @@ body {
 
 .floating-whatsapp {
   animation: pulse-subtle 2.5s infinite;
+}
+
+/* Assinatura do Artista estilizada em pátina */
+.artist-signature-text {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-style: italic;
+  letter-spacing: 0.05em;
 }

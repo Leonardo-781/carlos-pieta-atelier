@@ -69,8 +69,11 @@
 </head>
 <body class="bg-[#F7F6F2] text-stone-900 font-sans selection:bg-[#A36A4F] selection:text-white relative">
 
-  <!-- Barra de Progresso de Rolagem -->
+  <!-- Barra de Progresso de Leitura no Topo -->
   <div id="scroll-progress"></div>
+
+  <!-- Cursor Magnético Customizado (Desktop) -->
+  <div id="custom-magnetic-cursor">Explorar</div>
 
   <!-- ========================================================================= -->
   <!-- 1. NAVBAR COM LOGO OFICIAL -->
@@ -94,6 +97,7 @@
       <!-- Menu Desktop -->
       <nav class="hidden lg:flex items-center space-x-6 xl:space-x-8 text-xs uppercase tracking-widest font-semibold text-stone-700 whitespace-nowrap">
         <a href="#obras" class="hover:text-[#A36A4F] transition-colors py-1 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1.5px] after:bg-[#A36A4F] hover:after:w-full after:transition-all">Obras</a>
+        <a href="#comparador" class="hover:text-[#A36A4F] transition-colors py-1 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1.5px] after:bg-[#A36A4F] hover:after:w-full after:transition-all">Antes & Depois</a>
         <a href="#instagram-feed" class="hover:text-[#A36A4F] transition-colors py-1 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1.5px] after:bg-[#A36A4F] hover:after:w-full after:transition-all">Instagram Feed</a>
         <a href="#processo" class="hover:text-[#A36A4F] transition-colors py-1 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1.5px] after:bg-[#A36A4F] hover:after:w-full after:transition-all">Processo</a>
         <a href="#reconhecimento" class="hover:text-[#A36A4F] transition-colors py-1 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1.5px] after:bg-[#A36A4F] hover:after:w-full after:transition-all">Na Mídia</a>
@@ -120,7 +124,7 @@
 
         <a 
           href="#contato" 
-          class="inline-flex items-center gap-2 px-4 sm:px-5 py-2.5 rounded-xl bg-stone-900 hover:bg-[#A36A4F] text-white text-xs font-semibold uppercase tracking-wider transition-all shadow-sm whitespace-nowrap"
+          class="btn-bronze-metallic inline-flex items-center gap-2 px-4 sm:px-5 py-2.5 rounded-xl text-white text-xs font-semibold uppercase tracking-wider transition-all shadow-sm whitespace-nowrap"
         >
           <span>Solicitar Projeto</span>
           <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -157,6 +161,10 @@
       <nav class="mt-8 flex flex-col space-y-4 text-sm uppercase tracking-widest font-semibold text-stone-800">
         <a href="#obras" class="mobile-nav-link hover:text-[#A36A4F] py-2 border-b border-stone-200/50 flex items-center justify-between">
           <span>Obras & Acervo</span>
+          <i data-lucide="chevron-right" class="w-4 h-4 text-stone-400"></i>
+        </a>
+        <a href="#comparador" class="mobile-nav-link hover:text-[#A36A4F] py-2 border-b border-stone-200/50 flex items-center justify-between">
+          <span>Antes & Depois (Argila vs Obra)</span>
           <i data-lucide="chevron-right" class="w-4 h-4 text-stone-400"></i>
         </a>
         <a href="#instagram-feed" class="mobile-nav-link hover:text-[#A36A4F] py-2 border-b border-stone-200/50 flex items-center justify-between">
@@ -212,7 +220,7 @@
   <!-- ========================================================================= -->
   <!-- 2. HERO SECTION -->
   <!-- ========================================================================= -->
-  <section id="hero" class="relative pt-32 pb-20 lg:pt-40 lg:pb-32 overflow-hidden bg-stone-50">
+  <section id="hero" class="relative pt-32 pb-16 lg:pt-40 lg:pb-24 overflow-hidden bg-stone-50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <!-- Cabeçalho Editorial do Hero -->
@@ -236,24 +244,21 @@
           <div class="flex flex-wrap items-center gap-3">
             <a 
               href="#obras" 
-              class="px-6 py-3.5 rounded-xl bg-stone-900 text-white text-xs font-semibold tracking-widest uppercase hover:bg-[#A36A4F] transition-all shadow-md flex items-center gap-2 group"
+              class="btn-bronze-metallic px-6 py-3.5 rounded-xl text-white text-xs font-semibold tracking-widest uppercase transition-all shadow-md flex items-center gap-2 group"
             >
               <span>Ver Obras em Destaque</span>
               <i data-lucide="arrow-down" class="w-4 h-4 group-hover:translate-y-0.5 transition-transform"></i>
             </a>
 
-            <a 
-              href="https://www.instagram.com/carlospieta/" 
-              target="_blank"
-              class="px-6 py-3.5 rounded-xl border border-stone-300 text-stone-800 bg-white hover:bg-stone-100 text-xs font-semibold tracking-widest uppercase transition-all flex items-center gap-2"
+            <!-- Botão de Dossiê em PDF -->
+            <button 
+              id="download-dossie-btn"
+              class="px-5 py-3.5 rounded-xl border border-stone-300 text-stone-800 bg-white hover:bg-stone-100 text-xs font-semibold tracking-widest uppercase transition-all flex items-center gap-2"
+              title="Solicitar Catálogo em PDF"
             >
-              <svg class="w-4 h-4 text-[#A36A4F]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-              </svg>
-              <span>@carlospieta</span>
-            </a>
+              <i data-lucide="file-text" class="w-4 h-4 text-[#A36A4F]"></i>
+              <span>Dossiê Artístico (PDF)</span>
+            </button>
           </div>
         </div>
       </div>
@@ -307,11 +312,45 @@
         </div>
       </div>
 
+      <!-- ========================================================================= -->
+      <!-- NOVO: FAIXA DE AUTORIDADE INSTITUCIONAL & MÍDIA (SOCIAL PROOF)            -->
+      <!-- ========================================================================= -->
+      <div class="mt-12 pt-8 border-t border-stone-200/70 reveal">
+        <div class="text-center mb-6">
+          <span class="text-[10px] sm:text-xs font-semibold tracking-[0.25em] text-stone-500 uppercase">
+            Monumentos e Obras Homologadas por Instituições Oficiais & Imprensa
+          </span>
+        </div>
+        
+        <div class="flex flex-wrap items-center justify-center gap-6 sm:gap-10 md:gap-14 text-stone-600 text-xs sm:text-sm font-medium">
+          <div class="flex items-center gap-2 hover:text-stone-900 transition-colors">
+            <i data-lucide="church" class="w-4 h-4 text-[#A36A4F]"></i>
+            <span class="tracking-wide">Basílica de Romaria</span>
+          </div>
+          <div class="flex items-center gap-2 hover:text-stone-900 transition-colors">
+            <i data-lucide="landmark" class="w-4 h-4 text-[#A36A4F]"></i>
+            <span class="tracking-wide">Prefeitura de Monte Carmelo</span>
+          </div>
+          <div class="flex items-center gap-2 hover:text-stone-900 transition-colors">
+            <i data-lucide="shield" class="w-4 h-4 text-[#A36A4F]"></i>
+            <span class="tracking-wide">Paróquias de Patrocínio</span>
+          </div>
+          <div class="flex items-center gap-2 hover:text-stone-900 transition-colors">
+            <span class="px-2 py-0.5 rounded bg-red-800 text-white text-[10px] font-bold">G1</span>
+            <span class="tracking-wide">TV Globo Regional</span>
+          </div>
+          <div class="flex items-center gap-2 hover:text-stone-900 transition-colors">
+            <i data-lucide="newspaper" class="w-4 h-4 text-[#A36A4F]"></i>
+            <span class="tracking-wide">Jornal Estado de Minas</span>
+          </div>
+        </div>
+      </div>
+
     </div>
   </section>
 
   <!-- ========================================================================= -->
-  <!-- 3. GALERIA BENTO GRID COM FOTOS REAIS -->
+  <!-- 3. GALERIA BENTO GRID COM FOTOS REAIS & CONTADORES NAS ABAS               -->
   <!-- ========================================================================= -->
   <section id="obras" class="py-24 bg-[#F7F6F2] relative">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -329,25 +368,28 @@
         </p>
       </div>
 
-      <!-- Filtros de Categoria -->
-      <div class="flex flex-wrap items-center gap-2 mb-10 reveal">
+      <!-- Filtros de Categoria com Badges de Contagem -->
+      <div class="flex flex-wrap items-center gap-2.5 mb-10 reveal">
         <button 
           data-filter="all" 
-          class="filter-btn px-4 py-2 rounded-xl text-xs font-semibold tracking-wider uppercase transition-all bg-stone-900 text-white shadow-sm"
+          class="filter-btn px-4 py-2.5 rounded-xl text-xs font-semibold tracking-wider uppercase transition-all bg-stone-900 text-white shadow-sm flex items-center gap-2"
         >
-          Todas as Obras
+          <span>Todas as Obras</span>
+          <span id="count-all" class="px-2 py-0.5 rounded-full text-[10px] bg-white/20 font-bold">6</span>
         </button>
         <button 
           data-filter="monumentos" 
-          class="filter-btn px-4 py-2 rounded-xl text-xs font-semibold tracking-wider uppercase transition-all bg-stone-100 text-stone-700 hover:bg-stone-200"
+          class="filter-btn px-4 py-2.5 rounded-xl text-xs font-semibold tracking-wider uppercase transition-all bg-stone-100 text-stone-700 hover:bg-stone-200 flex items-center gap-2"
         >
-          Monumentos de Praça & Sacros
+          <span>Monumentos & Esculturas</span>
+          <span id="count-monumentos" class="px-2 py-0.5 rounded-full text-[10px] bg-stone-300 text-stone-800 font-bold">4</span>
         </button>
         <button 
           data-filter="vitrais" 
-          class="filter-btn px-4 py-2 rounded-xl text-xs font-semibold tracking-wider uppercase transition-all bg-stone-100 text-stone-700 hover:bg-stone-200"
+          class="filter-btn px-4 py-2.5 rounded-xl text-xs font-semibold tracking-wider uppercase transition-all bg-stone-100 text-stone-700 hover:bg-stone-200 flex items-center gap-2"
         >
-          Vitrais & Mosaicos
+          <span>Vitrais & Mosaicos</span>
+          <span id="count-vitrais" class="px-2 py-0.5 rounded-full text-[10px] bg-stone-300 text-stone-800 font-bold">2</span>
         </button>
       </div>
 
@@ -374,6 +416,85 @@
           Consultar Projeto Personalizado
         </a>
       </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================================================= -->
+  <!-- NOVO: SLIDER INTERATIVO ANTES & DEPOIS (DO BARRO AO MONUMENTO)            -->
+  <!-- ========================================================================= -->
+  <section id="comparador" class="py-24 bg-stone-950 text-white relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center mb-12">
+        <div class="lg:col-span-7 reveal">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#E8C5B0]/10 text-[#E8C5B0] text-xs font-semibold uppercase tracking-wider mb-3">
+            <i data-lucide="sliders" class="w-3.5 h-3.5"></i>
+            <span>Interatividade & Mestria Técnica</span>
+          </div>
+          <h2 class="text-3xl sm:text-4xl lg:text-5xl font-serifDisplay font-semibold text-white leading-tight">
+            Do Barro ao Monumento: <span class="italic font-serifCormorant font-normal text-[#E8C5B0]">Arraste para Comparar</span>
+          </h2>
+          <p class="text-stone-300 font-light text-sm sm:text-base mt-4 leading-relaxed">
+            Arraste a linha central para testemunhar a metamorfose plástica: da sensibilidade da modelagem em argila viva até a grandiosidade da estátua marmorizada resistente aos séculos.
+          </p>
+        </div>
+
+        <div class="lg:col-span-5 flex flex-col justify-end text-xs text-stone-400 space-y-2 reveal">
+          <div class="flex items-center gap-2">
+            <span class="w-2.5 h-2.5 rounded-full bg-stone-400"></span>
+            <span><strong>Lado Esquerdo:</strong> Modelagem autoral em argila viva com panejamentos manuais.</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="w-2.5 h-2.5 rounded-full bg-[#E8C5B0]"></span>
+            <span><strong>Lado Direito:</strong> Escultura monumental marmorizada instalada na Basílica.</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Componente Interativo do Slider Antes & Depois -->
+      <div class="relative w-full h-[400px] sm:h-[520px] lg:h-[620px] before-after-container border border-stone-800 shadow-2xl reveal" id="before-after-slider">
+        
+        <!-- Imagem "Depois" (Estátua Monumental Acabada - Fundo total) -->
+        <img 
+          src="images/carlos-pieta-apostolos-luz.png" 
+          alt="Monumento acabado dos 12 Apóstolos" 
+          class="before-after-image"
+        />
+        
+        <!-- Badge Direita (Depois) -->
+        <div class="absolute bottom-6 right-6 z-10 px-4 py-2 rounded-full bg-black/70 backdrop-blur-md border border-white/20 text-white text-xs font-semibold tracking-wider uppercase pointer-events-none">
+          Escultura Marmorizada Final
+        </div>
+
+        <!-- Camada "Antes" (Argila - Cortada dinamicamente) -->
+        <div class="before-after-overlay" id="before-overlay">
+          <img 
+            src="images/carlos-pieta-esculpindo.png" 
+            alt="Carlos Pietá esculpindo em argila" 
+            class="before-after-image"
+            style="width: 100%; min-width: 100%;"
+            id="before-image-inner"
+          />
+          
+          <!-- Badge Esquerda (Antes) -->
+          <div class="absolute bottom-6 left-6 z-10 px-4 py-2 rounded-full bg-black/70 backdrop-blur-md border border-white/20 text-[#E8C5B0] text-xs font-semibold tracking-wider uppercase pointer-events-none">
+            Modelagem em Argila Viva
+          </div>
+        </div>
+
+        <!-- Alça de Arraste Divisória -->
+        <div class="before-after-handle" id="before-handle">
+          <div class="before-after-circle">
+            <i data-lucide="chevrons-left-right" class="w-5 h-5 text-stone-900"></i>
+          </div>
+        </div>
+
+      </div>
+
+      <p class="text-center text-xs text-stone-400 mt-4">
+        * Clique ou arraste a barra divisória para o lado (suporta toque no celular e arraste no mouse).
+      </p>
 
     </div>
   </section>
@@ -621,7 +742,7 @@
   </section>
 
   <!-- ========================================================================= -->
-  <!-- 6. SOBRE O ARTISTA -->
+  <!-- 6. SOBRE O ARTISTA (COM ASSINATURA REAL & SELO DE AUTORIA) -->
   <!-- ========================================================================= -->
   <section id="sobre" class="py-24 bg-[#F7F6F2] relative">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -700,19 +821,25 @@
             </div>
           </div>
 
-          <!-- Botão Instagram -->
-          <div class="mt-8">
+          <!-- Assinatura Estilizada do Artista -->
+          <div class="mt-8 pt-6 border-t border-stone-200 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+            <div>
+              <span class="text-[10px] uppercase tracking-widest text-stone-400 font-semibold block">Autenticidade Curatorial</span>
+              <span class="artist-signature-text text-3xl sm:text-4xl text-[#A36A4F] font-serifCormorant block">Carlos Pietá</span>
+              <span class="text-xs text-stone-500 font-light">Mestre Escultor & Vitralista</span>
+            </div>
+
             <a 
               href="https://www.instagram.com/carlospieta/" 
               target="_blank"
-              class="inline-flex items-center gap-3 px-6 py-3.5 rounded-xl bg-stone-900 hover:bg-[#A36A4F] text-white text-xs font-semibold uppercase tracking-wider transition-all shadow-sm"
+              class="inline-flex items-center gap-3 px-5 py-3 rounded-xl bg-stone-900 hover:bg-[#A36A4F] text-white text-xs font-semibold uppercase tracking-wider transition-all shadow-sm"
             >
               <svg class="w-4 h-4 text-[#E8C5B0]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
                 <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
                 <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
               </svg>
-              <span>Acompanhar Bastidores no Instagram (@carlospieta)</span>
+              <span>Acompanhar Bastidores (@carlospieta)</span>
             </a>
           </div>
 
@@ -903,7 +1030,7 @@
             <div class="flex flex-col sm:flex-row items-center gap-4 pt-2">
               <button 
                 type="submit" 
-                class="w-full sm:w-auto flex-1 px-8 py-4 rounded-xl bg-stone-900 text-white text-xs font-semibold uppercase tracking-widest hover:bg-[#A36A4F] transition-all shadow-md flex items-center justify-center gap-2"
+                class="btn-bronze-metallic w-full sm:w-auto flex-1 px-8 py-4 rounded-xl text-white text-xs font-semibold uppercase tracking-widest transition-all shadow-md flex items-center justify-center gap-2"
               >
                 <span>Enviar Proposta ao Ateliê</span>
                 <i data-lucide="send" class="w-4 h-4"></i>
@@ -1026,6 +1153,7 @@
           <ul class="space-y-2.5 text-xs text-stone-400 font-medium">
             <li><a href="#hero" class="hover:text-white transition-colors">Início</a></li>
             <li><a href="#obras" class="hover:text-white transition-colors">Acervo & Obras</a></li>
+            <li><a href="#comparador" class="hover:text-white transition-colors">Antes & Depois</a></li>
             <li><a href="#instagram-feed" class="hover:text-white transition-colors">Feed Instagram</a></li>
             <li><a href="#processo" class="hover:text-white transition-colors">Processo & Técnica</a></li>
             <li><a href="#reconhecimento" class="hover:text-white transition-colors">Na Mídia</a></li>
@@ -1089,7 +1217,27 @@
   </aside>
 
   <!-- ========================================================================= -->
-  <!-- MODAL LIGHTBOX INTERATIVO PARA AS OBRAS -->
+  <!-- NOVO: BARRA FIXA MOBILE DE AÇÃO RÁPIDA (STICKY BOTTOM BAR)                 -->
+  <!-- ========================================================================= -->
+  <div id="mobile-sticky-bar" class="fixed bottom-0 inset-x-0 z-40 sm:hidden bg-stone-900/95 backdrop-blur-md border-t border-stone-700/80 p-3 flex items-center justify-between gap-2 shadow-2xl">
+    <a 
+      href="#obras" 
+      class="flex-1 py-2.5 px-3 rounded-xl bg-stone-800 text-stone-200 text-[11px] font-semibold uppercase tracking-wider text-center border border-stone-700"
+    >
+      Ver Obras
+    </a>
+    <a 
+      href="https://wa.me/5534999998888?text=Ol%C3%A1%2C%20Carlos%20Piet%C3%A1.%20Gostaria%20de%20solicitar%20um%20or%C3%A7amento%20para%20escultura%2Fmonumento." 
+      target="_blank"
+      class="flex-1 py-2.5 px-3 rounded-xl bg-[#25D366] text-white text-[11px] font-bold uppercase tracking-wider text-center flex items-center justify-center gap-1.5 shadow-lg"
+    >
+      <i data-lucide="message-circle" class="w-4 h-4"></i>
+      <span>Orçamento</span>
+    </a>
+  </div>
+
+  <!-- ========================================================================= -->
+  <!-- MODAL LIGHTBOX INTERATIVO PARA AS OBRAS COM LENTE DE ZOOM                 -->
   <!-- ========================================================================= -->
   <div id="artwork-modal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 sm:p-6 lg:p-10">
     <div id="modal-backdrop" class="fixed inset-0 bg-black/80 backdrop-blur-sm transition-opacity"></div>
@@ -1104,9 +1252,15 @@
       <!-- Conteúdo com Scroll Interno -->
       <div class="overflow-y-auto max-h-[calc(90vh)] flex flex-col md:flex-row">
         
-        <!-- Foto da Obra -->
-        <div class="md:w-1/2 relative bg-stone-900 min-h-[300px] md:min-h-[500px]">
+        <!-- Foto da Obra com Recurso de Zoom Interativo -->
+        <div class="md:w-1/2 relative bg-stone-900 min-h-[300px] md:min-h-[500px] modal-image-container" id="modal-image-wrapper">
           <img id="modal-image" src="" alt="" class="w-full h-full object-cover object-center" />
+          
+          <!-- Badge de Instrução de Zoom -->
+          <div class="zoom-indicator-badge" id="zoom-badge">
+            <i data-lucide="zoom-in" class="w-3.5 h-3.5"></i>
+            <span>Clique para zoom</span>
+          </div>
         </div>
 
         <!-- Ficha Técnica Editorial -->
@@ -1148,12 +1302,12 @@
             </div>
           </div>
 
-          <div class="mt-8 pt-4 border-t border-stone-200">
+          <div class="mt-8 pt-4 border-t border-stone-200 flex items-center gap-3">
             <a 
               id="modal-whatsapp-cta" 
               href="#" 
               target="_blank"
-              class="w-full py-3.5 px-4 rounded-xl bg-stone-900 text-white text-xs font-semibold uppercase tracking-wider flex items-center justify-center gap-2 hover:bg-[#A36A4F] transition-colors"
+              class="btn-bronze-metallic flex-1 py-3.5 px-4 rounded-xl text-white text-xs font-semibold uppercase tracking-wider flex items-center justify-center gap-2"
             >
               <i data-lucide="message-circle" class="w-4 h-4 text-green-400"></i>
               <span>Solicitar Orçamento Similar</span>
@@ -1178,7 +1332,7 @@
       <i data-lucide="check" class="w-4 h-4"></i>
     </div>
     <div>
-      <h6 class="text-xs font-bold uppercase tracking-wider text-white">Briefing Registrado!</h6>
+      <h6 class="text-xs font-bold uppercase tracking-wider text-white">Solicitação Registrada!</h6>
       <p class="text-xs text-stone-300">Conectando ao WhatsApp de Carlos Pietá...</p>
     </div>
   </div>

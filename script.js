@@ -1,7 +1,13 @@
 /**
  * Acervo e Obras Oficiais de Carlos Pietá (@carlospieta)
  * Base de dados com fotos REAIS das obras, ateliê e instalações
- * Inclui animações de Scroll Reveal, Contador Numérico e Barra de Progresso
+ * Inclui:
+ * - Slider Antes & Depois (Do Barro ao Monumento)
+ * - Lente de Zoom Interativo no Modal
+ * - Barra Mobile Sticky de Ação Rápida
+ * - Cursor Magnético Personalizado (Desktop)
+ * - Contadores Dinâmicos de Categorias
+ * - Scroll Reveal & Contadores Numéricos
  */
 
 const GOOGLE_SHEET_CSV_URL = ''; // Para sincronização remota via Google Sheets / Drive
@@ -151,6 +157,12 @@ const INSTAGRAM_FEED_DATA = [
 // Inicialização após carregamento do DOM
 document.addEventListener('DOMContentLoaded', () => {
   initDataSource();
+  updateCategoryCounts();
+  initBeforeAfterSlider();
+  initModalZoom();
+  initMagneticCursor();
+  initMobileStickyBar();
+  initDossieDownload();
   renderInstagramFeed();
   initFilterButtons();
   initNavbarScroll();
@@ -166,6 +178,221 @@ document.addEventListener('DOMContentLoaded', () => {
     window.lucide.createIcons();
   }
 });
+
+/**
+ * Atualiza os números das abas de filtro
+ */
+function updateCategoryCounts() {
+  const countAll = document.getElementById('count-all');
+  const countMonumentos = document.getElementById('count-monumentos');
+  const countVitrais = document.getElementById('count-vitrais');
+
+  if (countAll) countAll.innerText = ARTWORKS_DATA.length;
+  if (countMonumentos) {
+    countMonumentos.innerText = ARTWORKS_DATA.filter(a => a.category === 'monumentos').length;
+  }
+  if (countVitrais) {
+    countVitrais.innerText = ARTWORKS_DATA.filter(a => a.category === 'vitrais').length;
+  }
+}
+
+/**
+ * Slider Interativo Antes & Depois (Do Barro ao Monumento)
+ */
+function initBeforeAfterSlider() {
+  const container = document.getElementById('before-after-slider');
+  const overlay = document.getElementById('before-overlay');
+  const handle = document.getElementById('before-handle');
+  const innerImg = document.getElementById('before-image-inner');
+
+  if (!container || !overlay || !handle) return;
+
+  let isDragging = false;
+
+  const updateSlider = (clientX) => {
+    const rect = container.getBoundingClientRect();
+    let offsetX = clientX - rect.left;
+    let percentage = (offsetX / rect.width) * 100;
+
+    // Limites de segurança entre 3% e 97%
+    if (percentage < 3) percentage = 3;
+    if (percentage > 97) percentage = 97;
+
+    overlay.style.width = `${percentage}%`;
+    handle.style.left = `${percentage}%`;
+
+    // Garante que a imagem interna preserve a largura total do container
+    if (innerImg) {
+      innerImg.style.width = `${rect.width}px`;
+      innerImg.style.maxWidth = `${rect.width}px`;
+    }
+  };
+
+  // Redimensionamento de janela
+  const syncInnerImgSize = () => {
+    if (innerImg && container) {
+      const rect = container.getBoundingClientRect();
+      innerImg.style.width = `${rect.width}px`;
+      innerImg.style.maxWidth = `${rect.width}px`;
+    }
+  };
+  window.addEventListener('resize', syncInnerImgSize);
+  syncInnerImgSize();
+
+  // Mouse Events
+  container.addEventListener('mousedown', (e) => {
+    isDragging = true;
+    updateSlider(e.clientX);
+  });
+
+  window.addEventListener('mousemove', (e) => {
+    if (!isDragging) return;
+    updateSlider(e.clientX);
+  });
+
+  window.addEventListener('mouseup', () => {
+    isDragging = false;
+  });
+
+  // Touch Events para Celulares
+  container.addEventListener('touchstart', (e) => {
+    if (e.touches.length > 0) {
+      isDragging = true;
+      updateSlider(e.touches[0].clientX);
+    }
+  }, { passive: true });
+
+  window.addEventListener('touchmove', (e) => {
+    if (!isDragging || e.touches.length === 0) return;
+    updateSlider(e.touches[0].clientX);
+  }, { passive: true });
+
+  window.addEventListener('touchend', () => {
+    isDragging = false;
+  });
+}
+
+/**
+ * Lente de Zoom Interativo no Modal
+ */
+function initModalZoom() {
+  const wrapper = document.getElementById('modal-image-wrapper');
+  const img = document.getElementById('modal-image');
+  const badge = document.getElementById('zoom-badge');
+
+  if (!wrapper || !img) return;
+
+  wrapper.addEventListener('click', (e) => {
+    wrapper.classList.toggle('zoomed');
+    const isZoomed = wrapper.classList.contains('zoomed');
+
+    if (badge) {
+      badge.innerHTML = isZoomed 
+        ? '<i data-lucide="zoom-out" class="w-3.5 h-3.5"></i><span>Clique para reduzir</span>' 
+        : '<i data-lucide="zoom-in" class="w-3.5 h-3.5"></i><span>Clique para zoom</span>';
+      if (window.lucide) window.lucide.createIcons();
+    }
+
+    if (isZoomed) {
+      panImage(e);
+    } else {
+      img.style.transformOrigin = 'center center';
+    }
+  });
+
+  const panImage = (e) => {
+    if (!wrapper.classList.contains('zoomed')) return;
+    const rect = wrapper.getBoundingClientRect();
+    const x = ((e.clientX - rect.left) / rect.width) * 100;
+    const y = ((e.clientY - rect.top) / rect.height) * 100;
+    img.style.transformOrigin = `${x}% ${y}%`;
+  };
+
+  wrapper.addEventListener('mousemove', panImage);
+}
+
+/**
+ * Barra Mobile Sticky de Ação Rápida
+ */
+function initMobileStickyBar() {
+  const bar = document.getElementById('mobile-sticky-bar');
+  if (!bar) return;
+
+  window.addEventListener('scroll', () => {
+    if (window.innerWidth >= 640) {
+      bar.classList.remove('visible');
+      return;
+    }
+
+    // Mostra após rolar 350px
+    if (window.scrollY > 350) {
+      bar.classList.add('visible');
+    } else {
+      bar.classList.remove('visible');
+    }
+  });
+}
+
+/**
+ * Cursor Magnético Flutuante (Desktop)
+ */
+function initMagneticCursor() {
+  const cursor = document.getElementById('custom-magnetic-cursor');
+  if (!cursor || window.innerWidth < 1024) return;
+
+  window.addEventListener('mousemove', (e) => {
+    cursor.style.left = `${e.clientX}px`;
+    cursor.style.top = `${e.clientY}px`;
+  });
+
+  // Ativa ao passar sobre os cards da galeria
+  const attachCardListeners = () => {
+    const cards = document.querySelectorAll('.artwork-card');
+    cards.forEach(card => {
+      card.addEventListener('mouseenter', () => {
+        cursor.classList.add('active');
+      });
+      card.addEventListener('mouseleave', () => {
+        cursor.classList.remove('active');
+      });
+    });
+  };
+
+  attachCardListeners();
+  // Observer para reatachar quando os cards forem filtrados
+  const observer = new MutationObserver(attachCardListeners);
+  const grid = document.getElementById('bento-gallery-grid');
+  if (grid) observer.observe(grid, { childList: true });
+}
+
+/**
+ * Botão para Solicitar Dossiê Artístico (PDF)
+ */
+function initDossieDownload() {
+  const btn = document.getElementById('download-dossie-btn');
+  const toast = document.getElementById('toast-notification');
+
+  if (!btn) return;
+
+  btn.addEventListener('click', () => {
+    const msg = encodeURIComponent("Olá, Carlos Pietá! Gostaria de receber o Dossiê Artístico e Portfólio em PDF para apresentação a comissão/diocese/prefeitura.");
+    const waUrl = `https://wa.me/5534999998888?text=${msg}`;
+
+    if (toast) {
+      toast.classList.remove('opacity-0', 'translate-y-4', 'pointer-events-none');
+      toast.classList.add('opacity-100', 'translate-y-0');
+
+      setTimeout(() => {
+        toast.classList.add('opacity-0', 'translate-y-4', 'pointer-events-none');
+        toast.classList.remove('opacity-100', 'translate-y-0');
+      }, 4000);
+    }
+
+    setTimeout(() => {
+      window.open(waUrl, '_blank');
+    }, 800);
+  });
+}
 
 /**
  * Barra de Progresso de Rolagem
@@ -223,7 +450,6 @@ function initCounterStats() {
         const updateCount = (currentTime) => {
           const elapsed = currentTime - startTime;
           const progress = Math.min(elapsed / duration, 1);
-          // Easing ease-out
           const easeProgress = 1 - Math.pow(1 - progress, 3);
           const currentVal = Math.floor(easeProgress * targetNum);
 
@@ -256,6 +482,7 @@ async function initDataSource() {
       const parsedData = parseCsvData(csvText);
       if (parsedData && parsedData.length > 0) {
         ARTWORKS_DATA = parsedData;
+        updateCategoryCounts();
       }
     } catch (err) {
       console.warn('Carregando base local do acervo:', err);
@@ -379,7 +606,6 @@ function renderBentoGrid(filterCategory = 'all') {
     window.lucide.createIcons();
   }
 
-  // Re-observa elementos adicionados dinamicamente
   initScrollReveal();
 }
 
@@ -460,11 +686,21 @@ function initFilterButtons() {
       buttons.forEach(b => {
         b.classList.remove('bg-stone-900', 'text-white', 'shadow-sm');
         b.classList.add('bg-stone-100', 'text-stone-700', 'hover:bg-stone-200');
+        const badge = b.querySelector('span:last-child');
+        if (badge) {
+          badge.classList.remove('bg-white/20', 'text-white');
+          badge.classList.add('bg-stone-300', 'text-stone-800');
+        }
       });
 
       const target = e.currentTarget;
       target.classList.remove('bg-stone-100', 'text-stone-700', 'hover:bg-stone-200');
       target.classList.add('bg-stone-900', 'text-white', 'shadow-sm');
+      const badge = target.querySelector('span:last-child');
+      if (badge) {
+        badge.classList.remove('bg-stone-300', 'text-stone-800');
+        badge.classList.add('bg-white/20', 'text-white');
+      }
 
       const filterValue = target.getAttribute('data-filter') || 'all';
       renderBentoGrid(filterValue);
@@ -479,12 +715,19 @@ function initModalHandlers() {
   const modal = document.getElementById('artwork-modal');
   const closeBtn = document.getElementById('modal-close-btn');
   const backdrop = document.getElementById('modal-backdrop');
+  const wrapper = document.getElementById('modal-image-wrapper');
+  const badge = document.getElementById('zoom-badge');
 
   if (!modal) return;
 
   const closeModal = () => {
     modal.classList.add('hidden');
     document.body.style.overflow = 'auto';
+    if (wrapper) wrapper.classList.remove('zoomed');
+    if (badge) {
+      badge.innerHTML = '<i data-lucide="zoom-in" class="w-3.5 h-3.5"></i><span>Clique para zoom</span>';
+      if (window.lucide) window.lucide.createIcons();
+    }
   };
 
   if (closeBtn) closeBtn.addEventListener('click', closeModal);
@@ -500,6 +743,9 @@ function initModalHandlers() {
 function openArtworkModal(artwork) {
   const modal = document.getElementById('artwork-modal');
   if (!modal) return;
+
+  const wrapper = document.getElementById('modal-image-wrapper');
+  if (wrapper) wrapper.classList.remove('zoomed');
 
   document.getElementById('modal-image').src = artwork.image;
   document.getElementById('modal-image').alt = artwork.title;
