@@ -79,7 +79,7 @@
   <!-- 1. NAVBAR COM LOGO OFICIAL -->
   <!-- ========================================================================= -->
   <header id="main-navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-[#F7F6F2]/90 backdrop-blur-md border-b border-stone-200/60 h-20 flex items-center">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex items-center justify-between">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex items-center justify-between gap-4">
       
       <!-- Logotipo Oficial & Nome -->
       <a href="#hero" class="flex items-center gap-3 group shrink-0">
@@ -94,24 +94,22 @@
         </div>
       </a>
 
-      <!-- Menu Desktop -->
-      <nav class="hidden lg:flex items-center space-x-6 xl:space-x-8 text-xs uppercase tracking-widest font-semibold text-stone-700 whitespace-nowrap">
+      <!-- Menu Desktop Limpo e Harmonioso -->
+      <nav class="hidden xl:flex items-center space-x-5 2xl:space-x-7 text-xs uppercase tracking-wider font-semibold text-stone-700 whitespace-nowrap">
         <a href="#obras" class="hover:text-[#A36A4F] transition-colors py-1 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1.5px] after:bg-[#A36A4F] hover:after:w-full after:transition-all">Obras</a>
         <a href="#comparador" class="hover:text-[#A36A4F] transition-colors py-1 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1.5px] after:bg-[#A36A4F] hover:after:w-full after:transition-all">Antes & Depois</a>
-        <a href="#instagram-feed" class="hover:text-[#A36A4F] transition-colors py-1 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1.5px] after:bg-[#A36A4F] hover:after:w-full after:transition-all">Instagram Feed</a>
         <a href="#processo" class="hover:text-[#A36A4F] transition-colors py-1 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1.5px] after:bg-[#A36A4F] hover:after:w-full after:transition-all">Processo</a>
         <a href="#reconhecimento" class="hover:text-[#A36A4F] transition-colors py-1 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1.5px] after:bg-[#A36A4F] hover:after:w-full after:transition-all">Na Mídia</a>
         <a href="#sobre" class="hover:text-[#A36A4F] transition-colors py-1 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1.5px] after:bg-[#A36A4F] hover:after:w-full after:transition-all">O Artista</a>
         <a href="#faq" class="hover:text-[#A36A4F] transition-colors py-1 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1.5px] after:bg-[#A36A4F] hover:after:w-full after:transition-all">FAQ</a>
-        <a href="#contato" class="hover:text-[#A36A4F] transition-colors py-1 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1.5px] after:bg-[#A36A4F] hover:after:w-full after:transition-all">Contato</a>
       </nav>
 
       <!-- Botões de Ação à Direita -->
-      <div class="hidden sm:flex items-center gap-3 shrink-0">
+      <div class="flex items-center gap-2.5 sm:gap-3 shrink-0">
         <a 
           href="https://www.instagram.com/carlospieta/" 
           target="_blank"
-          class="inline-flex items-center gap-1.5 px-3 py-2 rounded-xl border border-stone-300 bg-white hover:bg-stone-100 text-stone-800 text-xs font-semibold tracking-wide transition-all shadow-sm group"
+          class="inline-flex items-center gap-1.5 px-3 py-2 rounded-xl border border-stone-300 bg-white hover:bg-stone-100 text-stone-800 text-xs font-semibold tracking-wide transition-all shadow-sm group shrink-0"
           title="Instagram @carlospieta"
         >
           <svg class="w-4 h-4 text-stone-700 group-hover:text-[#A36A4F] transition-colors" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -119,29 +117,29 @@
             <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
             <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
           </svg>
-          <span class="hidden md:inline">@carlospieta</span>
+          <span class="hidden sm:inline">@carlospieta</span>
         </a>
 
         <a 
           href="#contato" 
-          class="btn-bronze-metallic inline-flex items-center gap-2 px-4 sm:px-5 py-2.5 rounded-xl text-white text-xs font-semibold uppercase tracking-wider transition-all shadow-sm whitespace-nowrap"
+          class="btn-bronze-metallic inline-flex items-center gap-2 px-3.5 sm:px-4 xl:px-5 py-2 sm:py-2.5 rounded-xl text-white text-xs font-semibold uppercase tracking-wider transition-all shadow-sm whitespace-nowrap shrink-0"
         >
           <span>Solicitar Projeto</span>
-          <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <svg class="w-3.5 h-3.5 hidden sm:inline" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <line x1="5" y1="12" x2="19" y2="12"></line>
             <polyline points="12 5 19 12 12 19"></polyline>
           </svg>
         </a>
-      </div>
 
-      <!-- Botão Menu Mobile -->
-      <button 
-        id="mobile-menu-btn" 
-        class="lg:hidden p-2 rounded-xl border border-stone-200 bg-white text-stone-800 hover:text-[#A36A4F] focus:outline-none shrink-0"
-        aria-label="Abrir Menu"
-      >
-        <i data-lucide="menu" class="w-5 h-5"></i>
-      </button>
+        <!-- Botão Menu Mobile & Telas Menores -->
+        <button 
+          id="mobile-menu-btn" 
+          class="xl:hidden p-2 rounded-xl border border-stone-200 bg-white text-stone-800 hover:text-[#A36A4F] focus:outline-none shrink-0"
+          aria-label="Abrir Menu"
+        >
+          <i data-lucide="menu" class="w-5 h-5"></i>
+        </button>
+      </div>
     </div>
   </header>
 
