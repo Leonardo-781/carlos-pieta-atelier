@@ -1,4 +1,6 @@
-/* Fontes Oficiais da Marca Carlos Pietá */
+/* ========================================================================= */
+/* FONTES OFICIAIS DA MARCA CARLOS PIETÁ                                     */
+/* ========================================================================= */
 @font-face {
   font-family: 'TeX Gyre Termes';
   src: url('fonts/texgyretermes-regular.otf') format('opentype');
@@ -24,6 +26,14 @@
 }
 
 @font-face {
+  font-family: 'TeX Gyre Termes';
+  src: url('fonts/texgyretermes-bolditalic.otf') format('opentype');
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
   font-family: 'Kollektif';
   src: url('fonts/Kollektif.ttf') format('truetype');
   font-weight: 400;
@@ -42,26 +52,27 @@
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
 
 :root {
-  /* Paleta Oficial de Cores do Manual da Marca */
-  --color-bg: #F6EFE3;           /* Color 6: Off-White / Mármore / Pergaminho */
-  --color-dark: #111111;         /* Color 7: Ônix / Grafite Profundo */
-  --color-graphite: #111111;
-  --color-gold: #D4AF37;         /* Color 5: Ouro Real / Dourado Nobre */
-  --color-gold-light: #EAD79A;
-  --color-gold-dark: #A48623;
-  --color-blue-deep: #0D2B7E;    /* Color 1: Azul Imperial / Sacro */
-  --color-blue-royal: #1E49B6;   /* Color 2: Azul Real */
-  --color-patina: #1FA7A6;       /* Color 3: Pátina Turquesa */
-  --color-malachite: #32936F;    /* Color 4: Verde Malaquita */
-  --color-stone-line: rgba(212, 175, 55, 0.25);
-  --color-card-bg: #FFFFFF;
+  /* Paleta Oficial do Manual de Uso (Tons Marrom Nobre & Ouro Real) */
+  --color-bg: #1B1606;           /* Tom Marrom Nobre Profundo do manual (Shade 87.5% da paleta de ouro) */
+  --color-bg-elevated: #241D0D;  /* Tom Marrom Âmbar Escuro para seções e cards */
+  --color-bg-card: #2B2210;      /* Marrom Acobreado profundo */
+  --color-gold: #D4AF37;         /* Ouro Real oficial */
+  --color-gold-light: #EAD79A;   /* Ouro suave / Destaque */
+  --color-gold-dark: #A48623;    /* Bronze / Ouro envelhecido */
+  --color-cream: #F6EFE3;        /* Mármore / Creme oficial da marca */
+  --color-cream-muted: #DFDAD0;  /* Texto de apoio legível */
+  --color-blue-sacred: #0D2B7E;  /* Azul Sacro Imperial oficial */
+  --color-blue-royal: #1E49B6;   /* Azul Real Barroco */
+  --color-patina: #1FA7A6;       /* Pátina Turquesa */
+  --color-malachite: #32936F;    /* Pátina Malaquita */
+  --color-border-gold: rgba(212, 175, 55, 0.22);
 }
 
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 85px;
   background-color: var(--color-bg);
-  color: var(--color-graphite);
+  color: var(--color-cream);
 }
 
 body {
@@ -69,24 +80,25 @@ body {
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   background-color: var(--color-bg);
-  /* Textura de ruído sutil de pergaminho / papel de museu */
-  background-image: radial-gradient(rgba(212, 175, 55, 0.05) 1px, transparent 0);
+  /* Textura de micro-granulação artística sobre o fundo marrom */
+  background-image: radial-gradient(rgba(212, 175, 55, 0.07) 1px, transparent 0);
   background-size: 24px 24px;
+  color: var(--color-cream);
 }
 
-/* Barra de Progresso de Leitura no Topo */
+/* Barra de Progresso de Leitura */
 #scroll-progress {
   position: fixed;
   top: 0;
   left: 0;
   height: 3px;
-  background: linear-gradient(90deg, #D4AF37, #0D2B7E, #D4AF37);
+  background: linear-gradient(90deg, #D4AF37, #0D2B7E, #EAD79A);
   z-index: 100;
   width: 0%;
   transition: width 0.1s ease-out;
 }
 
-/* Tipografia Editorial Oficial */
+/* Tipografia Oficial Aplicada */
 .font-serif-display {
   font-family: 'TeX Gyre Termes', 'Playfair Display', Georgia, serif;
 }
@@ -99,25 +111,25 @@ body {
   font-family: 'Kollektif', 'Plus Jakarta Sans', -apple-system, sans-serif;
 }
 
-/* Suavização de Rolagem e Seleção */
+/* Seleção de Texto em Ouro Real */
 ::selection {
   background-color: #D4AF37;
-  color: #111111;
+  color: #1B1606;
 }
 
-/* Linha Editorial */
+/* Divisores Editoriais Finos */
 .editorial-line {
   height: 1px;
-  background: linear-gradient(90deg, transparent, var(--color-stone-line), transparent);
+  background: linear-gradient(90deg, transparent, var(--color-border-gold), transparent);
 }
 
-/* Sombra Editorial Fina */
+/* Sombras de Profundidade */
 .shadow-editorial {
-  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.05), 0 4px 12px -4px rgba(0, 0, 0, 0.03);
+  box-shadow: 0 12px 36px -10px rgba(0, 0, 0, 0.45), 0 4px 16px -4px rgba(212, 175, 55, 0.08);
 }
 
 .shadow-editorial-hover {
-  box-shadow: 0 20px 40px -15px rgba(212, 175, 55, 0.18), 0 8px 16px -6px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 24px 48px -12px rgba(0, 0, 0, 0.6), 0 8px 24px -4px rgba(212, 175, 55, 0.25);
 }
 
 /* Transições Suaves */
@@ -125,11 +137,13 @@ body {
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* Micro-interação da Imagem no Card & Efeito Shine */
+/* Micro-interação da Imagem no Card & Efeito Shine Dourado */
 .artwork-card {
   position: relative;
   overflow: hidden;
   cursor: pointer;
+  background-color: var(--color-bg-card);
+  border: 1px solid var(--color-border-gold);
 }
 
 .artwork-card::after {
@@ -142,11 +156,11 @@ body {
   background: linear-gradient(
     60deg,
     transparent 40%,
-    rgba(255, 255, 255, 0.18) 50%,
+    rgba(212, 175, 55, 0.22) 50%,
     transparent 60%
   );
   transform: translateX(-100%) rotate(25deg);
-  transition: transform 0.8s ease-in-out;
+  transition: transform 0.85s ease-in-out;
   pointer-events: none;
 }
 
@@ -162,16 +176,19 @@ body {
   transform: scale(1.05);
 }
 
-/* Botões com Pátina Metálica Dourada Oficial */
-.btn-bronze-metallic {
-  background: linear-gradient(135deg, #111111 0%, #1a1a1a 50%, #111111 100%);
+/* Botão em Pátina Dourada Nobre */
+.btn-gold-metallic {
+  background: linear-gradient(135deg, #D4AF37 0%, #BF9C29 50%, #A48623 100%);
+  color: #1B1606;
+  font-weight: 700;
   position: relative;
   overflow: hidden;
   transition: all 0.4s ease;
-  border: 1px solid rgba(212, 175, 55, 0.3);
+  border: 1px solid rgba(212, 175, 55, 0.5);
+  box-shadow: 0 4px 18px rgba(212, 175, 55, 0.25);
 }
 
-.btn-bronze-metallic::before {
+.btn-gold-metallic::before {
   content: '';
   position: absolute;
   top: 0;
@@ -181,25 +198,39 @@ body {
   background: linear-gradient(
     90deg,
     transparent,
-    rgba(212, 175, 55, 0.35),
+    rgba(255, 255, 255, 0.4),
     transparent
   );
   transition: left 0.6s ease;
 }
 
-.btn-bronze-metallic:hover::before {
+.btn-gold-metallic:hover::before {
   left: 100%;
 }
 
-.btn-bronze-metallic:hover {
-  background: linear-gradient(135deg, #D4AF37 0%, #A48623 100%);
-  color: #111111;
+.btn-gold-metallic:hover {
+  background: linear-gradient(135deg, #EAD79A 0%, #D4AF37 100%);
+  transform: translateY(-1px);
+  box-shadow: 0 8px 26px rgba(212, 175, 55, 0.45);
+}
+
+/* Botão Secundário Transparente Dourado */
+.btn-gold-outline {
+  background: rgba(36, 29, 13, 0.6);
+  color: #F6EFE3;
+  border: 1px solid rgba(212, 175, 55, 0.4);
+  backdrop-filter: blur(8px);
+  transition: all 0.35s ease;
+}
+
+.btn-gold-outline:hover {
+  background: rgba(212, 175, 55, 0.15);
   border-color: #D4AF37;
-  box-shadow: 0 10px 25px -5px rgba(212, 175, 55, 0.45);
+  color: #FFFFFF;
 }
 
 /* ========================================================================= */
-/* SLIDER INTERATIVO ANTES & DEPOIS (DO BARRO AO MONUMENTO)                  */
+/* SLIDER INTERATIVO ANTES & DEPOIS (DA ARGILA AO MÁRMORE)                   */
 /* ========================================================================= */
 .before-after-container {
   position: relative;
@@ -209,6 +240,7 @@ body {
   -webkit-user-select: none;
   border-radius: 1.5rem;
   touch-action: pan-y;
+  border: 1px solid var(--color-border-gold);
 }
 
 .before-after-image {
@@ -237,10 +269,10 @@ body {
   bottom: 0;
   left: 50%;
   width: 3px;
-  background-color: #FFFFFF;
+  background-color: #D4AF37;
   cursor: ew-resize;
   z-index: 20;
-  box-shadow: 0 0 12px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 16px rgba(212, 175, 55, 0.7);
   transform: translateX(-50%);
   will-change: left;
 }
@@ -253,12 +285,12 @@ body {
   width: 44px;
   height: 44px;
   border-radius: 50%;
-  background: #FFFFFF;
-  color: #111111;
+  background: #1B1606;
+  color: #D4AF37;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.6);
   border: 2px solid #D4AF37;
   transition: transform 0.2s ease, background-color 0.2s ease;
 }
@@ -266,7 +298,7 @@ body {
 .before-after-handle:hover .before-after-circle,
 .before-after-handle:active .before-after-circle {
   transform: translate(-50%, -50%) scale(1.1);
-  background: #F6EFE3;
+  background: #2B2210;
 }
 
 /* ========================================================================= */
@@ -291,9 +323,9 @@ body {
   position: absolute;
   bottom: 1rem;
   right: 1rem;
-  background: rgba(17, 17, 17, 0.85);
+  background: rgba(27, 22, 6, 0.85);
   backdrop-filter: blur(8px);
-  color: #FFFFFF;
+  color: #EAD79A;
   font-size: 0.7rem;
   padding: 0.35rem 0.75rem;
   border-radius: 9999px;
@@ -302,7 +334,6 @@ body {
   gap: 0.35rem;
   pointer-events: none;
   border: 1px solid rgba(212, 175, 55, 0.3);
-  transition: opacity 0.3s ease;
 }
 
 /* ========================================================================= */
@@ -312,6 +343,8 @@ body {
   transform: translateY(110%);
   transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   padding-bottom: max(0.75rem, env(safe-area-inset-bottom));
+  background: rgba(27, 22, 6, 0.96);
+  border-top: 1px solid rgba(212, 175, 55, 0.25);
 }
 
 #mobile-sticky-bar.visible {
@@ -328,9 +361,9 @@ body {
   width: 80px;
   height: 80px;
   border-radius: 50%;
-  background: rgba(212, 175, 55, 0.9);
-  color: #111111;
-  font-size: 0.7rem;
+  background: rgba(212, 175, 55, 0.92);
+  color: #1B1606;
+  font-size: 0.68rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.08em;
@@ -369,25 +402,26 @@ body {
   color: #D4AF37;
 }
 
-/* Scrollbar Customizada Estilo Galeria */
+/* Scrollbar Customizada em Ouro e Marrom Nobre */
 ::-webkit-scrollbar {
   width: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #F6EFE3;
+  background: #1B1606;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #D4AF37;
+  background: #372D0C;
+  border: 1px solid rgba(212, 175, 55, 0.3);
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #A48623;
+  background: #D4AF37;
 }
 
-/* Aspas Editoriais Gigantes */
+/* Aspas Editoriais em Ouro */
 .quote-mark {
   font-family: 'TeX Gyre Termes', 'Cormorant Garamond', Georgia, serif;
   line-height: 0.7;
@@ -406,8 +440,8 @@ body {
   transform: translateY(0);
 }
 
-/* Botão Flutuante de WhatsApp com Pulso Suave */
-@keyframes pulse-subtle {
+/* Botão Flutuante de WhatsApp */
+@keyframes pulse-gold {
   0% {
     box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.4);
   }
@@ -420,10 +454,10 @@ body {
 }
 
 .floating-whatsapp {
-  animation: pulse-subtle 2.5s infinite;
+  animation: pulse-gold 2.5s infinite;
 }
 
-/* Assinatura do Artista estilizada em pátina */
+/* Assinatura Caligráfica Oficial */
 .artist-signature-text {
   font-family: 'Cormorant Garamond', 'TeX Gyre Termes', Georgia, serif;
   font-style: italic;

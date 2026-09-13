@@ -8,6 +8,7 @@
  * - Cursor Magnético Personalizado (Desktop)
  * - Contadores Dinâmicos de Categorias
  * - Scroll Reveal & Contadores Numéricos
+ * - Paleta Nobre Marrom & Dourado Oficial da Marca
  */
 
 const GOOGLE_SHEET_CSV_URL = ''; // Para sincronização remota via Google Sheets / Drive
@@ -18,15 +19,15 @@ let ARTWORKS_DATA = [
     id: 'doze-apostolos-romaria',
     title: 'Conjunto Monumental dos 12 Apóstolos',
     category: 'monumentos',
-    categoryLabel: 'Monumento de Praça',
+    categoryLabel: 'Monumento de Esplanada',
     year: '2024',
     city: 'Romaria, MG',
     location: 'Esplanada do Santuário Basílica de N. Sra. da Abadia',
-    material: 'Resina Estrutural com Fibra de Vidro e Acabamento Marmorizado Nobre',
+    material: 'Resina Estrutural com Fibra de Vidro de Alta Densidade e Acabamento Marmorizado Nobre',
     dimensions: '2,60m de altura cada (Conjunto de 12 esculturas)',
     weight: '300 kg cada (~3.600 kg total)',
     image: 'images/carlos-pieta-apostolos-luz.png',
-    description: 'Conjunto escultórico monumental composto pelos 12 apóstolos de Cristo, instalado na praça principal para acolhimento de mais de 500 mil peregrinos anuais. Inspirado no barroco italiano e nas célebres estátuas da Arquibasílica de São João de Latrão em Roma. Esculpido com panejamentos expressivos e acabamento marmorizado de altíssima durabilidade contra intempéries.',
+    description: 'Conjunto escultórico monumental composto pelos doze apóstolos de Cristo, concebido para acolhimento canônico e cívico de mais de 500 mil peregrinos anuais. Inspirado no barroco italiano e nas célebres estátuas monumentais da Arquibasílica de São João de Latrão em Roma. Esculpido com panejamentos expressivos, rigor anatômico e acabamento marmorizado de altíssima durabilidade contra intempéries e radiação solar.',
     commissioner: 'Santuário Basílica de Nossa Senhora da Abadia & Diocese',
     featured: true,
     aspect: 'large'
@@ -35,15 +36,15 @@ let ARTWORKS_DATA = [
     id: 'praca-santuario-romaria-aerea',
     title: 'Esplanada Cívica e Sacra de Romaria',
     category: 'monumentos',
-    categoryLabel: 'Instalação Urbana / Monumento',
+    categoryLabel: 'Instalação Urbana & Paisagística',
     year: '2024',
     city: 'Romaria, MG',
     location: 'Praça Central do Santuário Basílica',
-    material: 'Conjunto em Resina Estrutural Marmorizada sobre Bases Cívicas',
+    material: 'Conjunto em Resina Estrutural Marmorizada sobre Bases Cívicas Graníticas',
     dimensions: 'Esplanada circular monumental',
-    weight: 'Conjunto completo',
+    weight: 'Conjunto estatuário completo',
     image: 'images/hero-romaria-aerea.jpg',
-    description: 'Vista aérea do complexo arquitetônico e urbanístico acolhendo as 12 esculturas dos Apóstolos e dos Arcanjos ao redor da esplanada, integrando o patrimônio histórico e a devoção popular do Triângulo Mineiro.',
+    description: 'Perspectiva aérea do complexo arquitetônico e urbanístico acolhendo as 12 esculturas dos Apóstolos ao redor da esplanada da Basílica, integrando o patrimônio histórico, a monumentalidade barroca e a identidade do Triângulo Mineiro.',
     commissioner: 'Prefeitura Municipal & Santuário Basílica',
     featured: false,
     aspect: 'wide'
@@ -52,16 +53,16 @@ let ARTWORKS_DATA = [
     id: 'vitrais-arte-sacra-minas',
     title: 'Vitral Sacro Tradicional & Composição Clássica',
     category: 'vitrais',
-    categoryLabel: 'Vitrais Clássicos',
+    categoryLabel: 'Vitrais Clássicos & Queima a Fogo',
     year: '2023',
     city: 'Minas Gerais',
     location: 'Templos e Santuários Tradicionais',
-    material: 'Vidro Nobre Colorido, Chumbo Estrutural e Grisalha Queimada a Fogo (600°C)',
-    dimensions: 'Formatos Variados sob Medida',
-    weight: 'Conforme projeto arquitetônico',
+    material: 'Vidro Nobre Policromático, Chumbo Estrutural e Grisalha Queimada a Fogo (600°C)',
+    dimensions: 'Execução sob medida para vãos arquitetônicos',
+    weight: 'Conforme cálculo estrutural',
     image: 'images/vitral-pieta-minas.png',
-    description: 'Criação e restauração de vitrais clássicos que banham os ambientes com feixes luminosos policromáticos. Composições com brasão histórico e figuras sacras produzidas segundo a tradição milenar das catedrais europeias.',
-    commissioner: 'Curadorias Sacras e Arquitetura Tradicional',
+    description: 'Criação e restauração de vitrais clássicos segundo a tradição milenar das catedrais europeias. Filtragem lumínica cênica projetada para iluminar o altar-mor com simbologias litúrgicas e heráldicas religiosas de alta precisão cromática.',
+    commissioner: 'Curadorias Sacras e Arquitetura Eclesiástica',
     featured: false,
     aspect: 'tall'
   },
@@ -69,32 +70,32 @@ let ARTWORKS_DATA = [
     id: 'modelagem-cristo-atelie',
     title: 'Busto Monumental do Cristo em Argila',
     category: 'monumentos',
-    categoryLabel: 'Modelagem Clássica & Busto',
+    categoryLabel: 'Modelagem Autoral & Busto',
     year: '2023',
     city: 'Ateliê Carlos Pietá',
-    location: 'Acervo do Ateliê & Coleções',
-    material: 'Modelagem Original em Argila Terracota / Fundição em Resina e Bronze',
+    location: 'Acervo do Ateliê & Coleções Privadas',
+    material: 'Modelagem Original em Argila Terracota / Fundição Estrutural',
     dimensions: 'Escala 1:1 e Heroica',
-    weight: 'Conforme fundição',
+    weight: 'Conforme fundição e matéria',
     image: 'images/carlos-pieta-esculpindo.png',
-    description: 'Processo minucioso de escultura e anatomia clássica realizado diretamente pelo artista plástico Carlos Pietá. Modelagem manual em argila viva com expressividade fisionômica e panejamentos refinados.',
-    commissioner: 'Ateliê Carlos Pietá & Comissões Cívicas',
+    description: 'Processo minucioso de escultura e anatomia clássica realizado diretamente pelas mãos de Carlos Pietá. Modelagem manual em argila viva, com expressividade fisionômica, serenidade fisionômica e panejamentos refinados.',
+    commissioner: 'Ateliê Carlos Pietá & Coleções Particulares',
     featured: false,
     aspect: 'normal'
   },
   {
     id: 'tres-arcanjos-miguel-gabriel-rafael',
-    title: 'Tríade dos Arcanjos (Miguel, Gabriel e Rafael)',
+    title: 'Tríade dos Santos Arcanjos (Miguel, Gabriel e Rafael)',
     category: 'monumentos',
-    categoryLabel: 'Esculturas Monumentais',
+    categoryLabel: 'Esculturas Monumentais Aladas',
     year: '2022',
     city: 'Monte Carmelo / Romaria, MG',
     location: 'Praça do Rosário & Santuário',
-    material: 'Resina Estrutural de Alta Densidade e Pátina Clássica',
-    dimensions: '3,00m de envergadura com asas',
-    weight: '380 kg cada',
+    material: 'Resina Estrutural de Alta Densidade com Pátina Clássica',
+    dimensions: '3,00m de envergadura com asas esculpidas',
+    weight: '380 kg cada escultura',
     image: 'images/arcanjos-monumento.jpg',
-    description: 'Esculturas monumentais com detalhes anatômicos e asas esculpidas em proporção clássica. A representação de São Miguel com a espada da justiça e os arcanjos guardiões dialoga harmoniosamente com a arquitetura tradicional e a fé popular.',
+    description: 'Esculturas monumentais com detalhes anatômicos e asas esculpidas em proporção clássica. A representação de São Miguel com a espada da justiça e os arcanjos guardiões dialoga harmoniosamente com o patrimônio histórico e a arquitetura das cidades mineiras.',
     commissioner: 'Comissão Cívica e Religiosa Municipal',
     featured: false,
     aspect: 'normal'
@@ -106,12 +107,12 @@ let ARTWORKS_DATA = [
     categoryLabel: 'Arte Sacra & Patrimônio',
     year: '2024',
     city: 'Minas Gerais',
-    location: 'Santuários e Catedrais',
-    material: 'Técnicas Mistas, Esculturas Barrocas e Douramento Clássico',
+    location: 'Santuários e Catedrais Históricas',
+    material: 'Técnicas Mistas, Esculturas Barrocas e Douramento Clássico em Folha',
     dimensions: 'Projetos Arquitetônicos e de Fachada',
-    weight: 'Integrado à estrutura',
+    weight: 'Integrado à alvenaria',
     image: 'images/carlos-pieta-altar-basilica.png',
-    description: 'Estudos e intervenções escultóricas integradas ao altar-mor e à arquitetura clássica dos templos históricos, harmonizando proporções barrocas e iluminação cênica.',
+    description: 'Estudos e intervenções escultóricas integradas ao altar-mor e à arquitetura clássica dos templos, harmonizando proporções do barroco mineiro e iluminação litúrgica.',
     commissioner: 'Dioceses e Ordens Religiosas',
     featured: false,
     aspect: 'wide'
@@ -131,7 +132,7 @@ const INSTAGRAM_FEED_DATA = [
   {
     id: 'ig-post-2',
     image: 'images/carlos-pieta-esculpindo.png',
-    caption: 'Modelagem direta em argila. Cada traço facial e textura da barba exigem silêncio, precisão anatômica e entrega.',
+    caption: 'Modelagem direta em argila viva. Cada traço facial e textura da barba exigem silêncio, precisão anatômica e entrega estética.',
     likes: '1.980',
     comments: '98',
     url: 'https://www.instagram.com/carlospieta/'
@@ -139,7 +140,7 @@ const INSTAGRAM_FEED_DATA = [
   {
     id: 'ig-post-3',
     image: 'images/vitral-pieta-minas.png',
-    caption: 'A magia dos vitrais: quando a luz do sol da tarde atravessa os vidros coloridos e projeta as cores sagradas sobre o altar.',
+    caption: 'A nobreza dos vitrais: quando a luz natural do entardecer atravessa os vidros coloridos e projeta as cores litúrgicas sobre a nave da igreja.',
     likes: '1.630',
     comments: '74',
     url: 'https://www.instagram.com/carlospieta/'
@@ -147,7 +148,7 @@ const INSTAGRAM_FEED_DATA = [
   {
     id: 'ig-post-4',
     image: 'images/hero-romaria-aerea.jpg',
-    caption: 'Vista aérea da Basílica de Romaria com as 12 esculturas acolhendo os peregrinos na esplanada. Gratidão a todos!',
+    caption: 'Vista aérea do Santuário Basílica de Romaria com as 12 esculturas acolhendo os peregrinos na esplanada. Gratidão a todos!',
     likes: '3.120',
     comments: '210',
     url: 'https://www.instagram.com/carlospieta/'
@@ -197,7 +198,7 @@ function updateCategoryCounts() {
 }
 
 /**
- * Slider Interativo Antes & Depois (Do Barro ao Monumento)
+ * Slider Interativo Antes & Depois (Da Argila ao Mármore)
  */
 function initBeforeAfterSlider() {
   const container = document.getElementById('before-after-slider');
@@ -214,21 +215,18 @@ function initBeforeAfterSlider() {
     let offsetX = clientX - rect.left;
     let percentage = (offsetX / rect.width) * 100;
 
-    // Limites de segurança entre 3% e 97%
     if (percentage < 3) percentage = 3;
     if (percentage > 97) percentage = 97;
 
     overlay.style.width = `${percentage}%`;
     handle.style.left = `${percentage}%`;
 
-    // Garante que a imagem interna preserve a largura total do container
     if (innerImg) {
       innerImg.style.width = `${rect.width}px`;
       innerImg.style.maxWidth = `${rect.width}px`;
     }
   };
 
-  // Redimensionamento de janela
   const syncInnerImgSize = () => {
     if (innerImg && container) {
       const rect = container.getBoundingClientRect();
@@ -254,7 +252,7 @@ function initBeforeAfterSlider() {
     isDragging = false;
   });
 
-  // Touch Events para Celulares
+  // Touch Events
   container.addEventListener('touchstart', (e) => {
     if (e.touches.length > 0) {
       isDragging = true;
@@ -289,7 +287,7 @@ function initModalZoom() {
     if (badge) {
       badge.innerHTML = isZoomed 
         ? '<i data-lucide="zoom-out" class="w-3.5 h-3.5"></i><span>Clique para reduzir</span>' 
-        : '<i data-lucide="zoom-in" class="w-3.5 h-3.5"></i><span>Clique para zoom</span>';
+        : '<i data-lucide="zoom-in" class="w-3.5 h-3.5"></i><span>Examinar detalhes</span>';
       if (window.lucide) window.lucide.createIcons();
     }
 
@@ -324,7 +322,6 @@ function initMobileStickyBar() {
       return;
     }
 
-    // Mostra após rolar 350px
     if (window.scrollY > 350) {
       bar.classList.add('visible');
     } else {
@@ -345,7 +342,6 @@ function initMagneticCursor() {
     cursor.style.top = `${e.clientY}px`;
   });
 
-  // Ativa ao passar sobre os cards da galeria
   const attachCardListeners = () => {
     const cards = document.querySelectorAll('.artwork-card');
     cards.forEach(card => {
@@ -359,14 +355,13 @@ function initMagneticCursor() {
   };
 
   attachCardListeners();
-  // Observer para reatachar quando os cards forem filtrados
   const observer = new MutationObserver(attachCardListeners);
   const grid = document.getElementById('bento-gallery-grid');
   if (grid) observer.observe(grid, { childList: true });
 }
 
 /**
- * Botão para Solicitar Dossiê Artístico (PDF)
+ * Botão para Solicitar Dossiê Institucional (PDF)
  */
 function initDossieDownload() {
   const btn = document.getElementById('download-dossie-btn');
@@ -375,7 +370,7 @@ function initDossieDownload() {
   if (!btn) return;
 
   btn.addEventListener('click', () => {
-    const msg = encodeURIComponent("Olá, Carlos Pietá! Gostaria de receber o Dossiê Artístico e Portfólio em PDF para apresentação a comissão/diocese/prefeitura.");
+    const msg = encodeURIComponent("Prezado Carlos Pietá, saudações. Gostaria de solicitar o Dossiê Institucional e Portfólio Técnico em PDF para apresentação a conselho curatorial/diocese/órgão público.");
     const waUrl = `https://wa.me/5534999998888?text=${msg}`;
 
     if (toast) {
@@ -409,7 +404,7 @@ function initScrollProgress() {
 }
 
 /**
- * Animação de Scroll Reveal (Intersection Observer)
+ * Animação de Scroll Reveal
  */
 function initScrollReveal() {
   const revealElements = document.querySelectorAll('.reveal');
@@ -512,7 +507,7 @@ function parseCsvData(csvText) {
 }
 
 /**
- * Renderização dinâmica da Bento Grid com suporte a filtros
+ * Renderização dinâmica da Bento Grid com suporte a filtros e paleta marrom nobre
  */
 function renderBentoGrid(filterCategory = 'all') {
   const container = document.getElementById('bento-gallery-grid');
@@ -543,11 +538,11 @@ function renderBentoGrid(filterCategory = 'all') {
     }
 
     const card = document.createElement('div');
-    card.className = `${colSpanClass} artwork-card group rounded-2xl bg-white border border-stone-200/80 shadow-editorial hover:shadow-editorial-hover transition-editorial flex flex-col justify-between overflow-hidden relative reveal`;
+    card.className = `${colSpanClass} artwork-card group rounded-2xl bg-[#241D0D] border border-[#D4AF37]/25 shadow-editorial hover:shadow-editorial-hover transition-editorial flex flex-col justify-between overflow-hidden relative reveal`;
     card.setAttribute('data-id', art.id);
 
     card.innerHTML = `
-      <div class="relative w-full ${heightClass} overflow-hidden bg-stone-100">
+      <div class="relative w-full ${heightClass} overflow-hidden bg-[#1B1606]">
         <!-- Imagem com Zoom Editorial -->
         <img 
           src="${art.image}" 
@@ -556,39 +551,39 @@ function renderBentoGrid(filterCategory = 'all') {
           class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out"
         />
         
-        <!-- Gradiente de Contraste e Legibilidade -->
-        <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-black/10 opacity-70 group-hover:opacity-85 transition-opacity duration-500"></div>
+        <!-- Gradiente em Marrom Escuro & Ouro -->
+        <div class="absolute inset-0 bg-gradient-to-t from-[#1B1606]/95 via-[#1B1606]/40 to-black/10 opacity-80 group-hover:opacity-90 transition-opacity duration-500"></div>
 
         <!-- Badges Superiores -->
         <div class="absolute top-4 left-4 right-4 flex items-center justify-between pointer-events-none">
-          <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/90 backdrop-blur-md text-stone-900 text-xs font-semibold tracking-wider uppercase shadow-sm">
-            <span class="w-1.5 h-1.5 rounded-full bg-[#A36A4F]"></span>
-            ${art.categoryLabel || 'Obra Monumental'}
+          <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#1B1606]/85 backdrop-blur-md text-[#EAD79A] text-xs font-semibold tracking-wider uppercase border border-[#D4AF37]/30 shadow-sm">
+            <span class="w-1.5 h-1.5 rounded-full bg-[#D4AF37]"></span>
+            ${art.categoryLabel || 'Obra de Acervo'}
           </span>
-          <span class="px-2.5 py-1 rounded-full bg-black/60 backdrop-blur-md text-stone-200 text-xs font-medium">
+          <span class="px-2.5 py-1 rounded-full bg-black/60 backdrop-blur-md text-[#DFDAD0] text-xs font-medium border border-white/10">
             ${art.year || '2024'}
           </span>
         </div>
 
         <!-- Informações Inferiores do Card -->
         <div class="absolute bottom-0 left-0 right-0 p-6 text-white flex flex-col justify-end">
-          <div class="flex items-center gap-2 text-xs text-stone-300 font-medium mb-1.5">
-            <i data-lucide="map-pin" class="w-3.5 h-3.5 text-[#A36A4F]"></i>
+          <div class="flex items-center gap-2 text-xs text-[#EAD79A] font-medium mb-1.5">
+            <i data-lucide="map-pin" class="w-3.5 h-3.5 text-[#D4AF37]"></i>
             <span>${art.location || ''} • ${art.city || ''}</span>
           </div>
 
-          <h3 class="text-xl lg:text-2xl font-serif-display font-medium text-white mb-2 leading-tight group-hover:text-[#E8C5B0] transition-colors">
+          <h3 class="text-xl lg:text-2xl font-serif-display font-medium text-[#F6EFE3] mb-2 leading-tight group-hover:text-[#D4AF37] transition-colors">
             ${art.title}
           </h3>
 
-          <div class="flex flex-wrap items-center justify-between gap-2 pt-3 border-t border-white/20 text-xs text-stone-300">
+          <div class="flex flex-wrap items-center justify-between gap-2 pt-3 border-t border-[#D4AF37]/20 text-xs text-[#DFDAD0]">
             <span class="truncate max-w-[70%] font-light">
-              <strong class="font-medium text-white/90">Material:</strong> ${art.material || 'Resina Estrutural Marmorizada'}
+              <strong class="font-medium text-[#F6EFE3]">Matéria:</strong> ${art.material || 'Resina Estrutural Marmorizada'}
             </span>
             
-            <span class="inline-flex items-center gap-1 text-white font-medium group-hover:translate-x-1 transition-transform">
-              <span>Detalhes</span>
-              <i data-lucide="arrow-up-right" class="w-4 h-4 text-[#A36A4F]"></i>
+            <span class="inline-flex items-center gap-1 text-[#D4AF37] font-medium group-hover:translate-x-1 transition-transform">
+              <span>Catalogação</span>
+              <i data-lucide="arrow-up-right" class="w-4 h-4 text-[#D4AF37]"></i>
             </span>
           </div>
         </div>
@@ -622,19 +617,19 @@ function renderInstagramFeed() {
     const card = document.createElement('a');
     card.href = post.url;
     card.target = '_blank';
-    card.className = 'group relative rounded-2xl overflow-hidden bg-stone-900 border border-stone-200/80 shadow-editorial hover:shadow-xl transition-all duration-300 block reveal';
+    card.className = 'group relative rounded-2xl overflow-hidden bg-[#241D0D] border border-[#D4AF37]/25 shadow-editorial hover:shadow-editorial-hover transition-all duration-300 block reveal';
 
     card.innerHTML = `
-      <div class="relative h-72 w-full overflow-hidden">
+      <div class="relative h-72 w-full overflow-hidden bg-[#1B1606]">
         <img 
           src="${post.image}" 
           alt="Post Instagram Carlos Pietá" 
           class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
         />
-        <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-60 group-hover:opacity-90 transition-opacity duration-300"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-[#1B1606]/95 via-[#1B1606]/45 to-transparent opacity-70 group-hover:opacity-90 transition-opacity duration-300"></div>
         
         <!-- Ícone do Instagram no topo -->
-        <div class="absolute top-3.5 right-3.5 w-8 h-8 rounded-full bg-black/50 backdrop-blur-md flex items-center justify-center text-white">
+        <div class="absolute top-3.5 right-3.5 w-8 h-8 rounded-full bg-black/60 backdrop-blur-md flex items-center justify-center text-[#D4AF37] border border-[#D4AF37]/30">
           <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
             <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
@@ -644,23 +639,23 @@ function renderInstagramFeed() {
 
         <!-- Conteúdo do Post -->
         <div class="absolute bottom-0 left-0 right-0 p-5 text-white flex flex-col justify-end">
-          <p class="text-xs text-stone-200 line-clamp-2 font-light leading-relaxed mb-3">
+          <p class="text-xs text-[#DFDAD0] line-clamp-2 font-light leading-relaxed mb-3">
             ${post.caption}
           </p>
 
-          <div class="flex items-center justify-between text-[11px] text-[#E8C5B0] font-semibold border-t border-white/20 pt-2.5">
+          <div class="flex items-center justify-between text-[11px] text-[#EAD79A] font-semibold border-t border-[#D4AF37]/20 pt-2.5">
             <div class="flex items-center gap-3">
-              <span class="flex items-center gap-1">
+              <span class="flex items-center gap-1 text-[#DFDAD0]">
                 <i data-lucide="heart" class="w-3.5 h-3.5 text-red-400 fill-red-400"></i>
                 ${post.likes}
               </span>
-              <span class="flex items-center gap-1">
+              <span class="flex items-center gap-1 text-[#DFDAD0]">
                 <i data-lucide="message-circle" class="w-3.5 h-3.5"></i>
                 ${post.comments}
               </span>
             </div>
-            <span class="inline-flex items-center gap-1 text-white group-hover:text-[#E8C5B0] transition-colors">
-              <span>Ver no App</span>
+            <span class="inline-flex items-center gap-1 text-[#D4AF37] group-hover:text-white transition-colors">
+              <span>Ver Registro</span>
               <i data-lucide="external-link" class="w-3 h-3"></i>
             </span>
           </div>
@@ -684,22 +679,22 @@ function initFilterButtons() {
   buttons.forEach(btn => {
     btn.addEventListener('click', (e) => {
       buttons.forEach(b => {
-        b.classList.remove('bg-stone-900', 'text-white', 'shadow-sm');
-        b.classList.add('bg-stone-100', 'text-stone-700', 'hover:bg-stone-200');
+        b.classList.remove('bg-[#D4AF37]', 'text-[#1B1606]', 'shadow-md');
+        b.classList.add('bg-[#241D0D]', 'text-[#EAD79A]', 'hover:bg-[#2B2210]', 'border-[#D4AF37]/25');
         const badge = b.querySelector('span:last-child');
         if (badge) {
-          badge.classList.remove('bg-white/20', 'text-white');
-          badge.classList.add('bg-stone-300', 'text-stone-800');
+          badge.classList.remove('bg-[#1B1606]/25', 'text-[#1B1606]');
+          badge.classList.add('bg-[#1B1606]', 'text-[#EAD79A]');
         }
       });
 
       const target = e.currentTarget;
-      target.classList.remove('bg-stone-100', 'text-stone-700', 'hover:bg-stone-200');
-      target.classList.add('bg-stone-900', 'text-white', 'shadow-sm');
+      target.classList.remove('bg-[#241D0D]', 'text-[#EAD79A]', 'hover:bg-[#2B2210]');
+      target.classList.add('bg-[#D4AF37]', 'text-[#1B1606]', 'shadow-md');
       const badge = target.querySelector('span:last-child');
       if (badge) {
-        badge.classList.remove('bg-stone-300', 'text-stone-800');
-        badge.classList.add('bg-white/20', 'text-white');
+        badge.classList.remove('bg-[#1B1606]', 'text-[#EAD79A]');
+        badge.classList.add('bg-[#1B1606]/25', 'text-[#1B1606]');
       }
 
       const filterValue = target.getAttribute('data-filter') || 'all';
@@ -709,7 +704,7 @@ function initFilterButtons() {
 }
 
 /**
- * Modal / Lightbox Interativo com Ficha Técnica Completa
+ * Modal / Lightbox Interativo com Ficha Museográfica Completa
  */
 function initModalHandlers() {
   const modal = document.getElementById('artwork-modal');
@@ -725,7 +720,7 @@ function initModalHandlers() {
     document.body.style.overflow = 'auto';
     if (wrapper) wrapper.classList.remove('zoomed');
     if (badge) {
-      badge.innerHTML = '<i data-lucide="zoom-in" class="w-3.5 h-3.5"></i><span>Clique para zoom</span>';
+      badge.innerHTML = '<i data-lucide="zoom-in" class="w-3.5 h-3.5"></i><span>Examinar detalhes</span>';
       if (window.lucide) window.lucide.createIcons();
     }
   };
@@ -749,19 +744,19 @@ function openArtworkModal(artwork) {
 
   document.getElementById('modal-image').src = artwork.image;
   document.getElementById('modal-image').alt = artwork.title;
-  document.getElementById('modal-category').innerText = artwork.categoryLabel || 'Obra de Acervo';
+  document.getElementById('modal-category').innerText = artwork.categoryLabel || 'Obra Catalogada';
   document.getElementById('modal-year').innerText = artwork.year || '2024';
   document.getElementById('modal-title').innerText = artwork.title;
   document.getElementById('modal-location').innerText = `${artwork.location || ''}, ${artwork.city || ''}`;
   document.getElementById('modal-material').innerText = artwork.material || 'Resina Estrutural Marmorizada';
-  document.getElementById('modal-dimensions').innerText = artwork.dimensions || 'Grande Porte';
-  document.getElementById('modal-weight').innerText = artwork.weight || 'Sob Consulta';
-  document.getElementById('modal-commissioner').innerText = artwork.commissioner || 'Santuário / Prefeitura';
+  document.getElementById('modal-dimensions').innerText = artwork.dimensions || 'Escala Monumental';
+  document.getElementById('modal-weight').innerText = artwork.weight || 'Sob Consulta Técnica';
+  document.getElementById('modal-commissioner').innerText = artwork.commissioner || 'Santuário / Diocese / Prefeitura';
   document.getElementById('modal-description').innerText = artwork.description || '';
 
   const modalCta = document.getElementById('modal-whatsapp-cta');
   if (modalCta) {
-    const message = encodeURIComponent(`Olá, Carlos Pietá (@carlospieta). Gostaria de solicitar informações e orçamento para um projeto artístico na linha de "${artwork.title}" (${artwork.city}).`);
+    const message = encodeURIComponent(`Prezado Carlos Pietá, saudações institucionais. Gostaria de solicitar informações técnicas e consultoria curatorial sobre um projeto escultórico na linha de "${artwork.title}" (${artwork.city}).`);
     modalCta.href = `https://wa.me/5534999998888?text=${message}`;
   }
 
@@ -799,10 +794,10 @@ function initNavbarScroll() {
 
   window.addEventListener('scroll', () => {
     if (window.scrollY > 40) {
-      navbar.classList.add('shadow-md', 'bg-[#F7F6F2]/95', 'border-stone-200/80');
+      navbar.classList.add('shadow-xl', 'bg-[#1B1606]/95', 'border-[#D4AF37]/25');
       navbar.classList.remove('border-transparent');
     } else {
-      navbar.classList.remove('shadow-md', 'bg-[#F7F6F2]/95', 'border-stone-200/80');
+      navbar.classList.remove('shadow-xl', 'bg-[#1B1606]/95', 'border-[#D4AF37]/25');
       navbar.classList.add('border-transparent');
     }
   });
@@ -836,7 +831,7 @@ function initMobileMenu() {
 }
 
 /**
- * Formulário de Briefing & WhatsApp
+ * Formulário Institucional de Protocolo Curatorial & WhatsApp
  */
 function initBriefingForm() {
   const form = document.getElementById('briefing-form');
@@ -849,18 +844,18 @@ function initBriefingForm() {
 
     const name = document.getElementById('form-name')?.value.trim() || '';
     const org = document.getElementById('form-org')?.value.trim() || 'Particular';
-    const projectType = document.getElementById('form-type')?.value || 'Monumento de Praça';
-    const city = document.getElementById('form-city')?.value.trim() || 'Não especificada';
-    const deadline = document.getElementById('form-deadline')?.value || 'Sem prazo fixado';
+    const projectType = document.getElementById('form-type')?.value || 'Monumento de Esplanada';
+    const city = document.getElementById('form-city')?.value.trim() || 'Não informada';
+    const deadline = document.getElementById('form-deadline')?.value || 'A definir em comissão';
     const messageText = document.getElementById('form-message')?.value.trim() || '';
 
-    const fullMessage = `🏛️ *SOLICITAÇÃO DE BRIEFING ARTÍSTICO - CARLOS PIETÁ (@carlospieta)*\n\n` +
+    const fullMessage = `🏛️ *PROTOCOLO DE CONSULTA CURATORIAL - ATELIÊ CARLOS PIETÁ*\n\n` +
       `👤 *Responsável:* ${name} (${org})\n` +
-      `📍 *Localização pretendida:* ${city}\n` +
-      `🎨 *Tipo de Projeto:* ${projectType}\n` +
-      `⏳ *Previsão/Prazo:* ${deadline}\n\n` +
-      `📝 *Detalhes da Proposta:*\n${messageText}\n\n` +
-      `_Enviado via portfólio oficial de Carlos Pietá._`;
+      `📍 *Localidade da Instalação:* ${city}\n` +
+      `🎨 *Tipologia do Projeto:* ${projectType}\n` +
+      `⏳ *Cronograma Previsto:* ${deadline}\n\n` +
+      `📝 *Memorial Descritivo Preliminar:*\n${messageText}\n\n` +
+      `_Protocolado via canal institucional oficial de Carlos Pietá._`;
 
     const waUrl = `https://wa.me/5534999998888?text=${encodeURIComponent(fullMessage)}`;
     
