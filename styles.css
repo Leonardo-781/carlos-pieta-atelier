@@ -55,7 +55,7 @@
   /* Paleta Oficial do Manual - Tom Creme Pergaminho puxado para Marrom (#E8D6B7) */
   --color-bg: #EBDBC2;           /* Bege Acastanhado / Areia Nobre Travertino (Shade 12.5% do manual) */
   --color-bg-alt: #E3D0B4;       /* Tom levemente mais encorpado para seções alternadas */
-  --color-bg-card: #FFFFFF;      /* Branco Mármore para contraste nítido nos cards */
+  --color-bg-card: #F4E9D9;      /* Branco Mármore para contraste nítido nos cards */
   --color-dark: #1A1612;         /* Ônix Castanho Profundo para Tipografia */
   --color-gold: #D4AF37;         /* Ouro Real Oficial */
   --color-gold-light: #EAD79A;   /* Ouro Suave */
@@ -214,7 +214,7 @@ body {
 
 /* Botão Secundário Dourado / Creme */
 .btn-gold-outline {
-  background: #FFFFFF;
+  background: #F4E9D9;
   color: #1A1612;
   border: 1px solid rgba(164, 134, 35, 0.5);
   transition: all 0.35s ease;
@@ -282,7 +282,7 @@ body {
   width: 44px;
   height: 44px;
   border-radius: 50%;
-  background: #FFFFFF;
+  background: #F4E9D9;
   color: #1A1612;
   display: flex;
   align-items: center;

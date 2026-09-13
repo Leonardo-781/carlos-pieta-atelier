@@ -538,7 +538,7 @@ function renderBentoGrid(filterCategory = 'all') {
     }
 
     const card = document.createElement('div');
-    card.className = `${colSpanClass} artwork-card group rounded-2xl bg-white border border-[#D4AF37]/35 shadow-editorial hover:shadow-editorial-hover transition-editorial flex flex-col justify-between overflow-hidden relative reveal`;
+    card.className = `${colSpanClass} artwork-card group rounded-2xl bg-[#F4E9D9] border border-[#D4AF37]/35 shadow-editorial hover:shadow-editorial-hover transition-editorial flex flex-col justify-between overflow-hidden relative reveal`;
     card.setAttribute('data-id', art.id);
 
     card.innerHTML = `
@@ -617,7 +617,7 @@ function renderInstagramFeed() {
     const card = document.createElement('a');
     card.href = post.url;
     card.target = '_blank';
-    card.className = 'group relative rounded-2xl overflow-hidden bg-white border border-[#D4AF37]/35 shadow-editorial hover:shadow-editorial-hover transition-all duration-300 block reveal';
+    card.className = 'group relative rounded-2xl overflow-hidden bg-[#F4E9D9] border border-[#D4AF37]/35 shadow-editorial hover:shadow-editorial-hover transition-all duration-300 block reveal';
 
     card.innerHTML = `
       <div class="relative h-72 w-full overflow-hidden bg-stone-900">
