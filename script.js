@@ -538,11 +538,11 @@ function renderBentoGrid(filterCategory = 'all') {
     }
 
     const card = document.createElement('div');
-    card.className = `${colSpanClass} artwork-card group rounded-2xl bg-[#3E2C12] border border-[#D4AF37]/25 shadow-editorial hover:shadow-editorial-hover transition-editorial flex flex-col justify-between overflow-hidden relative reveal`;
+    card.className = `${colSpanClass} artwork-card group rounded-2xl bg-white border border-[#D4AF37]/35 shadow-editorial hover:shadow-editorial-hover transition-editorial flex flex-col justify-between overflow-hidden relative reveal`;
     card.setAttribute('data-id', art.id);
 
     card.innerHTML = `
-      <div class="relative w-full ${heightClass} overflow-hidden bg-[#4A3515]">
+      <div class="relative w-full ${heightClass} overflow-hidden bg-stone-900">
         <!-- Imagem com Zoom Editorial -->
         <img 
           src="${art.image}" 
@@ -552,11 +552,11 @@ function renderBentoGrid(filterCategory = 'all') {
         />
         
         <!-- Gradiente em Marrom Escuro & Ouro -->
-        <div class="absolute inset-0 bg-gradient-to-t from-[#4A3515]/95 via-[#4A3515]/40 to-black/10 opacity-80 group-hover:opacity-90 transition-opacity duration-500"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/35 to-black/5 opacity-80 group-hover:opacity-90 transition-opacity duration-500"></div>
 
         <!-- Badges Superiores -->
         <div class="absolute top-4 left-4 right-4 flex items-center justify-between pointer-events-none">
-          <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#4A3515]/85 backdrop-blur-md text-[#EAD79A] text-xs font-semibold tracking-wider uppercase border border-[#D4AF37]/30 shadow-sm">
+          <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-stone-900/85 backdrop-blur-md text-[#EAD79A] text-xs font-semibold tracking-wider uppercase border border-[#D4AF37]/30 shadow-sm">
             <span class="w-1.5 h-1.5 rounded-full bg-[#D4AF37]"></span>
             ${art.categoryLabel || 'Obra de Acervo'}
           </span>
@@ -617,16 +617,16 @@ function renderInstagramFeed() {
     const card = document.createElement('a');
     card.href = post.url;
     card.target = '_blank';
-    card.className = 'group relative rounded-2xl overflow-hidden bg-[#3E2C12] border border-[#D4AF37]/25 shadow-editorial hover:shadow-editorial-hover transition-all duration-300 block reveal';
+    card.className = 'group relative rounded-2xl overflow-hidden bg-white border border-[#D4AF37]/35 shadow-editorial hover:shadow-editorial-hover transition-all duration-300 block reveal';
 
     card.innerHTML = `
-      <div class="relative h-72 w-full overflow-hidden bg-[#4A3515]">
+      <div class="relative h-72 w-full overflow-hidden bg-stone-900">
         <img 
           src="${post.image}" 
           alt="Post Instagram Carlos Pietá" 
           class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
         />
-        <div class="absolute inset-0 bg-gradient-to-t from-[#4A3515]/95 via-[#4A3515]/45 to-transparent opacity-70 group-hover:opacity-90 transition-opacity duration-300"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/35 to-transparent opacity-70 group-hover:opacity-90 transition-opacity duration-300"></div>
         
         <!-- Ícone do Instagram no topo -->
         <div class="absolute top-3.5 right-3.5 w-8 h-8 rounded-full bg-black/60 backdrop-blur-md flex items-center justify-center text-[#D4AF37] border border-[#D4AF37]/30">
@@ -683,8 +683,8 @@ function initFilterButtons() {
         b.classList.add('bg-[#3E2C12]', 'text-[#EAD79A]', 'hover:bg-[#543D19]', 'border-[#D4AF37]/25');
         const badge = b.querySelector('span:last-child');
         if (badge) {
-          badge.classList.remove('bg-[#4A3515]/25', 'text-[#4A3515]');
-          badge.classList.add('bg-[#4A3515]', 'text-[#EAD79A]');
+          badge.classList.remove('bg-stone-900/25', 'text-[#4A3515]');
+          badge.classList.add('bg-stone-900', 'text-[#EAD79A]');
         }
       });
 
@@ -693,8 +693,8 @@ function initFilterButtons() {
       target.classList.add('bg-[#D4AF37]', 'text-[#4A3515]', 'shadow-md');
       const badge = target.querySelector('span:last-child');
       if (badge) {
-        badge.classList.remove('bg-[#4A3515]', 'text-[#EAD79A]');
-        badge.classList.add('bg-[#4A3515]/25', 'text-[#4A3515]');
+        badge.classList.remove('bg-stone-900', 'text-[#EAD79A]');
+        badge.classList.add('bg-stone-900/25', 'text-[#4A3515]');
       }
 
       const filterValue = target.getAttribute('data-filter') || 'all';
@@ -794,10 +794,10 @@ function initNavbarScroll() {
 
   window.addEventListener('scroll', () => {
     if (window.scrollY > 40) {
-      navbar.classList.add('shadow-xl', 'bg-[#4A3515]/95', 'border-[#D4AF37]/25');
+      navbar.classList.add('shadow-xl', 'bg-stone-900/95', 'border-[#D4AF37]/25');
       navbar.classList.remove('border-transparent');
     } else {
-      navbar.classList.remove('shadow-xl', 'bg-[#4A3515]/95', 'border-[#D4AF37]/25');
+      navbar.classList.remove('shadow-xl', 'bg-stone-900/95', 'border-[#D4AF37]/25');
       navbar.classList.add('border-transparent');
     }
   });
