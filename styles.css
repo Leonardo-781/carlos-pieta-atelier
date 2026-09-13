@@ -52,20 +52,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
 
 :root {
-  /* Paleta Oficial do Manual de Uso (Tons Marrom Nobre & Ouro Real) */
-  --color-bg: #1B1606;           /* Tom Marrom Nobre Profundo do manual (Shade 87.5% da paleta de ouro) */
-  --color-bg-elevated: #241D0D;  /* Tom Marrom Âmbar Escuro para seções e cards */
-  --color-bg-card: #2B2210;      /* Marrom Acobreado profundo */
+  /* Paleta Oficial do Manual de Uso - Tom Marrom Nobre Claro (#5A431D) */
+  --color-bg: #4A3515;           /* Marrom Castanho Nobre (Fundo Geral) */
+  --color-bg-elevated: #3E2C12;  /* Marrom Acobreado Profundo */
+  --color-bg-card: #453114;      /* Marrom Nobre dos Cards */
   --color-gold: #D4AF37;         /* Ouro Real oficial */
-  --color-gold-light: #EAD79A;   /* Ouro suave / Destaque */
-  --color-gold-dark: #A48623;    /* Bronze / Ouro envelhecido */
-  --color-cream: #F6EFE3;        /* Mármore / Creme oficial da marca */
-  --color-cream-muted: #DFDAD0;  /* Texto de apoio legível */
+  --color-gold-light: #EAD79A;   /* Ouro Suave / Destaque */
+  --color-gold-dark: #A48623;    /* Bronze / Ouro Antigo */
+  --color-cream: #FDFBF7;        /* Mármore Claro de alta legibilidade */
+  --color-cream-muted: #EADBC8;  /* Texto de apoio legível */
   --color-blue-sacred: #0D2B7E;  /* Azul Sacro Imperial oficial */
   --color-blue-royal: #1E49B6;   /* Azul Real Barroco */
-  --color-patina: #1FA7A6;       /* Pátina Turquesa */
-  --color-malachite: #32936F;    /* Pátina Malaquita */
-  --color-border-gold: rgba(212, 175, 55, 0.22);
+  --color-border-gold: rgba(212, 175, 55, 0.35);
 }
 
 html {
@@ -80,8 +78,8 @@ body {
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   background-color: var(--color-bg);
-  /* Textura de micro-granulação artística sobre o fundo marrom */
-  background-image: radial-gradient(rgba(212, 175, 55, 0.07) 1px, transparent 0);
+  /* Textura refinada em tom bronze/dourado sobre o fundo marrom */
+  background-image: radial-gradient(rgba(212, 175, 55, 0.1) 1px, transparent 0);
   background-size: 24px 24px;
   color: var(--color-cream);
 }
@@ -92,7 +90,7 @@ body {
   top: 0;
   left: 0;
   height: 3px;
-  background: linear-gradient(90deg, #D4AF37, #0D2B7E, #EAD79A);
+  background: linear-gradient(90deg, #D4AF37, #EAD79A, #D4AF37);
   z-index: 100;
   width: 0%;
   transition: width 0.1s ease-out;
@@ -111,10 +109,10 @@ body {
   font-family: 'Kollektif', 'Plus Jakarta Sans', -apple-system, sans-serif;
 }
 
-/* Seleção de Texto em Ouro Real */
+/* Seleção de Texto em Ouro */
 ::selection {
   background-color: #D4AF37;
-  color: #1B1606;
+  color: #2E1F09;
 }
 
 /* Divisores Editoriais Finos */
@@ -125,11 +123,11 @@ body {
 
 /* Sombras de Profundidade */
 .shadow-editorial {
-  box-shadow: 0 12px 36px -10px rgba(0, 0, 0, 0.45), 0 4px 16px -4px rgba(212, 175, 55, 0.08);
+  box-shadow: 0 14px 40px -10px rgba(25, 17, 6, 0.6), 0 4px 16px -4px rgba(212, 175, 55, 0.12);
 }
 
 .shadow-editorial-hover {
-  box-shadow: 0 24px 48px -12px rgba(0, 0, 0, 0.6), 0 8px 24px -4px rgba(212, 175, 55, 0.25);
+  box-shadow: 0 24px 50px -12px rgba(25, 17, 6, 0.8), 0 8px 24px -4px rgba(212, 175, 55, 0.35);
 }
 
 /* Transições Suaves */
@@ -156,7 +154,7 @@ body {
   background: linear-gradient(
     60deg,
     transparent 40%,
-    rgba(212, 175, 55, 0.22) 50%,
+    rgba(212, 175, 55, 0.25) 50%,
     transparent 60%
   );
   transform: translateX(-100%) rotate(25deg);
@@ -178,14 +176,14 @@ body {
 
 /* Botão em Pátina Dourada Nobre */
 .btn-gold-metallic {
-  background: linear-gradient(135deg, #D4AF37 0%, #BF9C29 50%, #A48623 100%);
-  color: #1B1606;
+  background: linear-gradient(135deg, #EAD79A 0%, #D4AF37 50%, #BF9C29 100%);
+  color: #2E1F09;
   font-weight: 700;
   position: relative;
   overflow: hidden;
   transition: all 0.4s ease;
-  border: 1px solid rgba(212, 175, 55, 0.5);
-  box-shadow: 0 4px 18px rgba(212, 175, 55, 0.25);
+  border: 1px solid rgba(212, 175, 55, 0.6);
+  box-shadow: 0 4px 18px rgba(212, 175, 55, 0.3);
 }
 
 .btn-gold-metallic::before {
@@ -198,7 +196,7 @@ body {
   background: linear-gradient(
     90deg,
     transparent,
-    rgba(255, 255, 255, 0.4),
+    rgba(255, 255, 255, 0.45),
     transparent
   );
   transition: left 0.6s ease;
@@ -209,22 +207,22 @@ body {
 }
 
 .btn-gold-metallic:hover {
-  background: linear-gradient(135deg, #EAD79A 0%, #D4AF37 100%);
+  background: linear-gradient(135deg, #FFFFFF 0%, #D4AF37 100%);
   transform: translateY(-1px);
-  box-shadow: 0 8px 26px rgba(212, 175, 55, 0.45);
+  box-shadow: 0 8px 28px rgba(212, 175, 55, 0.5);
 }
 
-/* Botão Secundário Transparente Dourado */
+/* Botão Secundário Dourado */
 .btn-gold-outline {
-  background: rgba(36, 29, 13, 0.6);
-  color: #F6EFE3;
-  border: 1px solid rgba(212, 175, 55, 0.4);
+  background: rgba(46, 31, 9, 0.7);
+  color: #FDFBF7;
+  border: 1px solid rgba(212, 175, 55, 0.5);
   backdrop-filter: blur(8px);
   transition: all 0.35s ease;
 }
 
 .btn-gold-outline:hover {
-  background: rgba(212, 175, 55, 0.15);
+  background: rgba(212, 175, 55, 0.2);
   border-color: #D4AF37;
   color: #FFFFFF;
 }
@@ -272,7 +270,7 @@ body {
   background-color: #D4AF37;
   cursor: ew-resize;
   z-index: 20;
-  box-shadow: 0 0 16px rgba(212, 175, 55, 0.7);
+  box-shadow: 0 0 16px rgba(212, 175, 55, 0.8);
   transform: translateX(-50%);
   will-change: left;
 }
@@ -285,7 +283,7 @@ body {
   width: 44px;
   height: 44px;
   border-radius: 50%;
-  background: #1B1606;
+  background: #3E2C12;
   color: #D4AF37;
   display: flex;
   align-items: center;
@@ -298,7 +296,7 @@ body {
 .before-after-handle:hover .before-after-circle,
 .before-after-handle:active .before-after-circle {
   transform: translate(-50%, -50%) scale(1.1);
-  background: #2B2210;
+  background: #4A3515;
 }
 
 /* ========================================================================= */
@@ -323,7 +321,7 @@ body {
   position: absolute;
   bottom: 1rem;
   right: 1rem;
-  background: rgba(27, 22, 6, 0.85);
+  background: rgba(46, 31, 9, 0.9);
   backdrop-filter: blur(8px);
   color: #EAD79A;
   font-size: 0.7rem;
@@ -333,7 +331,7 @@ body {
   align-items: center;
   gap: 0.35rem;
   pointer-events: none;
-  border: 1px solid rgba(212, 175, 55, 0.3);
+  border: 1px solid rgba(212, 175, 55, 0.4);
 }
 
 /* ========================================================================= */
@@ -343,8 +341,8 @@ body {
   transform: translateY(110%);
   transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   padding-bottom: max(0.75rem, env(safe-area-inset-bottom));
-  background: rgba(27, 22, 6, 0.96);
-  border-top: 1px solid rgba(212, 175, 55, 0.25);
+  background: rgba(46, 31, 9, 0.96);
+  border-top: 1px solid rgba(212, 175, 55, 0.35);
 }
 
 #mobile-sticky-bar.visible {
@@ -361,8 +359,8 @@ body {
   width: 80px;
   height: 80px;
   border-radius: 50%;
-  background: rgba(212, 175, 55, 0.92);
-  color: #1B1606;
+  background: rgba(212, 175, 55, 0.94);
+  color: #2E1F09;
   font-size: 0.68rem;
   font-weight: 700;
   text-transform: uppercase;
@@ -375,7 +373,7 @@ body {
   transform: translate(-50%, -50%) scale(0);
   transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.2s ease;
   backdrop-filter: blur(4px);
-  box-shadow: 0 8px 24px rgba(212, 175, 55, 0.4);
+  box-shadow: 0 8px 24px rgba(212, 175, 55, 0.45);
   opacity: 0;
 }
 
@@ -408,12 +406,12 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: #1B1606;
+  background: #3E2C12;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #372D0C;
-  border: 1px solid rgba(212, 175, 55, 0.3);
+  background: #5A431D;
+  border: 1px solid rgba(212, 175, 55, 0.4);
   border-radius: 4px;
 }
 
