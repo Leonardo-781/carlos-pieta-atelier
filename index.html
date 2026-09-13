@@ -89,7 +89,7 @@
   <!-- ========================================================================= -->
   <!-- 1. NAVBAR INSTITUCIONAL COM LOGO DOURADO OFICIAL -->
   <!-- ========================================================================= -->
-  <header id="main-navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-[#EBDBC2]/90 backdrop-blur-md border-b border-[#D4AF37]/25 h-20 sm:h-24 flex items-center">
+  <header id="main-navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-[#161412]/95 backdrop-blur-md border-b border-[#D4AF37]/25 h-20 sm:h-24 flex items-center shadow-lg">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex items-center justify-between gap-4">
       
       <!-- Logotipo Horizontal Oficial Dourado com Alto Destaque -->
@@ -101,14 +101,14 @@
         />
       </a>
 
-      <!-- Menu de Navegação Institucional -->
-      <nav class="hidden xl:flex items-center space-x-5 2xl:space-x-7 text-xs uppercase tracking-wider font-semibold text-stone-800 whitespace-nowrap">
-        <a href="#obras" class="hover:text-[#A48623] transition-colors py-1 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1.5px] after:bg-[#D4AF37] hover:after:w-full after:transition-all">Acervo & Obras</a>
-        <a href="#comparador" class="hover:text-[#A48623] transition-colors py-1 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1.5px] after:bg-[#D4AF37] hover:after:w-full after:transition-all">Metamorfose da Argila</a>
-        <a href="#processo" class="hover:text-[#A48623] transition-colors py-1 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1.5px] after:bg-[#D4AF37] hover:after:w-full after:transition-all">Rigor Técnico</a>
-        <a href="#reconhecimento" class="hover:text-[#A48623] transition-colors py-1 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1.5px] after:bg-[#D4AF37] hover:after:w-full after:transition-all">Crítica & Mídia</a>
-        <a href="#sobre" class="hover:text-[#A48623] transition-colors py-1 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1.5px] after:bg-[#D4AF37] hover:after:w-full after:transition-all">O Artista</a>
-        <a href="#faq" class="hover:text-[#A48623] transition-colors py-1 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1.5px] after:bg-[#D4AF37] hover:after:w-full after:transition-all">FAQ</a>
+      <!-- Menu de Navegação Institucional em Ouro Real -->
+      <nav class="hidden xl:flex items-center space-x-5 2xl:space-x-7 text-xs uppercase tracking-wider font-semibold whitespace-nowrap">
+        <a href="#obras" class="nav-gold-link py-1">Acervo & Obras</a>
+        <a href="#comparador" class="nav-gold-link py-1">Metamorfose da Argila</a>
+        <a href="#processo" class="nav-gold-link py-1">Rigor Técnico</a>
+        <a href="#reconhecimento" class="nav-gold-link py-1">Crítica & Mídia</a>
+        <a href="#sobre" class="nav-gold-link py-1">O Artista</a>
+        <a href="#faq" class="nav-gold-link py-1">FAQ</a>
       </nav>
 
       <!-- Ações Institucionais à Direita -->
@@ -116,7 +116,7 @@
         <a 
           href="https://www.instagram.com/carlospieta/" 
           target="_blank"
-          class="inline-flex items-center gap-1.5 px-3 py-2 rounded-xl border border-stone-300 bg-[#F4E9D9] hover:bg-[#EBDBC2] text-stone-900 text-xs font-semibold tracking-wide transition-all shadow-sm group shrink-0"
+          class="inline-flex items-center gap-1.5 px-3 py-2 rounded-xl border border-[#D4AF37]/35 bg-[#F4E9D9] hover:bg-[#EBDBC2] text-stone-900 text-xs font-semibold tracking-wide transition-all shadow-sm group shrink-0"
           title="Instagram Oficial @carlospieta"
         >
           <svg class="w-4 h-4 text-stone-800 group-hover:text-[#D4AF37] transition-colors" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -141,7 +141,7 @@
         <!-- Botão Menu Mobile & Telas Menores -->
         <button 
           id="mobile-menu-btn" 
-          class="xl:hidden p-2.5 rounded-xl border border-stone-300 bg-[#F4E9D9] text-stone-800 hover:text-[#D4AF37] focus:outline-none shrink-0"
+          class="xl:hidden p-2.5 rounded-xl border border-[#D4AF37]/40 bg-[#F4E9D9] text-stone-800 hover:text-[#D4AF37] focus:outline-none shrink-0"
           aria-label="Abrir Menu"
         >
           <i data-lucide="menu" class="w-5 h-5"></i>
@@ -151,54 +151,54 @@
   </header>
 
   <!-- Menu Lateral Mobile (Drawer) -->
-  <div id="mobile-drawer" class="fixed inset-y-0 right-0 w-80 bg-[#EBDBC2] z-50 shadow-2xl p-6 flex flex-col justify-between transform translate-x-full transition-transform duration-300 ease-in-out border-l border-stone-300">
+  <div id="mobile-drawer" class="fixed inset-y-0 right-0 w-80 bg-[#161412] z-50 shadow-2xl p-6 flex flex-col justify-between transform translate-x-full transition-transform duration-300 ease-in-out border-l border-[#D4AF37]/30">
     <div>
-      <div class="flex items-center justify-between pb-6 border-b border-stone-300">
+      <div class="flex items-center justify-between pb-6 border-b border-[#D4AF37]/20">
         <div class="flex items-center">
           <img src="images/logo-horizontal-dourada.png" alt="Carlos Pietá" class="h-10 w-auto object-contain" />
         </div>
-        <button id="mobile-drawer-close" class="p-2 rounded-full hover:bg-stone-200 text-stone-800">
+        <button id="mobile-drawer-close" class="p-2 rounded-full hover:bg-stone-800 text-[#D4AF37]">
           <i data-lucide="x" class="w-5 h-5"></i>
         </button>
       </div>
 
-      <nav class="mt-8 flex flex-col space-y-4 text-sm uppercase tracking-widest font-semibold text-stone-800">
-        <a href="#obras" class="mobile-nav-link hover:text-[#D4AF37] py-2 border-b border-stone-200 flex items-center justify-between">
+      <nav class="mt-8 flex flex-col space-y-4 text-sm uppercase tracking-widest font-semibold text-[#D4AF37]">
+        <a href="#obras" class="mobile-nav-link text-[#D4AF37] hover:text-[#FFF5DC] py-2 border-b border-[#D4AF37]/15 flex items-center justify-between transition-colors">
           <span>Acervo & Obras</span>
-          <i data-lucide="chevron-right" class="w-4 h-4 text-stone-400"></i>
+          <i data-lucide="chevron-right" class="w-4 h-4 text-[#D4AF37]/60"></i>
         </a>
-        <a href="#comparador" class="mobile-nav-link hover:text-[#D4AF37] py-2 border-b border-stone-200 flex items-center justify-between">
+        <a href="#comparador" class="mobile-nav-link text-[#D4AF37] hover:text-[#FFF5DC] py-2 border-b border-[#D4AF37]/15 flex items-center justify-between transition-colors">
           <span>Metamorfose da Argila</span>
-          <i data-lucide="chevron-right" class="w-4 h-4 text-stone-400"></i>
+          <i data-lucide="chevron-right" class="w-4 h-4 text-[#D4AF37]/60"></i>
         </a>
-        <a href="#instagram-feed" class="mobile-nav-link hover:text-[#D4AF37] py-2 border-b border-stone-200 flex items-center justify-between">
+        <a href="#instagram-feed" class="mobile-nav-link text-[#D4AF37] hover:text-[#FFF5DC] py-2 border-b border-[#D4AF37]/15 flex items-center justify-between transition-colors">
           <span>Diário de Ateliê</span>
-          <i data-lucide="chevron-right" class="w-4 h-4 text-stone-400"></i>
+          <i data-lucide="chevron-right" class="w-4 h-4 text-[#D4AF37]/60"></i>
         </a>
-        <a href="#processo" class="mobile-nav-link hover:text-[#D4AF37] py-2 border-b border-stone-200 flex items-center justify-between">
+        <a href="#processo" class="mobile-nav-link text-[#D4AF37] hover:text-[#FFF5DC] py-2 border-b border-[#D4AF37]/15 flex items-center justify-between transition-colors">
           <span>Rigor Técnico</span>
-          <i data-lucide="chevron-right" class="w-4 h-4 text-stone-400"></i>
+          <i data-lucide="chevron-right" class="w-4 h-4 text-[#D4AF37]/60"></i>
         </a>
-        <a href="#reconhecimento" class="mobile-nav-link hover:text-[#D4AF37] py-2 border-b border-stone-200 flex items-center justify-between">
+        <a href="#reconhecimento" class="mobile-nav-link text-[#D4AF37] hover:text-[#FFF5DC] py-2 border-b border-[#D4AF37]/15 flex items-center justify-between transition-colors">
           <span>Crítica & Mídia</span>
-          <i data-lucide="chevron-right" class="w-4 h-4 text-stone-400"></i>
+          <i data-lucide="chevron-right" class="w-4 h-4 text-[#D4AF37]/60"></i>
         </a>
-        <a href="#sobre" class="mobile-nav-link hover:text-[#D4AF37] py-2 border-b border-stone-200 flex items-center justify-between">
+        <a href="#sobre" class="mobile-nav-link text-[#D4AF37] hover:text-[#FFF5DC] py-2 border-b border-[#D4AF37]/15 flex items-center justify-between transition-colors">
           <span>O Artista</span>
-          <i data-lucide="chevron-right" class="w-4 h-4 text-stone-400"></i>
+          <i data-lucide="chevron-right" class="w-4 h-4 text-[#D4AF37]/60"></i>
         </a>
-        <a href="#faq" class="mobile-nav-link hover:text-[#D4AF37] py-2 border-b border-stone-200 flex items-center justify-between">
+        <a href="#faq" class="mobile-nav-link text-[#D4AF37] hover:text-[#FFF5DC] py-2 border-b border-[#D4AF37]/15 flex items-center justify-between transition-colors">
           <span>FAQ / Esclarecimentos</span>
-          <i data-lucide="chevron-right" class="w-4 h-4 text-stone-400"></i>
+          <i data-lucide="chevron-right" class="w-4 h-4 text-[#D4AF37]/60"></i>
         </a>
-        <a href="#contato" class="mobile-nav-link hover:text-[#D4AF37] py-2 border-b border-stone-200 flex items-center justify-between">
+        <a href="#contato" class="mobile-nav-link text-[#D4AF37] hover:text-[#FFF5DC] py-2 border-b border-[#D4AF37]/15 flex items-center justify-between transition-colors">
           <span>Protocolo Curatorial</span>
-          <i data-lucide="chevron-right" class="w-4 h-4 text-stone-400"></i>
+          <i data-lucide="chevron-right" class="w-4 h-4 text-[#D4AF37]/60"></i>
         </a>
       </nav>
     </div>
 
-    <div class="pt-6 border-t border-stone-300 flex flex-col gap-3">
+    <div class="pt-6 border-t border-[#D4AF37]/20 flex flex-col gap-3">
       <a 
         href="https://www.instagram.com/carlospieta/" 
         target="_blank"
