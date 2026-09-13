@@ -4,3 +4,9 @@ node_modules/
 .vscode/
 .idea/
 *.log
+
+# Brand assets de desenvolvimento e arquivos pesados (>100MB)
+*.zip
+Carlos Pietá Manual de Uso/
+brand_assets/
+*.py

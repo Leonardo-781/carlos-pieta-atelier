@@ -15,7 +15,7 @@
   <meta name="twitter:card" content="summary_large_image" />
 
   <!-- Favicon Oficial -->
-  <link rel="icon" type="image/png" href="images/logo-carlos-pieta.png" />
+  <link rel="icon" type="image/png" href="images/favicon-dourada.png" />
 
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -24,21 +24,40 @@
       theme: {
         extend: {
           colors: {
+            gold: {
+              DEFAULT: '#D4AF37',
+              50: '#FAF5E6',
+              100: '#F4EBCD',
+              200: '#EFE1B3',
+              300: '#EAD79A',
+              400: '#DFC368',
+              500: '#D4AF37',
+              600: '#BF9C29',
+              700: '#A48623',
+              800: '#89701D',
+              900: '#6D5917',
+            },
+            sacred: {
+              deep: '#0D2B7E',
+              royal: '#1E49B6',
+              patina: '#1FA7A6',
+              malachite: '#32936F',
+            },
             bronze: {
-              DEFAULT: '#A36A4F',
-              50: '#FDF9F7',
-              100: '#F7EDE7',
-              200: '#ECCEC0',
-              300: '#E0AD98',
-              400: '#D58D70',
-              500: '#A36A4F',
-              600: '#8C573E',
-              700: '#75442E',
-              800: '#5E3320',
-              900: '#472314',
+              DEFAULT: '#D4AF37',
+              50: '#FAF5E6',
+              100: '#F4EBCD',
+              200: '#EFE1B3',
+              300: '#EAD79A',
+              400: '#DFC368',
+              500: '#D4AF37',
+              600: '#BF9C29',
+              700: '#A48623',
+              800: '#89701D',
+              900: '#6D5917',
             },
             stone: {
-              50: '#F7F6F2',
+              50: '#F6EFE3',
               100: '#EFECE6',
               200: '#DFDAD0',
               300: '#C4BDB4',
@@ -47,10 +66,18 @@
               600: '#5A554D',
               700: '#403C35',
               800: '#2A2722',
-              900: '#1C1C1C',
-              950: '#121212',
+              900: '#111111',
+              950: '#0A0A0A',
             }
           },
+          fontFamily: {
+            serifDisplay: ['"TeX Gyre Termes"', '"Playfair Display"', 'Georgia', 'serif'],
+            serifCormorant: ['"Cormorant Garamond"', '"TeX Gyre Termes"', 'Georgia', 'serif'],
+            sans: ['"Kollektif"', '"Plus Jakarta Sans"', 'sans-serif'],
+          }
+        }
+      }
+    },
           fontFamily: {
             serifDisplay: ['"Playfair Display"', 'Georgia', 'serif'],
             serifCormorant: ['"Cormorant Garamond"', 'Georgia', 'serif'],
@@ -67,7 +94,7 @@
   <!-- Custom Styles -->
   <link rel="stylesheet" href="styles.css" />
 </head>
-<body class="bg-[#F7F6F2] text-stone-900 font-sans selection:bg-[#A36A4F] selection:text-white relative">
+<body class="bg-[#F6EFE3] text-stone-900 font-sans selection:bg-[#D4AF37] selection:text-white relative">
 
   <!-- Barra de Progresso de Leitura no Topo -->
   <div id="scroll-progress"></div>
@@ -78,30 +105,25 @@
   <!-- ========================================================================= -->
   <!-- 1. NAVBAR COM LOGO OFICIAL -->
   <!-- ========================================================================= -->
-  <header id="main-navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-[#F7F6F2]/90 backdrop-blur-md border-b border-stone-200/60 h-20 flex items-center">
+  <header id="main-navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-[#F6EFE3]/90 backdrop-blur-md border-b border-stone-200/60 h-20 flex items-center">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex items-center justify-between gap-4">
       
       <!-- Logotipo Oficial & Nome -->
-      <a href="#hero" class="flex items-center gap-3 group shrink-0">
+      <a href="#hero" class="flex items-center group shrink-0 py-1">
         <img 
-          src="images/logo-carlos-pieta.png" 
-          alt="Logotipo Oficial Carlos Pietá" 
-          class="h-11 sm:h-12 w-auto object-contain rounded-lg shadow-sm group-hover:scale-105 transition-transform"
+          src="images/logo-horizontal-dourada.png" 
+          alt="Carlos Pietá - Ateliê de Escultura & Arte Sacra" 
+          class="h-10 sm:h-12 w-auto object-contain group-hover:opacity-90 transition-opacity"
         />
-        <div class="flex flex-col">
-          <span class="font-serifDisplay font-bold text-base sm:text-lg tracking-wider text-stone-900 uppercase whitespace-nowrap">Carlos Pietá</span>
-          <span class="text-[9px] sm:text-[10px] tracking-[0.2em] text-stone-500 uppercase font-medium whitespace-nowrap">Escultor • Monumentos & Arte Sacra</span>
-        </div>
       </a>
-
       <!-- Menu Desktop Limpo e Harmonioso -->
       <nav class="hidden xl:flex items-center space-x-5 2xl:space-x-7 text-xs uppercase tracking-wider font-semibold text-stone-700 whitespace-nowrap">
-        <a href="#obras" class="hover:text-[#A36A4F] transition-colors py-1 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1.5px] after:bg-[#A36A4F] hover:after:w-full after:transition-all">Obras</a>
-        <a href="#comparador" class="hover:text-[#A36A4F] transition-colors py-1 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1.5px] after:bg-[#A36A4F] hover:after:w-full after:transition-all">Antes & Depois</a>
-        <a href="#processo" class="hover:text-[#A36A4F] transition-colors py-1 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1.5px] after:bg-[#A36A4F] hover:after:w-full after:transition-all">Processo</a>
-        <a href="#reconhecimento" class="hover:text-[#A36A4F] transition-colors py-1 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1.5px] after:bg-[#A36A4F] hover:after:w-full after:transition-all">Na Mídia</a>
-        <a href="#sobre" class="hover:text-[#A36A4F] transition-colors py-1 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1.5px] after:bg-[#A36A4F] hover:after:w-full after:transition-all">O Artista</a>
-        <a href="#faq" class="hover:text-[#A36A4F] transition-colors py-1 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1.5px] after:bg-[#A36A4F] hover:after:w-full after:transition-all">FAQ</a>
+        <a href="#obras" class="hover:text-[#D4AF37] transition-colors py-1 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1.5px] after:bg-[#D4AF37] hover:after:w-full after:transition-all">Obras</a>
+        <a href="#comparador" class="hover:text-[#D4AF37] transition-colors py-1 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1.5px] after:bg-[#D4AF37] hover:after:w-full after:transition-all">Antes & Depois</a>
+        <a href="#processo" class="hover:text-[#D4AF37] transition-colors py-1 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1.5px] after:bg-[#D4AF37] hover:after:w-full after:transition-all">Processo</a>
+        <a href="#reconhecimento" class="hover:text-[#D4AF37] transition-colors py-1 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1.5px] after:bg-[#D4AF37] hover:after:w-full after:transition-all">Na Mídia</a>
+        <a href="#sobre" class="hover:text-[#D4AF37] transition-colors py-1 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1.5px] after:bg-[#D4AF37] hover:after:w-full after:transition-all">O Artista</a>
+        <a href="#faq" class="hover:text-[#D4AF37] transition-colors py-1 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1.5px] after:bg-[#D4AF37] hover:after:w-full after:transition-all">FAQ</a>
       </nav>
 
       <!-- Botões de Ação à Direita -->
@@ -112,7 +134,7 @@
           class="inline-flex items-center gap-1.5 px-3 py-2 rounded-xl border border-stone-300 bg-white hover:bg-stone-100 text-stone-800 text-xs font-semibold tracking-wide transition-all shadow-sm group shrink-0"
           title="Instagram @carlospieta"
         >
-          <svg class="w-4 h-4 text-stone-700 group-hover:text-[#A36A4F] transition-colors" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <svg class="w-4 h-4 text-stone-700 group-hover:text-[#D4AF37] transition-colors" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
             <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
             <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
@@ -134,7 +156,7 @@
         <!-- Botão Menu Mobile & Telas Menores -->
         <button 
           id="mobile-menu-btn" 
-          class="xl:hidden p-2 rounded-xl border border-stone-200 bg-white text-stone-800 hover:text-[#A36A4F] focus:outline-none shrink-0"
+          class="xl:hidden p-2 rounded-xl border border-stone-200 bg-white text-stone-800 hover:text-[#D4AF37] focus:outline-none shrink-0"
           aria-label="Abrir Menu"
         >
           <i data-lucide="menu" class="w-5 h-5"></i>
@@ -144,48 +166,47 @@
   </header>
 
   <!-- Menu Lateral Mobile (Drawer) -->
-  <div id="mobile-drawer" class="fixed inset-y-0 right-0 w-80 bg-[#F7F6F2] z-50 shadow-2xl p-6 flex flex-col justify-between transform translate-x-full transition-transform duration-300 ease-in-out border-l border-stone-200">
+  <div id="mobile-drawer" class="fixed inset-y-0 right-0 w-80 bg-[#F6EFE3] z-50 shadow-2xl p-6 flex flex-col justify-between transform translate-x-full transition-transform duration-300 ease-in-out border-l border-stone-200">
     <div>
       <div class="flex items-center justify-between pb-6 border-b border-stone-200">
-        <div class="flex items-center gap-2.5">
-          <img src="images/logo-carlos-pieta.png" alt="Logo Carlos Pietá" class="h-9 w-auto object-contain rounded-md" />
-          <span class="font-serifDisplay font-bold text-lg text-stone-900">CARLOS PIETÁ</span>
+        <div class="flex items-center">
+          <img src="images/logo-horizontal-dourada.png" alt="Carlos Pietá" class="h-9 w-auto object-contain" />
         </div>
-        <button id="mobile-drawer-close" class="p-2 rounded-full hover:bg-stone-200 text-stone-700">
+        <button id="mobile-drawer-close"  class="p-2 rounded-full hover:bg-stone-200 text-stone-700">
           <i data-lucide="x" class="w-5 h-5"></i>
         </button>
       </div>
 
       <nav class="mt-8 flex flex-col space-y-4 text-sm uppercase tracking-widest font-semibold text-stone-800">
-        <a href="#obras" class="mobile-nav-link hover:text-[#A36A4F] py-2 border-b border-stone-200/50 flex items-center justify-between">
+        <a href="#obras" class="mobile-nav-link hover:text-[#D4AF37] py-2 border-b border-stone-200/50 flex items-center justify-between">
           <span>Obras & Acervo</span>
           <i data-lucide="chevron-right" class="w-4 h-4 text-stone-400"></i>
         </a>
-        <a href="#comparador" class="mobile-nav-link hover:text-[#A36A4F] py-2 border-b border-stone-200/50 flex items-center justify-between">
+        <a href="#comparador" class="mobile-nav-link hover:text-[#D4AF37] py-2 border-b border-stone-200/50 flex items-center justify-between">
           <span>Antes & Depois (Argila vs Obra)</span>
           <i data-lucide="chevron-right" class="w-4 h-4 text-stone-400"></i>
         </a>
-        <a href="#instagram-feed" class="mobile-nav-link hover:text-[#A36A4F] py-2 border-b border-stone-200/50 flex items-center justify-between">
+        <a href="#instagram-feed" class="mobile-nav-link hover:text-[#D4AF37] py-2 border-b border-stone-200/50 flex items-center justify-between">
           <span>Feed Instagram</span>
           <i data-lucide="chevron-right" class="w-4 h-4 text-stone-400"></i>
         </a>
-        <a href="#processo" class="mobile-nav-link hover:text-[#A36A4F] py-2 border-b border-stone-200/50 flex items-center justify-between">
+        <a href="#processo" class="mobile-nav-link hover:text-[#D4AF37] py-2 border-b border-stone-200/50 flex items-center justify-between">
           <span>Processo Técnico</span>
           <i data-lucide="chevron-right" class="w-4 h-4 text-stone-400"></i>
         </a>
-        <a href="#reconhecimento" class="mobile-nav-link hover:text-[#A36A4F] py-2 border-b border-stone-200/50 flex items-center justify-between">
+        <a href="#reconhecimento" class="mobile-nav-link hover:text-[#D4AF37] py-2 border-b border-stone-200/50 flex items-center justify-between">
           <span>Na Mídia & Destaques</span>
           <i data-lucide="chevron-right" class="w-4 h-4 text-stone-400"></i>
         </a>
-        <a href="#sobre" class="mobile-nav-link hover:text-[#A36A4F] py-2 border-b border-stone-200/50 flex items-center justify-between">
+        <a href="#sobre" class="mobile-nav-link hover:text-[#D4AF37] py-2 border-b border-stone-200/50 flex items-center justify-between">
           <span>Sobre Carlos Pietá</span>
           <i data-lucide="chevron-right" class="w-4 h-4 text-stone-400"></i>
         </a>
-        <a href="#faq" class="mobile-nav-link hover:text-[#A36A4F] py-2 border-b border-stone-200/50 flex items-center justify-between">
+        <a href="#faq" class="mobile-nav-link hover:text-[#D4AF37] py-2 border-b border-stone-200/50 flex items-center justify-between">
           <span>Perguntas Frequentes</span>
           <i data-lucide="chevron-right" class="w-4 h-4 text-stone-400"></i>
         </a>
-        <a href="#contato" class="mobile-nav-link hover:text-[#A36A4F] py-2 border-b border-stone-200/50 flex items-center justify-between">
+        <a href="#contato" class="mobile-nav-link hover:text-[#D4AF37] py-2 border-b border-stone-200/50 flex items-center justify-between">
           <span>Briefing & Contato</span>
           <i data-lucide="chevron-right" class="w-4 h-4 text-stone-400"></i>
         </a>
@@ -196,9 +217,9 @@
       <a 
         href="https://www.instagram.com/carlospieta/" 
         target="_blank"
-        class="w-full py-3 text-center rounded-xl bg-stone-900 text-white text-xs font-semibold tracking-widest uppercase flex items-center justify-center gap-2 shadow-sm hover:bg-[#A36A4F] transition-colors"
+        class="w-full py-3 text-center rounded-xl bg-stone-900 text-white text-xs font-semibold tracking-widest uppercase flex items-center justify-center gap-2 shadow-sm hover:bg-[#D4AF37] transition-colors"
       >
-        <svg class="w-4 h-4 text-[#E8C5B0]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <svg class="w-4 h-4 text-[#EAD79A]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
           <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
           <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
@@ -225,12 +246,12 @@
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-end mb-12 lg:mb-16 reveal">
         <div class="lg:col-span-8">
           <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-stone-200/70 text-stone-800 text-xs font-semibold tracking-widest uppercase mb-6">
-            <span class="w-2 h-2 rounded-full bg-[#A36A4F] animate-pulse"></span>
+            <span class="w-2 h-2 rounded-full bg-[#D4AF37] animate-pulse"></span>
             <span>Escultura Clássica • Monumentos Cívicos & Sacros</span>
           </div>
 
           <h1 class="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-serifDisplay font-semibold text-stone-900 leading-[1.08] tracking-tight">
-            A Nobreza do Barroco em <span class="italic font-serifCormorant font-normal text-[#A36A4F]">Escala Monumental</span>
+            A Nobreza do Barroco em <span class="italic font-serifCormorant font-normal text-[#D4AF37]">Escala Monumental</span>
           </h1>
         </div>
 
@@ -254,7 +275,7 @@
               class="px-5 py-3.5 rounded-xl border border-stone-300 text-stone-800 bg-white hover:bg-stone-100 text-xs font-semibold tracking-widest uppercase transition-all flex items-center gap-2"
               title="Solicitar Catálogo em PDF"
             >
-              <i data-lucide="file-text" class="w-4 h-4 text-[#A36A4F]"></i>
+              <i data-lucide="file-text" class="w-4 h-4 text-[#D4AF37]"></i>
               <span>Dossiê Artístico (PDF)</span>
             </button>
           </div>
@@ -274,7 +295,7 @@
           <!-- Legenda Editorial Sobreposta -->
           <div class="absolute bottom-6 sm:bottom-10 left-6 sm:left-10 right-6 sm:right-10 flex flex-col md:flex-row md:items-end justify-between gap-4 text-white">
             <div>
-              <span class="inline-block text-xs font-semibold tracking-[0.2em] uppercase text-[#E8C5B0] mb-1">Obra Monumental Histórica</span>
+              <span class="inline-block text-xs font-semibold tracking-[0.2em] uppercase text-[#EAD79A] mb-1">Obra Monumental Histórica</span>
               <h2 class="text-2xl sm:text-3xl font-serifDisplay font-medium text-white">Conjunto dos 12 Apóstolos (Romaria - MG)</h2>
               <p class="text-xs sm:text-sm text-stone-300 font-light mt-1">Santuário Basílica de N. Sra. da Abadia • 2,60m de altura cada • Resina Estrutural Marmorizada</p>
             </div>
@@ -284,7 +305,7 @@
               class="inline-flex items-center gap-2 self-start md:self-auto px-4 py-2 rounded-xl bg-white/20 backdrop-blur-md hover:bg-white/30 text-white text-xs font-medium tracking-wider uppercase transition-colors"
             >
               <span>Explorar Ficha Técnica</span>
-              <i data-lucide="arrow-up-right" class="w-4 h-4 text-[#E8C5B0]"></i>
+              <i data-lucide="arrow-up-right" class="w-4 h-4 text-[#EAD79A]"></i>
             </a>
           </div>
         </div>
@@ -305,7 +326,7 @@
           <span class="text-xs sm:text-sm text-stone-600 font-medium mt-1">Fiéis acolhidos anualmente pelo conjunto</span>
         </div>
         <div class="flex flex-col">
-          <span class="font-serifDisplay text-3xl sm:text-4xl font-semibold text-[#A36A4F] counter-stat" data-target="100" data-suffix="% Autoral">0</span>
+          <span class="font-serifDisplay text-3xl sm:text-4xl font-semibold text-[#D4AF37] counter-stat" data-target="100" data-suffix="% Autoral">0</span>
           <span class="text-xs sm:text-sm text-stone-600 font-medium mt-1">Tecnologia Estrutural Marmorizada</span>
         </div>
       </div>
@@ -322,15 +343,15 @@
         
         <div class="flex flex-wrap items-center justify-center gap-6 sm:gap-10 md:gap-14 text-stone-600 text-xs sm:text-sm font-medium">
           <div class="flex items-center gap-2 hover:text-stone-900 transition-colors">
-            <i data-lucide="church" class="w-4 h-4 text-[#A36A4F]"></i>
+            <i data-lucide="church" class="w-4 h-4 text-[#D4AF37]"></i>
             <span class="tracking-wide">Basílica de Romaria</span>
           </div>
           <div class="flex items-center gap-2 hover:text-stone-900 transition-colors">
-            <i data-lucide="landmark" class="w-4 h-4 text-[#A36A4F]"></i>
+            <i data-lucide="landmark" class="w-4 h-4 text-[#D4AF37]"></i>
             <span class="tracking-wide">Prefeitura de Monte Carmelo</span>
           </div>
           <div class="flex items-center gap-2 hover:text-stone-900 transition-colors">
-            <i data-lucide="shield" class="w-4 h-4 text-[#A36A4F]"></i>
+            <i data-lucide="shield" class="w-4 h-4 text-[#D4AF37]"></i>
             <span class="tracking-wide">Paróquias de Patrocínio</span>
           </div>
           <div class="flex items-center gap-2 hover:text-stone-900 transition-colors">
@@ -338,7 +359,7 @@
             <span class="tracking-wide">TV Globo Regional</span>
           </div>
           <div class="flex items-center gap-2 hover:text-stone-900 transition-colors">
-            <i data-lucide="newspaper" class="w-4 h-4 text-[#A36A4F]"></i>
+            <i data-lucide="newspaper" class="w-4 h-4 text-[#D4AF37]"></i>
             <span class="tracking-wide">Jornal Estado de Minas</span>
           </div>
         </div>
@@ -350,13 +371,13 @@
   <!-- ========================================================================= -->
   <!-- 3. GALERIA BENTO GRID COM FOTOS REAIS & CONTADORES NAS ABAS               -->
   <!-- ========================================================================= -->
-  <section id="obras" class="py-24 bg-[#F7F6F2] relative">
+  <section id="obras" class="py-24 bg-[#F6EFE3] relative">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <!-- Cabeçalho da Seção -->
       <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 pb-6 border-b border-stone-200 reveal">
         <div>
-          <span class="text-xs font-semibold tracking-[0.25em] text-[#A36A4F] uppercase">Acervo & Obras Oficiais</span>
+          <span class="text-xs font-semibold tracking-[0.25em] text-[#D4AF37] uppercase">Acervo & Obras Oficiais</span>
           <h2 class="text-3xl sm:text-4xl lg:text-5xl font-serifDisplay font-semibold text-stone-900 mt-2">
             Monumentos & Criações
           </h2>
@@ -399,7 +420,7 @@
       <!-- Informação Curatorial de Apoio -->
       <div class="mt-14 p-6 sm:p-8 rounded-2xl bg-white border border-stone-200/80 shadow-sm flex flex-col md:flex-row items-center justify-between gap-6 reveal">
         <div class="flex items-center gap-4">
-          <div class="w-12 h-12 rounded-xl bg-stone-100 flex items-center justify-center text-[#A36A4F]">
+          <div class="w-12 h-12 rounded-xl bg-stone-100 flex items-center justify-center text-[#D4AF37]">
             <i data-lucide="landmark" class="w-6 h-6"></i>
           </div>
           <div>
@@ -409,7 +430,7 @@
         </div>
         <a 
           href="#contato" 
-          class="shrink-0 px-5 py-2.5 rounded-xl bg-stone-900 text-white text-xs font-semibold tracking-wider uppercase hover:bg-[#A36A4F] transition-colors"
+          class="shrink-0 px-5 py-2.5 rounded-xl bg-stone-900 text-white text-xs font-semibold tracking-wider uppercase hover:bg-[#D4AF37] transition-colors"
         >
           Consultar Projeto Personalizado
         </a>
@@ -426,12 +447,12 @@
       
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center mb-12">
         <div class="lg:col-span-7 reveal">
-          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#E8C5B0]/10 text-[#E8C5B0] text-xs font-semibold uppercase tracking-wider mb-3">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#EAD79A]/10 text-[#EAD79A] text-xs font-semibold uppercase tracking-wider mb-3">
             <i data-lucide="sliders" class="w-3.5 h-3.5"></i>
             <span>Interatividade & Mestria Técnica</span>
           </div>
           <h2 class="text-3xl sm:text-4xl lg:text-5xl font-serifDisplay font-semibold text-white leading-tight">
-            Do Barro ao Monumento: <span class="italic font-serifCormorant font-normal text-[#E8C5B0]">Arraste para Comparar</span>
+            Do Barro ao Monumento: <span class="italic font-serifCormorant font-normal text-[#EAD79A]">Arraste para Comparar</span>
           </h2>
           <p class="text-stone-300 font-light text-sm sm:text-base mt-4 leading-relaxed">
             Arraste a linha central para testemunhar a metamorfose plástica: da sensibilidade da modelagem em argila viva até a grandiosidade da estátua marmorizada resistente aos séculos.
@@ -444,7 +465,7 @@
             <span><strong>Lado Esquerdo:</strong> Modelagem autoral em argila viva com panejamentos manuais.</span>
           </div>
           <div class="flex items-center gap-2">
-            <span class="w-2.5 h-2.5 rounded-full bg-[#E8C5B0]"></span>
+            <span class="w-2.5 h-2.5 rounded-full bg-[#EAD79A]"></span>
             <span><strong>Lado Direito:</strong> Escultura monumental marmorizada instalada na Basílica.</span>
           </div>
         </div>
@@ -468,7 +489,7 @@
         <!-- Camada "Antes" (Argila - Cortada dinamicamente) -->
         <div class="before-after-overlay" id="before-overlay">
           <img 
-            src="images/carlos-pieta-esculpindo.png" 
+            src="images/carlos-pieta-retrato-estudio.jpg" 
             alt="Carlos Pietá esculpindo em argila" 
             class="before-after-image"
             style="width: 100%; min-width: 100%;"
@@ -476,7 +497,7 @@
           />
           
           <!-- Badge Esquerda (Antes) -->
-          <div class="absolute bottom-6 left-6 z-10 px-4 py-2 rounded-full bg-black/70 backdrop-blur-md border border-white/20 text-[#E8C5B0] text-xs font-semibold tracking-wider uppercase pointer-events-none">
+          <div class="absolute bottom-6 left-6 z-10 px-4 py-2 rounded-full bg-black/70 backdrop-blur-md border border-white/20 text-[#EAD79A] text-xs font-semibold tracking-wider uppercase pointer-events-none">
             Modelagem em Argila Viva
           </div>
         </div>
@@ -505,7 +526,7 @@
       
       <div class="flex flex-col md:flex-row md:items-end justify-between mb-14 reveal">
         <div>
-          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#F7EDE7] text-[#A36A4F] text-xs font-semibold uppercase tracking-wider mb-3">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#F7EDE7] text-[#D4AF37] text-xs font-semibold uppercase tracking-wider mb-3">
             <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
               <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
@@ -514,16 +535,16 @@
             <span>Instagram Feed & Bastidores</span>
           </div>
           <h2 class="text-3xl sm:text-4xl lg:text-5xl font-serifDisplay font-semibold text-stone-900">
-            Direto do Ateliê <span class="italic font-serifCormorant font-normal text-[#A36A4F]">@carlospieta</span>
+            Direto do Ateliê <span class="italic font-serifCormorant font-normal text-[#D4AF37]">@carlospieta</span>
           </h2>
         </div>
 
         <a 
           href="https://www.instagram.com/carlospieta/" 
           target="_blank"
-          class="mt-4 md:mt-0 inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-stone-900 hover:bg-[#A36A4F] text-white text-xs font-semibold uppercase tracking-wider transition-all shadow-sm"
+          class="mt-4 md:mt-0 inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-stone-900 hover:bg-[#D4AF37] text-white text-xs font-semibold uppercase tracking-wider transition-all shadow-sm"
         >
-          <svg class="w-4 h-4 text-[#E8C5B0]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <svg class="w-4 h-4 text-[#EAD79A]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
             <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
             <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
@@ -545,15 +566,15 @@
   <!-- 4. PROCESSO CRIATIVO & TÉCNICA -->
   <!-- ========================================================================= -->
   <section id="processo" class="py-24 bg-stone-900 text-white relative overflow-hidden">
-    <div class="absolute -top-40 -right-40 w-96 h-96 rounded-full bg-[#A36A4F]/15 blur-3xl pointer-events-none"></div>
-    <div class="absolute -bottom-40 -left-40 w-96 h-96 rounded-full bg-[#A36A4F]/10 blur-3xl pointer-events-none"></div>
+    <div class="absolute -top-40 -right-40 w-96 h-96 rounded-full bg-[#D4AF37]/15 blur-3xl pointer-events-none"></div>
+    <div class="absolute -bottom-40 -left-40 w-96 h-96 rounded-full bg-[#D4AF37]/10 blur-3xl pointer-events-none"></div>
 
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
       
       <div class="max-w-3xl mb-16 reveal">
-        <span class="text-xs font-semibold tracking-[0.25em] text-[#E8C5B0] uppercase">Rigor Técnico & Durabilidade Secular</span>
+        <span class="text-xs font-semibold tracking-[0.25em] text-[#EAD79A] uppercase">Rigor Técnico & Durabilidade Secular</span>
         <h2 class="text-3xl sm:text-4xl lg:text-5xl font-serifDisplay font-semibold text-white mt-2 leading-tight">
-          Processo de Escultura, <span class="italic font-serifCormorant font-normal text-[#E8C5B0]">Resina Estrutural & Vitrais</span>
+          Processo de Escultura, <span class="italic font-serifCormorant font-normal text-[#EAD79A]">Resina Estrutural & Vitrais</span>
         </h2>
         <p class="text-stone-300 font-light text-sm sm:text-base mt-4 leading-relaxed">
           A união entre a poética do barroco italiano clássico e as mais avançadas técnicas de resina estrutural marmorizada reforçada com fibra de vidro — conferindo resistência comparável à rocha com leveza e precisão plástica.
@@ -564,11 +585,11 @@
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
         
         <!-- Etapa 01 -->
-        <div class="p-8 rounded-2xl bg-stone-800/60 border border-stone-700/60 flex flex-col justify-between relative group hover:border-[#A36A4F] transition-all reveal">
+        <div class="p-8 rounded-2xl bg-stone-800/60 border border-stone-700/60 flex flex-col justify-between relative group hover:border-[#D4AF37] transition-all reveal">
           <div>
             <div class="flex items-center justify-between mb-6">
-              <span class="text-3xl font-serifDisplay font-bold text-[#E8C5B0]">01</span>
-              <div class="w-10 h-10 rounded-xl bg-stone-700/50 flex items-center justify-center text-[#E8C5B0]">
+              <span class="text-3xl font-serifDisplay font-bold text-[#EAD79A]">01</span>
+              <div class="w-10 h-10 rounded-xl bg-stone-700/50 flex items-center justify-center text-[#EAD79A]">
                 <i data-lucide="pen-tool" class="w-5 h-5"></i>
               </div>
             </div>
@@ -586,11 +607,11 @@
         </div>
 
         <!-- Etapa 02 -->
-        <div class="p-8 rounded-2xl bg-stone-800/60 border border-stone-700/60 flex flex-col justify-between relative group hover:border-[#A36A4F] transition-all reveal">
+        <div class="p-8 rounded-2xl bg-stone-800/60 border border-stone-700/60 flex flex-col justify-between relative group hover:border-[#D4AF37] transition-all reveal">
           <div>
             <div class="flex items-center justify-between mb-6">
-              <span class="text-3xl font-serifDisplay font-bold text-[#E8C5B0]">02</span>
-              <div class="w-10 h-10 rounded-xl bg-stone-700/50 flex items-center justify-center text-[#E8C5B0]">
+              <span class="text-3xl font-serifDisplay font-bold text-[#EAD79A]">02</span>
+              <div class="w-10 h-10 rounded-xl bg-stone-700/50 flex items-center justify-center text-[#EAD79A]">
                 <i data-lucide="shield" class="w-5 h-5"></i>
               </div>
             </div>
@@ -608,11 +629,11 @@
         </div>
 
         <!-- Etapa 03 -->
-        <div class="p-8 rounded-2xl bg-stone-800/60 border border-stone-700/60 flex flex-col justify-between relative group hover:border-[#A36A4F] transition-all reveal">
+        <div class="p-8 rounded-2xl bg-stone-800/60 border border-stone-700/60 flex flex-col justify-between relative group hover:border-[#D4AF37] transition-all reveal">
           <div>
             <div class="flex items-center justify-between mb-6">
-              <span class="text-3xl font-serifDisplay font-bold text-[#E8C5B0]">03</span>
-              <div class="w-10 h-10 rounded-xl bg-stone-700/50 flex items-center justify-center text-[#E8C5B0]">
+              <span class="text-3xl font-serifDisplay font-bold text-[#EAD79A]">03</span>
+              <div class="w-10 h-10 rounded-xl bg-stone-700/50 flex items-center justify-center text-[#EAD79A]">
                 <i data-lucide="truck" class="w-5 h-5"></i>
               </div>
             </div>
@@ -634,19 +655,19 @@
       <!-- Painel de Técnicas e Materiais -->
       <div class="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 reveal">
         <div class="p-4 rounded-xl bg-stone-800/40 border border-stone-700/40">
-          <span class="text-xs uppercase font-semibold text-[#E8C5B0] block mb-1">Resina Marmorizada</span>
+          <span class="text-xs uppercase font-semibold text-[#EAD79A] block mb-1">Resina Marmorizada</span>
           <p class="text-xs text-stone-400">Acabamento com textura de mármore clássico de alta resistência.</p>
         </div>
         <div class="p-4 rounded-xl bg-stone-800/40 border border-stone-700/40">
-          <span class="text-xs uppercase font-semibold text-[#E8C5B0] block mb-1">Vitrais Sacros</span>
+          <span class="text-xs uppercase font-semibold text-[#EAD79A] block mb-1">Vitrais Sacros</span>
           <p class="text-xs text-stone-400">Vidro colorido de alta qualidade com chumbo tradicional e queima a fogo.</p>
         </div>
         <div class="p-4 rounded-xl bg-stone-800/40 border border-stone-700/40">
-          <span class="text-xs uppercase font-semibold text-[#E8C5B0] block mb-1">Mosaicos Murano</span>
+          <span class="text-xs uppercase font-semibold text-[#EAD79A] block mb-1">Mosaicos Murano</span>
           <p class="text-xs text-stone-400">Tesselas nobres para murais eclesiásticos e fachadas arquitetônicas.</p>
         </div>
         <div class="p-4 rounded-xl bg-stone-800/40 border border-stone-700/40">
-          <span class="text-xs uppercase font-semibold text-[#E8C5B0] block mb-1">Bronze & Pátina</span>
+          <span class="text-xs uppercase font-semibold text-[#EAD79A] block mb-1">Bronze & Pátina</span>
           <p class="text-xs text-stone-400">Fundição clássica para bustos e efígies comemorativas.</p>
         </div>
       </div>
@@ -661,7 +682,7 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <div class="max-w-3xl mb-14 reveal">
-        <span class="text-xs font-semibold tracking-[0.25em] text-[#A36A4F] uppercase">Reconhecimento & Imprensa</span>
+        <span class="text-xs font-semibold tracking-[0.25em] text-[#D4AF37] uppercase">Reconhecimento & Imprensa</span>
         <h2 class="text-3xl sm:text-4xl lg:text-5xl font-serifDisplay font-semibold text-stone-900 mt-2">
           A Voz do Escultor & Cobertura Nacional
         </h2>
@@ -674,8 +695,8 @@
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
         
         <!-- Citação Real do Artista -->
-        <div class="lg:col-span-7 bg-[#F7F6F2] p-8 sm:p-12 rounded-3xl border border-stone-200 flex flex-col justify-between relative overflow-hidden reveal">
-          <span class="quote-mark text-8xl text-[#A36A4F]/20 absolute -top-2 left-6 select-none">“</span>
+        <div class="lg:col-span-7 bg-[#F6EFE3] p-8 sm:p-12 rounded-3xl border border-stone-200 flex flex-col justify-between relative overflow-hidden reveal">
+          <span class="quote-mark text-8xl text-[#D4AF37]/20 absolute -top-2 left-6 select-none">“</span>
           
           <div class="relative z-10 pt-4">
             <p class="font-serifCormorant italic text-2xl sm:text-3xl text-stone-900 leading-relaxed">
@@ -691,7 +712,7 @@
             <a 
               href="https://www.instagram.com/carlospieta/" 
               target="_blank" 
-              class="inline-flex items-center gap-1.5 text-xs font-semibold text-[#A36A4F] hover:underline"
+              class="inline-flex items-center gap-1.5 text-xs font-semibold text-[#D4AF37] hover:underline"
             >
               <span>@carlospieta</span>
               <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
@@ -703,7 +724,7 @@
         <div class="lg:col-span-5 flex flex-col justify-between space-y-4">
           
           <div class="p-6 rounded-2xl bg-white border border-stone-200 shadow-sm flex items-start gap-4 reveal">
-            <div class="w-10 h-10 rounded-xl bg-stone-100 flex items-center justify-center text-[#A36A4F] shrink-0">
+            <div class="w-10 h-10 rounded-xl bg-stone-100 flex items-center justify-center text-[#D4AF37] shrink-0">
               <i data-lucide="newspaper" class="w-5 h-5"></i>
             </div>
             <div>
@@ -714,11 +735,11 @@
           </div>
 
           <div class="p-6 rounded-2xl bg-white border border-stone-200 shadow-sm flex items-start gap-4 reveal">
-            <div class="w-10 h-10 rounded-xl bg-stone-100 flex items-center justify-center text-[#A36A4F] shrink-0">
+            <div class="w-10 h-10 rounded-xl bg-stone-100 flex items-center justify-center text-[#D4AF37] shrink-0">
               <i data-lucide="tv" class="w-5 h-5"></i>
             </div>
             <div>
-              <span class="text-[11px] font-bold uppercase tracking-wider text-[#A36A4F] block">Jornal Estado de Minas</span>
+              <span class="text-[11px] font-bold uppercase tracking-wider text-[#D4AF37] block">Jornal Estado de Minas</span>
               <h5 class="text-sm font-semibold text-stone-900 mt-0.5">"Arte Sacra e Tradição: As novas obras de Carlos Pietá"</h5>
               <p class="text-xs text-stone-500 font-light mt-1">Reportagem sobre a chegada das estátuas dos santos arcanjos e a revitalização cívico-religiosa.</p>
             </div>
@@ -726,10 +747,10 @@
 
           <div class="p-6 rounded-2xl bg-stone-900 text-white flex items-center justify-between gap-4 reveal">
             <div>
-              <span class="text-xs font-semibold uppercase tracking-wider text-[#E8C5B0]">Santuário Basílica</span>
+              <span class="text-xs font-semibold uppercase tracking-wider text-[#EAD79A]">Santuário Basílica</span>
               <p class="text-xs text-stone-300 mt-0.5">+500.000 fiéis e turistas acolhidos anualmente pelo conjunto escultórico.</p>
             </div>
-            <i data-lucide="church" class="w-8 h-8 text-[#E8C5B0] shrink-0"></i>
+            <i data-lucide="church" class="w-8 h-8 text-[#EAD79A] shrink-0"></i>
           </div>
 
         </div>
@@ -742,7 +763,7 @@
   <!-- ========================================================================= -->
   <!-- 6. SOBRE O ARTISTA (COM ASSINATURA REAL & SELO DE AUTORIA) -->
   <!-- ========================================================================= -->
-  <section id="sobre" class="py-24 bg-[#F7F6F2] relative">
+  <section id="sobre" class="py-24 bg-[#F6EFE3] relative">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
@@ -761,13 +782,13 @@
               <p class="font-serifCormorant italic text-lg sm:text-xl text-stone-200 leading-snug">
                 "A arte pública e sacra é a ponte visível entre o transcendente e o cotidiano das cidades."
               </p>
-              <span class="text-xs uppercase tracking-widest text-[#E8C5B0] font-semibold block mt-2">— Carlos Pietá (@carlospieta)</span>
+              <span class="text-xs uppercase tracking-widest text-[#EAD79A] font-semibold block mt-2">— Carlos Pietá (@carlospieta)</span>
             </div>
           </div>
 
           <!-- Card Flutuante de Credibilidade -->
           <div class="hidden sm:flex absolute -bottom-6 -right-6 bg-white p-5 rounded-2xl shadow-xl border border-stone-200 items-center gap-4 max-w-xs">
-            <div class="w-12 h-12 rounded-full bg-[#F7EDE7] flex items-center justify-center text-[#A36A4F] shrink-0">
+            <div class="w-12 h-12 rounded-full bg-[#F7EDE7] flex items-center justify-center text-[#D4AF37] shrink-0">
               <i data-lucide="award" class="w-6 h-6"></i>
             </div>
             <div>
@@ -779,7 +800,7 @@
 
         <!-- Coluna Direita: Biografia & Dados Institucionais -->
         <div class="lg:col-span-7 reveal">
-          <span class="text-xs font-semibold tracking-[0.25em] text-[#A36A4F] uppercase">O Artista Plástico</span>
+          <span class="text-xs font-semibold tracking-[0.25em] text-[#D4AF37] uppercase">O Artista Plástico</span>
           <h2 class="text-3xl sm:text-4xl lg:text-5xl font-serifDisplay font-semibold text-stone-900 mt-2 mb-6">
             Carlos Pietá: Tradição Barroca & Monumentalidade
           </h2>
@@ -799,7 +820,7 @@
           <!-- Destaques em Grid -->
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-8 pt-6 border-t border-stone-200">
             <div class="flex items-start gap-3">
-              <div class="w-8 h-8 rounded-lg bg-stone-100 flex items-center justify-center text-[#A36A4F] shrink-0 mt-0.5">
+              <div class="w-8 h-8 rounded-lg bg-stone-100 flex items-center justify-center text-[#D4AF37] shrink-0 mt-0.5">
                 <i data-lucide="shield-check" class="w-4 h-4"></i>
               </div>
               <div>
@@ -809,7 +830,7 @@
             </div>
 
             <div class="flex items-start gap-3">
-              <div class="w-8 h-8 rounded-lg bg-stone-100 flex items-center justify-center text-[#A36A4F] shrink-0 mt-0.5">
+              <div class="w-8 h-8 rounded-lg bg-stone-100 flex items-center justify-center text-[#D4AF37] shrink-0 mt-0.5">
                 <i data-lucide="compass" class="w-4 h-4"></i>
               </div>
               <div>
@@ -823,16 +844,16 @@
           <div class="mt-8 pt-6 border-t border-stone-200 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
             <div>
               <span class="text-[10px] uppercase tracking-widest text-stone-400 font-semibold block">Autenticidade Curatorial</span>
-              <span class="artist-signature-text text-3xl sm:text-4xl text-[#A36A4F] font-serifCormorant block">Carlos Pietá</span>
+              <span class="artist-signature-text text-3xl sm:text-4xl text-[#D4AF37] font-serifCormorant block">Carlos Pietá</span>
               <span class="text-xs text-stone-500 font-light">Mestre Escultor & Vitralista</span>
             </div>
 
             <a 
               href="https://www.instagram.com/carlospieta/" 
               target="_blank"
-              class="inline-flex items-center gap-3 px-5 py-3 rounded-xl bg-stone-900 hover:bg-[#A36A4F] text-white text-xs font-semibold uppercase tracking-wider transition-all shadow-sm"
+              class="inline-flex items-center gap-3 px-5 py-3 rounded-xl bg-stone-900 hover:bg-[#D4AF37] text-white text-xs font-semibold uppercase tracking-wider transition-all shadow-sm"
             >
-              <svg class="w-4 h-4 text-[#E8C5B0]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <svg class="w-4 h-4 text-[#EAD79A]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
                 <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
                 <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
@@ -855,7 +876,7 @@
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <div class="text-center mb-16 reveal">
-        <span class="text-xs font-semibold tracking-[0.25em] text-[#A36A4F] uppercase">Esclarecimentos Técnicos</span>
+        <span class="text-xs font-semibold tracking-[0.25em] text-[#D4AF37] uppercase">Esclarecimentos Técnicos</span>
         <h2 class="text-3xl sm:text-4xl lg:text-5xl font-serifDisplay font-semibold text-stone-900 mt-2">
           Perguntas Frequentes
         </h2>
@@ -867,7 +888,7 @@
       <div class="space-y-4 reveal">
         
         <!-- Item 1 -->
-        <div class="faq-item rounded-2xl bg-[#F7F6F2] border border-stone-200 overflow-hidden transition-all">
+        <div class="faq-item rounded-2xl bg-[#F6EFE3] border border-stone-200 overflow-hidden transition-all">
           <button class="faq-header w-full p-6 text-left flex items-center justify-between gap-4 focus:outline-none">
             <span class="font-serifDisplay font-semibold text-base sm:text-lg text-stone-900">Qual a vantagem da resina estrutural marmorizada em relação à pedra maciça?</span>
             <i data-lucide="chevron-down" class="faq-icon w-5 h-5 text-stone-500 shrink-0 transition-transform duration-300"></i>
@@ -878,7 +899,7 @@
         </div>
 
         <!-- Item 2 -->
-        <div class="faq-item rounded-2xl bg-[#F7F6F2] border border-stone-200 overflow-hidden transition-all">
+        <div class="faq-item rounded-2xl bg-[#F6EFE3] border border-stone-200 overflow-hidden transition-all">
           <button class="faq-header w-full p-6 text-left flex items-center justify-between gap-4 focus:outline-none">
             <span class="font-serifDisplay font-semibold text-base sm:text-lg text-stone-900">O ateliê atende projetos em todo o Brasil?</span>
             <i data-lucide="chevron-down" class="faq-icon w-5 h-5 text-stone-500 shrink-0 transition-transform duration-300"></i>
@@ -889,7 +910,7 @@
         </div>
 
         <!-- Item 3 -->
-        <div class="faq-item rounded-2xl bg-[#F7F6F2] border border-stone-200 overflow-hidden transition-all">
+        <div class="faq-item rounded-2xl bg-[#F6EFE3] border border-stone-200 overflow-hidden transition-all">
           <button class="faq-header w-full p-6 text-left flex items-center justify-between gap-4 focus:outline-none">
             <span class="font-serifDisplay font-semibold text-base sm:text-lg text-stone-900">Qual o prazo médio de produção para uma escultura monumental?</span>
             <i data-lucide="chevron-down" class="faq-icon w-5 h-5 text-stone-500 shrink-0 transition-transform duration-300"></i>
@@ -900,7 +921,7 @@
         </div>
 
         <!-- Item 4 -->
-        <div class="faq-item rounded-2xl bg-[#F7F6F2] border border-stone-200 overflow-hidden transition-all">
+        <div class="faq-item rounded-2xl bg-[#F6EFE3] border border-stone-200 overflow-hidden transition-all">
           <button class="faq-header w-full p-6 text-left flex items-center justify-between gap-4 focus:outline-none">
             <span class="font-serifDisplay font-semibold text-base sm:text-lg text-stone-900">Como é feito o processo para vitrais e mosaicos?</span>
             <i data-lucide="chevron-down" class="faq-icon w-5 h-5 text-stone-500 shrink-0 transition-transform duration-300"></i>
@@ -918,11 +939,11 @@
   <!-- ========================================================================= -->
   <!-- 8. FORMULÁRIO DE BRIEFING & CONTATO -->
   <!-- ========================================================================= -->
-  <section id="contato" class="py-24 bg-[#F7F6F2] border-t border-stone-200 relative">
+  <section id="contato" class="py-24 bg-[#F6EFE3] border-t border-stone-200 relative">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <div class="max-w-3xl mx-auto text-center mb-16 reveal">
-        <span class="text-xs font-semibold tracking-[0.25em] text-[#A36A4F] uppercase">Solicitação de Projeto</span>
+        <span class="text-xs font-semibold tracking-[0.25em] text-[#D4AF37] uppercase">Solicitação de Projeto</span>
         <h2 class="text-3xl sm:text-4xl lg:text-5xl font-serifDisplay font-semibold text-stone-900 mt-2">
           Briefing Direto com o Ateliê
         </h2>
@@ -947,7 +968,7 @@
                   id="form-name" 
                   required
                   placeholder="Ex: Padre Roberto / Arq. Marina" 
-                  class="w-full px-4 py-3 rounded-xl bg-stone-50 border border-stone-200 text-sm text-stone-900 placeholder-stone-400 focus:outline-none focus:border-[#A36A4F] focus:ring-1 focus:ring-[#A36A4F] transition-all"
+                  class="w-full px-4 py-3 rounded-xl bg-stone-50 border border-stone-200 text-sm text-stone-900 placeholder-stone-400 focus:outline-none focus:border-[#D4AF37] focus:ring-1 focus:ring-[#D4AF37] transition-all"
                 />
               </div>
 
@@ -959,7 +980,7 @@
                   type="text" 
                   id="form-org" 
                   placeholder="Ex: Paróquia São José ou Prefeitura" 
-                  class="w-full px-4 py-3 rounded-xl bg-stone-50 border border-stone-200 text-sm text-stone-900 placeholder-stone-400 focus:outline-none focus:border-[#A36A4F] focus:ring-1 focus:ring-[#A36A4F] transition-all"
+                  class="w-full px-4 py-3 rounded-xl bg-stone-50 border border-stone-200 text-sm text-stone-900 placeholder-stone-400 focus:outline-none focus:border-[#D4AF37] focus:ring-1 focus:ring-[#D4AF37] transition-all"
                 />
               </div>
             </div>
@@ -972,7 +993,7 @@
                 <select 
                   id="form-type" 
                   required
-                  class="w-full px-4 py-3 rounded-xl bg-stone-50 border border-stone-200 text-sm text-stone-900 focus:outline-none focus:border-[#A36A4F] focus:ring-1 focus:ring-[#A36A4F] transition-all"
+                  class="w-full px-4 py-3 rounded-xl bg-stone-50 border border-stone-200 text-sm text-stone-900 focus:outline-none focus:border-[#D4AF37] focus:ring-1 focus:ring-[#D4AF37] transition-all"
                 >
                   <option value="Escultura Monumental Sacra / Praça">Escultura Monumental Sacra / de Praça</option>
                   <option value="Conjunto de Imagens / Apóstolos / Santos">Conjunto Escultórico (Santos / Apóstolos / Arcanjos)</option>
@@ -992,7 +1013,7 @@
                   id="form-city" 
                   required
                   placeholder="Ex: Romaria, MG ou São Paulo, SP" 
-                  class="w-full px-4 py-3 rounded-xl bg-stone-50 border border-stone-200 text-sm text-stone-900 placeholder-stone-400 focus:outline-none focus:border-[#A36A4F] focus:ring-1 focus:ring-[#A36A4F] transition-all"
+                  class="w-full px-4 py-3 rounded-xl bg-stone-50 border border-stone-200 text-sm text-stone-900 placeholder-stone-400 focus:outline-none focus:border-[#D4AF37] focus:ring-1 focus:ring-[#D4AF37] transition-all"
                 />
               </div>
             </div>
@@ -1003,7 +1024,7 @@
               </label>
               <select 
                 id="form-deadline" 
-                class="w-full px-4 py-3 rounded-xl bg-stone-50 border border-stone-200 text-sm text-stone-900 focus:outline-none focus:border-[#A36A4F] focus:ring-1 focus:ring-[#A36A4F] transition-all"
+                class="w-full px-4 py-3 rounded-xl bg-stone-50 border border-stone-200 text-sm text-stone-900 focus:outline-none focus:border-[#D4AF37] focus:ring-1 focus:ring-[#D4AF37] transition-all"
               >
                 <option value="Curto Prazo (3 a 6 meses)">Curto Prazo (3 a 6 meses)</option>
                 <option value="Médio Prazo (6 a 12 meses)" selected>Médio Prazo (6 a 12 meses)</option>
@@ -1021,7 +1042,7 @@
                 rows="4" 
                 required
                 placeholder="Descreva a imagem pretendida (altura, pedestal, fachada, praça ou torre), contexto da homenagem ou detalhes arquitetônicos..." 
-                class="w-full px-4 py-3 rounded-xl bg-stone-50 border border-stone-200 text-sm text-stone-900 placeholder-stone-400 focus:outline-none focus:border-[#A36A4F] focus:ring-1 focus:ring-[#A36A4F] transition-all resize-none"
+                class="w-full px-4 py-3 rounded-xl bg-stone-50 border border-stone-200 text-sm text-stone-900 placeholder-stone-400 focus:outline-none focus:border-[#D4AF37] focus:ring-1 focus:ring-[#D4AF37] transition-all resize-none"
               ></textarea>
             </div>
 
@@ -1058,7 +1079,7 @@
             
             <div class="space-y-5 text-sm text-stone-700">
               <div class="flex items-start gap-4">
-                <div class="w-9 h-9 rounded-xl bg-stone-100 flex items-center justify-center text-[#A36A4F] shrink-0">
+                <div class="w-9 h-9 rounded-xl bg-stone-100 flex items-center justify-center text-[#D4AF37] shrink-0">
                   <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
                     <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
@@ -1067,12 +1088,12 @@
                 </div>
                 <div>
                   <strong class="block text-stone-900 font-medium">Instagram Oficial</strong>
-                  <a href="https://www.instagram.com/carlospieta/" target="_blank" class="text-stone-600 hover:text-[#A36A4F] text-xs sm:text-sm font-semibold transition-colors">@carlospieta</a>
+                  <a href="https://www.instagram.com/carlospieta/" target="_blank" class="text-stone-600 hover:text-[#D4AF37] text-xs sm:text-sm font-semibold transition-colors">@carlospieta</a>
                 </div>
               </div>
 
               <div class="flex items-start gap-4">
-                <div class="w-9 h-9 rounded-xl bg-stone-100 flex items-center justify-center text-[#A36A4F] shrink-0">
+                <div class="w-9 h-9 rounded-xl bg-stone-100 flex items-center justify-center text-[#D4AF37] shrink-0">
                   <i data-lucide="map-pin" class="w-4 h-4"></i>
                 </div>
                 <div>
@@ -1082,17 +1103,17 @@
               </div>
 
               <div class="flex items-start gap-4">
-                <div class="w-9 h-9 rounded-xl bg-stone-100 flex items-center justify-center text-[#A36A4F] shrink-0">
+                <div class="w-9 h-9 rounded-xl bg-stone-100 flex items-center justify-center text-[#D4AF37] shrink-0">
                   <i data-lucide="mail" class="w-4 h-4"></i>
                 </div>
                 <div>
                   <strong class="block text-stone-900 font-medium">E-mail de Atendimento</strong>
-                  <a href="mailto:contato@carlospieta.art.br" class="text-stone-600 hover:text-[#A36A4F] text-xs sm:text-sm transition-colors">contato@carlospieta.art.br</a>
+                  <a href="mailto:contato@carlospieta.art.br" class="text-stone-600 hover:text-[#D4AF37] text-xs sm:text-sm transition-colors">contato@carlospieta.art.br</a>
                 </div>
               </div>
 
               <div class="flex items-start gap-4">
-                <div class="w-9 h-9 rounded-xl bg-stone-100 flex items-center justify-center text-[#A36A4F] shrink-0">
+                <div class="w-9 h-9 rounded-xl bg-stone-100 flex items-center justify-center text-[#D4AF37] shrink-0">
                   <i data-lucide="phone" class="w-4 h-4"></i>
                 </div>
                 <div>
@@ -1106,7 +1127,7 @@
           <!-- Card de Garantia de Patrimônio -->
           <div class="p-6 rounded-2xl bg-stone-900 text-white">
             <div class="flex items-center gap-3 mb-2">
-              <i data-lucide="shield" class="w-5 h-5 text-[#E8C5B0]"></i>
+              <i data-lucide="shield" class="w-5 h-5 text-[#EAD79A]"></i>
               <span class="font-serifDisplay font-semibold text-base">Qualidade e Acabamento Sacro</span>
             </div>
             <p class="text-xs text-stone-300 font-light leading-relaxed">
@@ -1130,16 +1151,12 @@
       <div class="grid grid-cols-1 md:grid-cols-12 gap-10 pb-12 border-b border-stone-800">
         
         <div class="md:col-span-5">
-          <a href="#hero" class="flex items-center gap-3 mb-4">
+          <a href="#hero" class="inline-block mb-4">
             <img 
-              src="images/logo-carlos-pieta.png" 
-              alt="Logo Carlos Pietá" 
-              class="h-14 w-auto object-contain rounded-xl shadow-md"
+              src="images/logo-horizontal-dourada.png" 
+              alt="Logo Oficial Carlos Pietá" 
+              class="h-12 sm:h-14 w-auto object-contain"
             />
-            <div class="flex flex-col">
-              <span class="font-serifDisplay font-bold text-xl tracking-wider text-white">CARLOS PIETÁ</span>
-              <span class="text-[10px] tracking-[0.2em] text-[#E8C5B0] uppercase font-medium">Ateliê de Esculturas & Arte Sacra</span>
-            </div>
           </a>
           <p class="text-xs sm:text-sm text-stone-400 font-light max-w-sm leading-relaxed">
             Ateliê de artes plásticas especializado em esculturas monumentais, arte sacra barroca, vitrais e mosaicos.
@@ -1147,7 +1164,7 @@
         </div>
 
         <div class="md:col-span-3">
-          <h5 class="text-xs font-semibold uppercase tracking-[0.2em] text-[#E8C5B0] mb-4">Navegação</h5>
+          <h5 class="text-xs font-semibold uppercase tracking-[0.2em] text-[#EAD79A] mb-4">Navegação</h5>
           <ul class="space-y-2.5 text-xs text-stone-400 font-medium">
             <li><a href="#hero" class="hover:text-white transition-colors">Início</a></li>
             <li><a href="#obras" class="hover:text-white transition-colors">Acervo & Obras</a></li>
@@ -1162,14 +1179,14 @@
         </div>
 
         <div class="md:col-span-4">
-          <h5 class="text-xs font-semibold uppercase tracking-[0.2em] text-[#E8C5B0] mb-4">Presença & Redes Sociais</h5>
+          <h5 class="text-xs font-semibold uppercase tracking-[0.2em] text-[#EAD79A] mb-4">Presença & Redes Sociais</h5>
           <div class="flex flex-col space-y-3 text-xs text-stone-400">
             <a 
               href="https://www.instagram.com/carlospieta/" 
               target="_blank"
-              class="inline-flex items-center gap-2 text-stone-300 hover:text-[#E8C5B0] transition-colors"
+              class="inline-flex items-center gap-2 text-stone-300 hover:text-[#EAD79A] transition-colors"
             >
-              <svg class="w-4 h-4 text-[#E8C5B0]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <svg class="w-4 h-4 text-[#EAD79A]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
                 <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
                 <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
@@ -1240,7 +1257,7 @@
   <div id="artwork-modal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 sm:p-6 lg:p-10">
     <div id="modal-backdrop" class="fixed inset-0 bg-black/80 backdrop-blur-sm transition-opacity"></div>
 
-    <div class="relative w-full max-w-4xl max-h-[90vh] bg-[#F7F6F2] rounded-3xl shadow-2xl border border-stone-200 overflow-hidden z-10 flex flex-col my-auto">
+    <div class="relative w-full max-w-4xl max-h-[90vh] bg-[#F6EFE3] rounded-3xl shadow-2xl border border-stone-200 overflow-hidden z-10 flex flex-col my-auto">
       
       <!-- Botão Fechar -->
       <button id="modal-close-btn" class="absolute top-4 right-4 z-20 w-10 h-10 rounded-full bg-black/60 text-white hover:bg-black flex items-center justify-center transition-colors">
@@ -1270,7 +1287,7 @@
             </div>
 
             <h3 id="modal-title" class="text-2xl sm:text-3xl font-serifDisplay font-semibold text-stone-900 mb-2"></h3>
-            <p id="modal-location" class="text-xs text-[#A36A4F] font-semibold mb-6 flex items-center gap-1.5">
+            <p id="modal-location" class="text-xs text-[#D4AF37] font-semibold mb-6 flex items-center gap-1.5">
               <i data-lucide="map-pin" class="w-3.5 h-3.5"></i>
               <span></span>
             </p>

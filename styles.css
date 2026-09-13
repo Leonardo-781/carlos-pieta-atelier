@@ -1,13 +1,59 @@
+/* Fontes Oficiais da Marca Carlos Pietá */
+@font-face {
+  font-family: 'TeX Gyre Termes';
+  src: url('fonts/texgyretermes-regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'TeX Gyre Termes';
+  src: url('fonts/texgyretermes-bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'TeX Gyre Termes';
+  src: url('fonts/texgyretermes-italic.otf') format('opentype');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Kollektif';
+  src: url('fonts/Kollektif.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Kollektif';
+  src: url('fonts/Kollektif-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
 
 :root {
-  --color-bg: #F7F6F2;
-  --color-dark: #151515;
-  --color-graphite: #1C1C1C;
-  --color-bronze: #A36A4F;
-  --color-bronze-dark: #87533B;
-  --color-bronze-light: #C48E75;
-  --color-stone-line: rgba(214, 211, 201, 0.7);
+  /* Paleta Oficial de Cores do Manual da Marca */
+  --color-bg: #F6EFE3;           /* Color 6: Off-White / Mármore / Pergaminho */
+  --color-dark: #111111;         /* Color 7: Ônix / Grafite Profundo */
+  --color-graphite: #111111;
+  --color-gold: #D4AF37;         /* Color 5: Ouro Real / Dourado Nobre */
+  --color-gold-light: #EAD79A;
+  --color-gold-dark: #A48623;
+  --color-blue-deep: #0D2B7E;    /* Color 1: Azul Imperial / Sacro */
+  --color-blue-royal: #1E49B6;   /* Color 2: Azul Real */
+  --color-patina: #1FA7A6;       /* Color 3: Pátina Turquesa */
+  --color-malachite: #32936F;    /* Color 4: Verde Malaquita */
+  --color-stone-line: rgba(212, 175, 55, 0.25);
   --color-card-bg: #FFFFFF;
 }
 
@@ -19,12 +65,12 @@ html {
 }
 
 body {
-  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-family: 'Kollektif', 'Plus Jakarta Sans', sans-serif;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   background-color: var(--color-bg);
-  /* Textura de ruído editorial suave estilo papel de museu */
-  background-image: radial-gradient(rgba(163, 106, 79, 0.04) 1px, transparent 0);
+  /* Textura de ruído sutil de pergaminho / papel de museu */
+  background-image: radial-gradient(rgba(212, 175, 55, 0.05) 1px, transparent 0);
   background-size: 24px 24px;
 }
 
@@ -34,29 +80,29 @@ body {
   top: 0;
   left: 0;
   height: 3px;
-  background: linear-gradient(90deg, #A36A4F, #E8C5B0);
+  background: linear-gradient(90deg, #D4AF37, #0D2B7E, #D4AF37);
   z-index: 100;
   width: 0%;
   transition: width 0.1s ease-out;
 }
 
-/* Tipografia Editorial */
+/* Tipografia Editorial Oficial */
 .font-serif-display {
-  font-family: 'Playfair Display', Georgia, serif;
+  font-family: 'TeX Gyre Termes', 'Playfair Display', Georgia, serif;
 }
 
 .font-serif-cormorant {
-  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-family: 'Cormorant Garamond', 'TeX Gyre Termes', Georgia, serif;
 }
 
 .font-sans-body {
-  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: 'Kollektif', 'Plus Jakarta Sans', -apple-system, sans-serif;
 }
 
 /* Suavização de Rolagem e Seleção */
 ::selection {
-  background-color: #A36A4F;
-  color: #FFFFFF;
+  background-color: #D4AF37;
+  color: #111111;
 }
 
 /* Linha Editorial */
@@ -71,7 +117,7 @@ body {
 }
 
 .shadow-editorial-hover {
-  box-shadow: 0 20px 40px -15px rgba(163, 106, 79, 0.15), 0 8px 16px -6px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 20px 40px -15px rgba(212, 175, 55, 0.18), 0 8px 16px -6px rgba(0, 0, 0, 0.06);
 }
 
 /* Transições Suaves */
@@ -96,7 +142,7 @@ body {
   background: linear-gradient(
     60deg,
     transparent 40%,
-    rgba(255, 255, 255, 0.15) 50%,
+    rgba(255, 255, 255, 0.18) 50%,
     transparent 60%
   );
   transform: translateX(-100%) rotate(25deg);
@@ -116,12 +162,13 @@ body {
   transform: scale(1.05);
 }
 
-/* Botões com Pátina Metálica e Efeito de Douramento */
+/* Botões com Pátina Metálica Dourada Oficial */
 .btn-bronze-metallic {
-  background: linear-gradient(135deg, #1c1c1c 0%, #2a2722 50%, #1c1c1c 100%);
+  background: linear-gradient(135deg, #111111 0%, #1a1a1a 50%, #111111 100%);
   position: relative;
   overflow: hidden;
   transition: all 0.4s ease;
+  border: 1px solid rgba(212, 175, 55, 0.3);
 }
 
 .btn-bronze-metallic::before {
@@ -134,7 +181,7 @@ body {
   background: linear-gradient(
     90deg,
     transparent,
-    rgba(232, 197, 176, 0.25),
+    rgba(212, 175, 55, 0.35),
     transparent
   );
   transition: left 0.6s ease;
@@ -145,8 +192,10 @@ body {
 }
 
 .btn-bronze-metallic:hover {
-  background: linear-gradient(135deg, #A36A4F 0%, #8C573E 100%);
-  box-shadow: 0 10px 25px -5px rgba(163, 106, 79, 0.4);
+  background: linear-gradient(135deg, #D4AF37 0%, #A48623 100%);
+  color: #111111;
+  border-color: #D4AF37;
+  box-shadow: 0 10px 25px -5px rgba(212, 175, 55, 0.45);
 }
 
 /* ========================================================================= */
@@ -205,19 +254,19 @@ body {
   height: 44px;
   border-radius: 50%;
   background: #FFFFFF;
-  color: #1C1C1C;
+  color: #111111;
   display: flex;
   align-items: center;
   justify-content: center;
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
-  border: 2px solid #A36A4F;
+  border: 2px solid #D4AF37;
   transition: transform 0.2s ease, background-color 0.2s ease;
 }
 
 .before-after-handle:hover .before-after-circle,
 .before-after-handle:active .before-after-circle {
   transform: translate(-50%, -50%) scale(1.1);
-  background: #F7EDE7;
+  background: #F6EFE3;
 }
 
 /* ========================================================================= */
@@ -242,7 +291,7 @@ body {
   position: absolute;
   bottom: 1rem;
   right: 1rem;
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(17, 17, 17, 0.85);
   backdrop-filter: blur(8px);
   color: #FFFFFF;
   font-size: 0.7rem;
@@ -252,7 +301,7 @@ body {
   align-items: center;
   gap: 0.35rem;
   pointer-events: none;
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(212, 175, 55, 0.3);
   transition: opacity 0.3s ease;
 }
 
@@ -279,10 +328,10 @@ body {
   width: 80px;
   height: 80px;
   border-radius: 50%;
-  background: rgba(163, 106, 79, 0.85);
-  color: #FFFFFF;
+  background: rgba(212, 175, 55, 0.9);
+  color: #111111;
   font-size: 0.7rem;
-  font-weight: 600;
+  font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.08em;
   display: flex;
@@ -293,7 +342,7 @@ body {
   transform: translate(-50%, -50%) scale(0);
   transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.2s ease;
   backdrop-filter: blur(4px);
-  box-shadow: 0 8px 24px rgba(163, 106, 79, 0.3);
+  box-shadow: 0 8px 24px rgba(212, 175, 55, 0.4);
   opacity: 0;
 }
 
@@ -317,7 +366,7 @@ body {
 
 .faq-item.active .faq-icon {
   transform: rotate(180deg);
-  color: #A36A4F;
+  color: #D4AF37;
 }
 
 /* Scrollbar Customizada Estilo Galeria */
@@ -326,21 +375,21 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: #EFECE6;
+  background: #F6EFE3;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #C4BDB4;
+  background: #D4AF37;
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #A36A4F;
+  background: #A48623;
 }
 
 /* Aspas Editoriais Gigantes */
 .quote-mark {
-  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-family: 'TeX Gyre Termes', 'Cormorant Garamond', Georgia, serif;
   line-height: 0.7;
 }
 
@@ -376,7 +425,7 @@ body {
 
 /* Assinatura do Artista estilizada em pátina */
 .artist-signature-text {
-  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-family: 'Cormorant Garamond', 'TeX Gyre Termes', Georgia, serif;
   font-style: italic;
   letter-spacing: 0.05em;
 }
