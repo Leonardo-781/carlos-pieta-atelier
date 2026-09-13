@@ -572,13 +572,13 @@ function renderBentoGrid(filterCategory = 'all') {
             <span>${art.location || ''} • ${art.city || ''}</span>
           </div>
 
-          <h3 class="text-xl lg:text-2xl font-serif-display font-medium text-[#F6EFE3] mb-2 leading-tight group-hover:text-[#D4AF37] transition-colors">
+          <h3 class="text-xl lg:text-2xl font-serif-display font-medium text-[#EBDBC2] mb-2 leading-tight group-hover:text-[#D4AF37] transition-colors">
             ${art.title}
           </h3>
 
           <div class="flex flex-wrap items-center justify-between gap-2 pt-3 border-t border-[#D4AF37]/20 text-xs text-[#DFDAD0]">
             <span class="truncate max-w-[70%] font-light">
-              <strong class="font-medium text-[#F6EFE3]">Matéria:</strong> ${art.material || 'Resina Estrutural Marmorizada'}
+              <strong class="font-medium text-[#EBDBC2]">Matéria:</strong> ${art.material || 'Resina Estrutural Marmorizada'}
             </span>
             
             <span class="inline-flex items-center gap-1 text-[#D4AF37] font-medium group-hover:translate-x-1 transition-transform">

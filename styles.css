@@ -52,18 +52,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
 
 :root {
-  /* Paleta Oficial do Manual de Uso (Creme Mármore, Ouro Real e Ônix) */
-  --color-bg: #F6EFE3;           /* Color 6: Creme Mármore / Pergaminho Oficial */
-  --color-bg-card: #FFFFFF;      /* Branco Puro para Cards Luminosos */
-  --color-dark: #111111;         /* Color 7: Ônix Profundo para Tipografia */
-  --color-gold: #D4AF37;         /* Color 5: Ouro Real Oficial */
+  /* Paleta Oficial do Manual - Tom Creme Pergaminho puxado para Marrom (#E8D6B7) */
+  --color-bg: #EBDBC2;           /* Bege Acastanhado / Areia Nobre Travertino (Shade 12.5% do manual) */
+  --color-bg-alt: #E3D0B4;       /* Tom levemente mais encorpado para seções alternadas */
+  --color-bg-card: #FFFFFF;      /* Branco Mármore para contraste nítido nos cards */
+  --color-dark: #1A1612;         /* Ônix Castanho Profundo para Tipografia */
+  --color-gold: #D4AF37;         /* Ouro Real Oficial */
   --color-gold-light: #EAD79A;   /* Ouro Suave */
   --color-gold-dark: #A48623;    /* Bronze / Ouro Antigo */
-  --color-blue-sacred: #0D2B7E;  /* Color 1: Azul Imperial / Sacro */
-  --color-blue-royal: #1E49B6;   /* Color 2: Azul Real */
-  --color-patina: #1FA7A6;       /* Color 3: Pátina Turquesa */
-  --color-malachite: #32936F;    /* Color 4: Verde Malaquita */
-  --color-stone-line: rgba(212, 175, 55, 0.28);
+  --color-blue-sacred: #0D2B7E;  /* Azul Imperial / Sacro */
+  --color-stone-line: rgba(164, 134, 35, 0.35);
 }
 
 html {
@@ -78,8 +76,8 @@ body {
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   background-color: var(--color-bg);
-  /* Textura de micro-granulação sutil de papel artístico / pergaminho */
-  background-image: radial-gradient(rgba(212, 175, 55, 0.06) 1px, transparent 0);
+  /* Textura de micro-granulação artística em tom bronze/dourado suave */
+  background-image: radial-gradient(rgba(164, 134, 35, 0.08) 1px, transparent 0);
   background-size: 24px 24px;
   color: var(--color-dark);
 }
@@ -90,7 +88,7 @@ body {
   top: 0;
   left: 0;
   height: 3px;
-  background: linear-gradient(90deg, #D4AF37, #0D2B7E, #D4AF37);
+  background: linear-gradient(90deg, #D4AF37, #A48623, #0D2B7E);
   z-index: 100;
   width: 0%;
   transition: width 0.1s ease-out;
@@ -112,7 +110,7 @@ body {
 /* Seleção de Texto em Ouro */
 ::selection {
   background-color: #D4AF37;
-  color: #111111;
+  color: #1A1612;
 }
 
 /* Divisores Editoriais Finos */
@@ -123,11 +121,11 @@ body {
 
 /* Sombras Editoriais Suaves de Museu */
 .shadow-editorial {
-  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.06), 0 4px 12px -4px rgba(212, 175, 55, 0.08);
+  box-shadow: 0 10px 30px -10px rgba(50, 35, 15, 0.12), 0 4px 12px -4px rgba(212, 175, 55, 0.1);
 }
 
 .shadow-editorial-hover {
-  box-shadow: 0 20px 40px -12px rgba(212, 175, 55, 0.22), 0 8px 20px -6px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 20px 40px -12px rgba(50, 35, 15, 0.22), 0 8px 20px -6px rgba(212, 175, 55, 0.18);
 }
 
 /* Transições Suaves */
@@ -141,7 +139,7 @@ body {
   overflow: hidden;
   cursor: pointer;
   background-color: var(--color-bg-card);
-  border: 1px solid rgba(212, 175, 55, 0.28);
+  border: 1px solid rgba(164, 134, 35, 0.35);
 }
 
 .artwork-card::after {
@@ -154,7 +152,7 @@ body {
   background: linear-gradient(
     60deg,
     transparent 40%,
-    rgba(255, 255, 255, 0.25) 50%,
+    rgba(255, 255, 255, 0.3) 50%,
     transparent 60%
   );
   transform: translateX(-100%) rotate(25deg);
@@ -176,14 +174,14 @@ body {
 
 /* Botão em Pátina Metálica Dourada Nobre */
 .btn-gold-metallic {
-  background: linear-gradient(135deg, #111111 0%, #1e1e1e 50%, #111111 100%);
-  color: #F6EFE3;
+  background: linear-gradient(135deg, #1A1612 0%, #2A231C 50%, #1A1612 100%);
+  color: #FDFBF7;
   font-weight: 700;
   position: relative;
   overflow: hidden;
   transition: all 0.4s ease;
-  border: 1px solid rgba(212, 175, 55, 0.45);
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+  border: 1px solid rgba(212, 175, 55, 0.5);
+  box-shadow: 0 4px 16px rgba(50, 35, 15, 0.2);
 }
 
 .btn-gold-metallic::before {
@@ -196,7 +194,7 @@ body {
   background: linear-gradient(
     90deg,
     transparent,
-    rgba(212, 175, 55, 0.35),
+    rgba(212, 175, 55, 0.4),
     transparent
   );
   transition: left 0.6s ease;
@@ -208,24 +206,24 @@ body {
 
 .btn-gold-metallic:hover {
   background: linear-gradient(135deg, #D4AF37 0%, #A48623 100%);
-  color: #111111;
+  color: #1A1612;
   border-color: #D4AF37;
   transform: translateY(-1px);
-  box-shadow: 0 8px 24px rgba(212, 175, 55, 0.35);
+  box-shadow: 0 8px 24px rgba(212, 175, 55, 0.4);
 }
 
 /* Botão Secundário Dourado / Creme */
 .btn-gold-outline {
   background: #FFFFFF;
-  color: #111111;
-  border: 1px solid rgba(212, 175, 55, 0.5);
+  color: #1A1612;
+  border: 1px solid rgba(164, 134, 35, 0.5);
   transition: all 0.35s ease;
 }
 
 .btn-gold-outline:hover {
-  background: #F6EFE3;
-  border-color: #D4AF37;
-  color: #111111;
+  background: #E3D0B4;
+  border-color: #A48623;
+  color: #1A1612;
 }
 
 /* ========================================================================= */
@@ -239,7 +237,7 @@ body {
   -webkit-user-select: none;
   border-radius: 1.5rem;
   touch-action: pan-y;
-  border: 1px solid rgba(212, 175, 55, 0.35);
+  border: 1px solid rgba(212, 175, 55, 0.4);
 }
 
 .before-after-image {
@@ -285,7 +283,7 @@ body {
   height: 44px;
   border-radius: 50%;
   background: #FFFFFF;
-  color: #111111;
+  color: #1A1612;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -297,7 +295,7 @@ body {
 .before-after-handle:hover .before-after-circle,
 .before-after-handle:active .before-after-circle {
   transform: translate(-50%, -50%) scale(1.1);
-  background: #F6EFE3;
+  background: #EBDBC2;
 }
 
 /* ========================================================================= */
@@ -322,7 +320,7 @@ body {
   position: absolute;
   bottom: 1rem;
   right: 1rem;
-  background: rgba(17, 17, 17, 0.85);
+  background: rgba(26, 22, 18, 0.85);
   backdrop-filter: blur(8px);
   color: #EAD79A;
   font-size: 0.7rem;
@@ -342,8 +340,8 @@ body {
   transform: translateY(110%);
   transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   padding-bottom: max(0.75rem, env(safe-area-inset-bottom));
-  background: rgba(246, 239, 227, 0.96);
-  border-top: 1px solid rgba(212, 175, 55, 0.35);
+  background: rgba(235, 219, 194, 0.96);
+  border-top: 1px solid rgba(164, 134, 35, 0.4);
 }
 
 #mobile-sticky-bar.visible {
@@ -360,8 +358,8 @@ body {
   width: 80px;
   height: 80px;
   border-radius: 50%;
-  background: rgba(212, 175, 55, 0.92);
-  color: #111111;
+  background: rgba(212, 175, 55, 0.94);
+  color: #1A1612;
   font-size: 0.68rem;
   font-weight: 700;
   text-transform: uppercase;
@@ -374,7 +372,7 @@ body {
   transform: translate(-50%, -50%) scale(0);
   transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.2s ease;
   backdrop-filter: blur(4px);
-  box-shadow: 0 8px 24px rgba(212, 175, 55, 0.35);
+  box-shadow: 0 8px 24px rgba(164, 134, 35, 0.35);
   opacity: 0;
 }
 
@@ -398,16 +396,16 @@ body {
 
 .faq-item.active .faq-icon {
   transform: rotate(180deg);
-  color: #D4AF37;
+  color: #A48623;
 }
 
-/* Scrollbar Customizada em Mármore e Dourado */
+/* Scrollbar Customizada */
 ::-webkit-scrollbar {
   width: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #EFE8DA;
+  background: #E3D0B4;
 }
 
 ::-webkit-scrollbar-thumb {
